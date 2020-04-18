@@ -1,1 +1,382 @@
 
+    function poster (obj,info,newVal) {
+		console.log(obj,info,newVal)
+		this.c=obj;
+        this.init(info,newVal)
+    }
+    poster.prototype.init = function (posterInfo,newVal) {
+		this.data={
+			avatar:posterInfo.avatar,
+			 banner: posterInfo.banner,
+			 qr: posterInfo.qr,
+			 img: posterInfo.img,
+			 show: true,
+			 posterInfo:posterInfo,
+			 };
+		this.load(newVal);
+    }
+   
+    poster.prototype.load = function (newVal) {
+		if (newVal) {
+		  if (this.data.posterInfo.is_pic && this.data.posterInfo.style != 2) {
+		    this.startCreatImg();
+		  } else {
+		    console.log(2)
+		    this.startCreat();
+		  }
+		}
+    }
+   
+    poster.prototype.startCreatImg=function() {
+       // let imgs = [this.data.posterInfo.qr, this.data.posterInfo.is_pic];
+       
+       this.drawPosterImg();
+     },
+    poster.prototype.drawPosterImg=function() {
+       const ctx = this.c.getContext("2d");
+       // 背景
+       if (this.data.posterInfo.is_pic) {
+         // ctx.drawImage(this.data.posterInfo.is_pic, 0, 0, 750, 1330);
+		 this.newImg(this. data.posterInfo.is_pic, 0, 0, 750, 1330);
+       } else {
+         ctx.fillStyle='#f9f3e0';
+         ctx.fillRect(0, 0, 750, 1330);
+       }
+   
+       // 太阳码
+       // ctx.drawImage(this.data.posterInfo.qr, 480, 1060, 195, 195);
+	   this.newImg(this. data.posterInfo.qr, 480, 1040, 195, 195);
+       // ctx.draw();
+       setTimeout(() => {
+         this.createPoster();
+       }, 500)
+     },
+    poster.prototype.startCreat=function() {
+       this.drawPoster();
+     },
+	 poster.prototype.newImg=function(src, x, x1, y, y1){
+		 const ctx = this.c.getContext("2d");
+		 var imgbg = new Image();
+		  imgbg.src = src;
+		  imgbg.onload=function(){
+			   if (imgbg.complete) {
+				    ctx.drawImage(imgbg, x, x1, y, y1);
+			   }
+		  }
+	 }
+    poster.prototype.drawPoster=function() {
+       const ctx = this.c.getContext("2d");
+       // 背景
+       if (this.data.posterInfo.bg) {
+		   this.newImg(this. data.posterInfo.bg, 0, 0, 750, 1330);
+         // ctx.drawImage(this.data.posterInfo.bg, 0, 0, 750, 1330);
+       } else {
+         ctx.fillStyle='#f9f3e0';
+         ctx.fillRect(0, 0, 750, 1330);
+       }
+       //白色底方框
+       roundRect(ctx, 40, 150, 670, 795, 10, '#fff');
+	   
+	   
+       //白色底图片切割-开始
+       ctx.save();
+       ctx.beginPath();
+       roundRect(ctx, 54, 164, 642, 642, 10, '#fff');
+       ctx.clip();
+	   this.newImg(this. data.posterInfo.img, 54, 164, 642, 642);
+       // ctx.drawImage(this. data.posterInfo.img, 54, 164, 642, 642);
+       ctx.restore();
+       //白色底图片切割-结束
+   
+       //标题
+       let txt0 = {
+         obj: ctx,
+         str: this.data.posterInfo.title,
+         initHeight: 854,
+         initWidth: 55,
+         titleHeight: 50,
+         canvasWidth: 630,
+         fontsize: '30px Arial',
+         color: '#333',
+         maxline: 1,
+         center: false
+       };
+       this.drawText(txt0);
+   
+       //白色底方框下面
+       roundRect(ctx, 40, 984, 670, 248, 10, '#fff');
+   
+       // 昵称
+       if (this.data.posterInfo.style == 2) {
+         let txtname = {
+           obj: ctx,
+           str: this.data.posterInfo.name,
+           initHeight: 1085,
+           initWidth: 168,
+           titleHeight: 50,
+           canvasWidth: 300,
+           fontsize:  '26px Arial',
+           color: '#222',
+           maxline: 1,
+           center: false
+         };
+         let txtnames = this.drawText(txtname);
+       } else {
+         let txtname = {
+           obj: ctx,
+           str: this.data.posterInfo.name,
+           initHeight: 1085,
+           initWidth: 168,
+           titleHeight: 50,
+           canvasWidth: 300,
+           fontsize: '26px Arial',
+           color: '#222',
+           maxline: 1,
+           center: false
+         };
+         let txtnames = this.drawText(txtname);
+       }
+   
+       //特别推荐
+       if (this.data.posterInfo.style != 2) {
+         let txtname = {
+           obj: ctx,
+           str: '「' + this.data.posterInfo.recommend + '」',
+           initHeight: 1165,
+           initWidth: 54,
+           titleHeight: 50,
+           canvasWidth: 360,
+           fontsize: '30px Arial',
+           color: '#000',
+           maxline: 1,
+           center: false
+         };
+         let txtnames = this.drawText(txtname);
+       }
+   
+       // 价格
+       if (this.data.posterInfo.price != -1) {
+         if (this.data.posterInfo.style == 2) {
+           let txtprice = {
+             obj: ctx,
+             str: this.data.posterInfo.price,
+             initHeight: 910,
+             initWidth: 54,
+             titleHeight: 46,
+             canvasWidth: 360,
+             fontsize: '28px Arial',
+             color: '#fe433f',
+             maxline: 1,
+             center: false
+           };
+           let txtprices = this.drawText(txtprice);
+           // let w = txtprices.width + 60;
+           // if (!txtprices.width) {
+           //   w = 420;
+           // }
+           // roundRect(ctx, 56, 876, w, 50, 25, '#fe433f');
+           this.drawText(txtprice);
+         } else {
+           let txtprice = {
+             obj: ctx,
+             str: this.data.posterInfo.price,
+             initHeight: 910,
+             initWidth: 54,
+             titleHeight: 46,
+             canvasWidth: 360,
+             fontsize: '28px Arial',
+             color: '#fe433f',
+             maxline: 1,
+             center: false
+           };
+           let txtprices = this.drawText(txtprice);
+           // let w = txtprices.width + 60;
+           // if (!txtprices.width) {
+           //   w = 420;
+           // }
+           // roundRect(ctx, 56, 876, w, 50, 25, '#fe433f');
+           this.drawText(txtprice);
+         }
+       }
+   
+       // 热度
+       let txthot = {
+         obj: ctx,
+         str: this.data.posterInfo.hot,
+         initHeight: 1200,
+         initWidth: 70,
+         titleHeight: 50,
+         canvasWidth: 240,
+         fontsize: '22px Arial',
+         color: '#222',
+         maxline: 1,
+         center: false
+       };
+       let txthots = this.drawText(txthot);
+   
+       // 太阳码
+       if (this.data.posterInfo.style == 2) {
+		   this.newImg(this. data.posterInfo.qr, 480, 990, 195, 195);
+         // ctx.drawImage(this.data.posterInfo.qr, 480, 1000, 195, 195);
+       } else {
+		   this.newImg(this. data.posterInfo.qr, 480, 990, 195, 195);
+         // ctx.drawImage(this.data.posterInfo.qr, 480, 986, 195, 195);
+       }
+       // 太阳码下面文字
+       if (this.data.posterInfo.style != 2) {
+         let txtqr = {
+           obj: ctx,
+           str: '长按立即查看',
+           initHeight: 1212,
+           initWidth: 504,
+           titleHeight: 50,
+           canvasWidth: 240,
+           fontsize: '24px Arial',
+           color: '#fff',
+           maxline: 1,
+           center: false
+         };
+         roundRect(ctx, 456, 1187, 240, 32, 16, '#222');
+         this.drawText(txtqr);
+       }
+       //头像-开始
+       if (this.data.posterInfo.style == 2) {
+         ctx.save();
+         ctx.beginPath();
+         ctx.arc(106, 1075, 42, 0, 2 * Math.PI);
+         ctx.clip();
+         // ctx.drawImage(this.data.posterInfo.avatar, 64, 1033, 84, 84);		   
+		 this.newImg(this.data.posterInfo.avatar, 64, 1033, 84, 84);	
+         ctx.restore();
+         //头像-结束
+         // ctx.draw();
+         setTimeout(() => {
+           this.createPoster();
+         }, 500)
+       } else {
+         ctx.save();
+         ctx.beginPath();
+         ctx.arc(106, 1075, 42, 0, 2 * Math.PI);
+         ctx.clip();		 
+		 this.newImg(this.data.posterInfo.avatar, 64, 1033, 84, 84);	
+         // ctx.drawImage(this.data.posterInfo.avatar, 64, 1033, 84, 84);
+         ctx.restore();
+         //头像-结束
+         // ctx.draw();
+         setTimeout(() => {
+           this.createPoster();
+         }, 500)
+       }
+     },
+	poster.prototype.createPoster=function() {
+		var base64 = this.c.toDataURL();
+		document.getElementById("poster").setAttribute('src',base64)
+		console.log(base64,24777,this.c)
+	}
+    poster.prototype.drawText=function(param) {
+       console.log(param)
+       let ctx = param.obj;
+       let lineheight = param.titleHeight;
+       let lineWidth = 0;
+       let lastSubStrIndex = 0; //每次开始截取的字符串的索引
+       let line = 0;
+       let width = param.canvasWidth;
+	   console.log(param.fontsize)
+       ctx.font=param.fontsize;
+       ctx.fillStyle=  param.color;
+       for (let i = 0; i < param.str.length; i++) {
+         lineWidth += ctx.measureText(param.str[i]).width;
+         if (lineWidth > param.canvasWidth) {
+           ++line;
+           if (line >= param.maxline) {
+             var str = param.str.substring(lastSubStrIndex, i - 1) + '...';
+             if (param.center) {
+               let sops = (750 - lineWidth) / 2;
+               ctx.fillText(str, sops, param.initHeight);
+             } else {
+               ctx.fillText(str, param.initWidth, param.initHeight);
+             }
+             let wh = {
+               width: param.canvasWidth,
+               height: param.titleHeight
+             }
+             return param.titleHeight;
+           } else {
+             ctx.fillText(param.str.substring(lastSubStrIndex, i), param.initWidth, param.initHeight); //绘制截取部分
+             param.initHeight += lineheight; //20为字体的高度
+             lineWidth = 0;
+             lastSubStrIndex = i;
+             param.titleHeight += lineheight;
+           }
+         }
+         if (i == param.str.length - 1) {
+           if (line < 1) {
+             width = lineWidth;
+           }
+           if (param.center) {
+             let sops = (750 - lineWidth) / 2;
+             ctx.fillText(param.str.substring(lastSubStrIndex, i + 1), sops, param.initHeight);
+           } else {
+             ctx.fillText(param.str.substring(lastSubStrIndex, i + 1), param.initWidth, param.initHeight);
+           }
+         }
+       }
+       let wh = {
+         width: width,
+         height: param.titleHeight
+       }
+       return wh;
+     }
+
+
+
+
+/**
+ * 
+ * @param {CanvasContext} ctx canvas上下文
+ * @param {number} x 圆角矩形选区的左上角 x坐标
+ * @param {number} y 圆角矩形选区的左上角 y坐标
+ * @param {number} w 圆角矩形选区的宽度
+ * @param {number} h 圆角矩形选区的高度
+ * @param {number} r 圆角的半径
+ */
+function roundRect(ctx, x, y, w, h, r, color) {
+  // 开始绘制
+  ctx.beginPath()
+  // 因为边缘描边存在锯齿，最好指定使用 transparent 填充
+  // 这里是使用 fill 还是 stroke都可以，二选一即可
+  ctx.fillStyle=color
+  // ctx.setStrokeStyle('transparent')
+  // 左上角
+  ctx.arc(x + r, y + r, r, Math.PI, Math.PI * 1.5)
+
+  // border-top
+  ctx.moveTo(x + r, y)
+  ctx.lineTo(x + w - r, y)
+  ctx.lineTo(x + w, y + r)
+  // 右上角
+  ctx.arc(x + w - r, y + r, r, Math.PI * 1.5, Math.PI * 2)
+
+  // border-right
+  ctx.lineTo(x + w, y + h - r)
+  ctx.lineTo(x + w - r, y + h)
+  // 右下角
+  ctx.arc(x + w - r, y + h - r, r, 0, Math.PI * 0.5)
+
+  // border-bottom
+  ctx.lineTo(x + r, y + h)
+  ctx.lineTo(x, y + h - r)
+  // 左下角
+  ctx.arc(x + r, y + h - r, r, Math.PI * 0.5, Math.PI)
+
+  // border-left
+  ctx.lineTo(x, y + r)
+  ctx.lineTo(x + r, y)
+
+  // 这里是使用 fill 还是 stroke都可以，二选一即可，但是需要与上面对应
+  ctx.fill()
+  // ctx.stroke()
+  ctx.closePath()
+  // 剪切
+  // ctx.clip()
+}
