@@ -1,0 +1,47 @@
+/* base/ordersSearch/ordersSearch.wxss */
+@import "/zhy/template/temgroup/temgroup.wxss";
+.content{
+  min-height: 100vh;
+}
+.ui-title {
+  font-size: 32rpx;
+}
+.ui-btn {
+    display: block;
+    box-sizing: border-box;
+    line-height: 1;
+    background: #fff;
+    color: #999;
+    font-size: inherit;
+    padding: 14rpx 40rpx;
+}
+.ui-title .ui-btn{
+  flex: 1;
+  -webkit-flex:1
+
+}
+.tr{
+  text-align: right;
+}
+.ui-btn-big {
+      width: 100%;
+    padding: 32rpx 0;
+    font-size: 32rpx;
+    border-radius: 45rpx;
+}
+.c-btn-thin {
+    border: 1px solid  var(--blue);
+    color:  var(--blue);
+    background-color: #fff;
+}
+.pt80rpx {
+    padding-top: 80rpx;
+}
+
+.plr30rpx {
+    padding-left: 36rpx;
+    padding-right: 30rpx;
+}
+.c-theme-font {
+    color:  var(--blue);
+}

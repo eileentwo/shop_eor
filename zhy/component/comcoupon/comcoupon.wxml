@@ -1,0 +1,49 @@
+<block wx:for="{{coupons}}" wx:key="index">
+  <view class="coupon-detail-body" wx:if="{{item.state==1 ||item.is_show==1 ||item.coupon_info}}" catchtap="_useFn" data-item="{{item}}">
+    <view class="coupon-detail-wrap">
+      <view class="coupon-detail {{item.showMore?'coupon-expand':''}}"  style="background-image: {{item.canuse==1 || item.state==2 || (item.all_getnums&&item.all_getnums == item.count)?'var(--prevent)':'var(--normal)'}} ">
+        <view class="coupon-head flex-sb" style="border-color:{{item.canuse==1 || item.state==2 || (item.all_getnums&&item.all_getnums == item.count)?'transparent':'#F52827'}}">
+          <view class="flex-1">
+            <view class="flex-andmid">
+              <view class="coupon-money">
+                <text class="coupon-money-mark">¥</text>
+                <text class="v1">{{item.money[0]}}.</text>
+                <text class="v2">{{item.money[1]}}</text>
+              </view>
+
+              <view class="coupon-use-limit" wx:if="{{ item.coupon_info}}">({{item.coupon_info.range_type !='1' ?'指定商品可用':'全场通用'}})</view>
+              <view class="coupon-use-limit" wx:else>({{item.range_type!='1'?'指定商品可用':'全场通用'}})</view>
+            </view>
+            <view hidden="{{item.state}}">
+            </view>
+            <view class="coupon-use-limit flex-andmid" wx:if="{{item.at_least>0 ||item.coupon_info.at_least>0 }}">满{{item.at_least?item.at_least:item.coupon_info.at_least}}元可使用<text class="coupon-time-limit" wx:if="{{item.max_fetch>0}}">（每人限领{{item.max_fetch}}张）</text></view>
+            <view class="coupon-use-limit flex-andmid" wx:if="{{item.at_least==0 ||item.coupon_info.at_least==0 }}">无门槛<text class="coupon-time-limit" wx:if="{{item.max_fetch>0}}">（每人限领{{item.max_fetch}}张）</text></view>
+            
+            <view class="coupon-time-limit">{{item.start_time}}~{{item.end_time}} </view>
+          </view>
+          <view class="coupon-btn-use" wx:if="{{getcoupon || item.getcoupon}}" hidden="{{item.canuse==1 || item.state==2 || (item.all_getnums&&item.all_getnums == item.count)}}">立即领取</view>
+          <view class="coupon-btn-use coupon-btn-use1" wx:if="{{item.canuse==0&&item.state==1}}">立即使用     <text></text>
+          </view>
+          <view class="coupon-btn-use coupon-btn-use1" wx:if="{{item.canuse==1}}" hidden="{{item.getcoupon}}">已使用</view>
+          <view class="coupon-btn-use coupon-btn-use1" wx:if="{{(item.state==2 &&item.canuse!=1)}}">已过期</view>
+          <view class="coupon-btn-use coupon-btn-use1" wx:if="{{(item.all_getnums&&item.all_getnums == item.count)}}">已领完</view>
+          
+        </view>
+          <!-- <view class="coupon-decorate flex-sb">
+            <view class="coupon-decorate-icon coupon-decorate-left"></view>
+            <view class="coupon-decorate-icon coupon-decorate-right"></view>
+          </view>
+        <view class="coupon-middle  flex-andmid">
+          <text class="coupon-type" wx:if="{{item.type}}">{{item.type}}</text>
+          <text class="coupon-name">{{item.coupon_name?item.coupon_name:item.coupon_info.coupon_name}}</text>
+        </view>
+        <view class="coupon-footer flex-andmid" wx:if="{{item.desc}}">
+          <view class="coupon-explain">{{item.desc}}</view>
+           <view class="coupon-btn-toggle" catchtap="_toggle" data-index="{{index}}">使用说明
+						<image class="coupon-img-toggle" src="../../resource/images/arrow-d2.png"></image>
+					</view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</block>

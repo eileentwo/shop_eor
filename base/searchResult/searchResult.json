@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "comfilters": "/zhy/component/comfiters/comfilters",
+    "comnodata": "/zhy/component/comnodata/comnodata",
+    "comlist": "/zhy/component/comList/comList"
+  }
+}

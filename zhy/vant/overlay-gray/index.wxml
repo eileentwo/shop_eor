@@ -1,0 +1,7 @@
+<van-transition
+  show="{{ show }}"
+  custom-class="van-overlay"
+  custom-style=" border-radius: 10rpx;z-index: {{ zIndex }}; {{ mask ? 'background-color: rgba(0, 0, 0, 0.6);' : '' }}; {{ customStyle }}"
+  bind:tap="onClick"
+  catch:touchmove="noop"
+/>

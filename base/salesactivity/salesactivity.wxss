@@ -1,0 +1,80 @@
+/* base/salesactivity/salesactivity.wxss */
+@import "/zhy/template/customhead/customhead.wxss";
+.wrap{
+  min-height: 100vh;
+}
+.sales-activity-nav .flex-andmid {
+  height: 92rpx;
+  line-height: 92rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+  border-bottom: 1px solid #D2D5DF;
+}
+.sales-activity-nav-item{
+  height: 100%;
+  position: relative;
+}
+.sales-activity-nav .border{
+  position: absolute;
+  width: 144rpx;
+  height: 4rpx ;
+  bottom: 0;
+  left: 50%;
+  margin-left: -72rpx;
+}
+
+.sales-activity-nav .active{
+  color:  var(--blue);
+}
+.sales-activity-nav .active .border{
+  background-color:  var(--blue);
+}
+.sales-activity-list {
+  background-color: #fff;
+  padding:  0 24rpx 0 20rpx;
+  box-sizing: border-box;
+}
+
+.sales-activity-list-item{
+  border-bottom: 1px solid #ebeef4;  
+  padding: 35rpx 0 35rpx 14rpx;
+  box-sizing: border-box;
+}
+.sales-activity-item-header {
+  line-break: 46rpx;
+  font-size: 32rpx;
+  color: #33404e;
+}
+.sales-activity-item-footer {
+  margin-top: 19rpx;
+  font-size: 24rpx;
+}
+.sales-activity-item-footer .isStart {
+  color: #ff7d58;
+}
+
+.sales-activity-item-footer .icon-time{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 8rpx;
+}
+.nodata-wrap{
+  display: flex;
+  justify-content: center;
+}
+.nodata{
+  text-align: center;
+  font-size: 30rpx;
+  transform: translateY(32%);
+}
+.pt30rem {
+  font-size: 30rpx;
+  padding-top:20rpx ;
+  color: #747474;
+}
+.icon-nodata {
+  display: inline-block;
+  width: 180rpx;
+  height: 180rpx;  
+}

@@ -1,0 +1,91 @@
+<!--zhy/component/comList.wxml-->
+
+<view class="good_box" hidden="{{hide_good_box}}" style="left: {{bus_x}}px; top: {{bus_y}}px;"></view>
+<view class="{{isA?'find-contenta':''}} {{isA1?'find-contenta1':''}} {{isB?'find-contentb':''}} {{isC?'find-contentc':''}}">
+	<block wx:for="{{goodsList}}" wx:key="index">
+		<view class="find-item  {{isBig?'find-item-big':''}} {{index<goodsList.arr.length?'find-itemBo':''}}" data-goods_name="{{item.goods_name}}" data-id="{{item.goods_id}}" catchtap="_toGoodsDetail" wx:if="{{item.goods_id}}">
+			<view class="find-list  {{index<goodsList.length-1&&!isC?'borderB':''}}">
+				<view class="flex-all"  wx:if="{{isBig}}">
+					<image src="{{siteroot+item.pic_cover_big}}" mode="aspectFill" class="find-img" wx:if="{{item.pic_cover_big}}"></image>
+					<image src="{{item.picture_info?siteroot+item.picture_info.pic_cover_big:siteroot+item.picture.pic_cover_big}}" mode="aspectFill" class="find-img" wx:else></image>
+				</view>
+        <view class="flex-all"  wx:else>
+					<image src="{{siteroot+item.pic_cover_mid}}" mode="aspectFill" class="find-img" wx:if="{{item.pic_cover_mid}}"></image>
+					<image src="{{item.picture_info?siteroot+item.picture_info.pic_cover_mid:siteroot+item.picture.pic_cover_mid}}" mode="aspectFill" class="find-img" wx:else></image>
+				</view>
+				<view class="find-rig  {{index<goodsList.length-1&&isC?'borderB':''}}">
+					<view class="find-padding" wx:if="{{isC}}">
+						<view>
+							<view class="food-name ellips1">{{item.goods_name}}</view>
+							<view class="food-name food-desc ellips1" wx:if="{{item.introduction}}">{{item.introduction}}</view>
+							<!-- <view class="flex-andmid" wx:if="{{isA}}">
+              <text class="tag flex-all" wx:if="{{discount|| item.promotion_type==2}}">折扣</text><text class="tag flex-all tag1" hidden="{{item.shipping_fee_id==0}}">包邮</text>
+              </view> -->
+						</view>
+						<view class="flex-sb {{discount || item.promotion_type==2?'':'baseline'}}">
+
+							<view wx:if="{{!checkstate}}">
+								<view class="food-price">￥{{discount&&!checkstate || item.promotion_type==2&&!checkstate?item.promotion_price:item.wholesaler_price}}起</view>
+								<text class="food-desc"  hidden="{{discount}}">销量：{{item.sales}}</text>
+							</view>
+							<view wx:if="{{checkstate}}">
+								<view class="food-price">
+									批发价:
+									<text>￥</text>
+
+
+
+									<text>{{item.wholesaler_price}}</text>起
+								</view>
+								<view class="original-price">零售价￥{{item.price}}起</view>
+							</view>
+							<view wx:if="{{item.stock>0}}">
+
+								<view class="btn" wx:if="{{item.sku_list.length!=1}}"  catchtap="_changeNum" data-cur="a1"  data-goods_id="{{item.goods_id}}">购买</view>
+                <view class="operation-box flex-andmid" catchtap="_changeNum" data-goods_id="{{item.goods_id}}" data-cur="{{index}}" wx:else>
+                  <image src="../../resource/images/minus.png" class="icon-minus" wx:if="{{item.num>0}}" data-isadd="1" data-index='0'></image>
+                  <image src="../../resource/images/minusg.png" class="icon-minus" data-isadd="0" data-index='1' wx:else></image>
+                  <view data-isadd="2" data-index='2'>{{item.num?item.num:0}}</view>
+                  <image src="../../resource/images/add.png" class="icon-add" data-isadd="3" data-index='3'></image>
+                </view>
+							</view>
+							<view class="btn btng" wx:else>库存不足</view>
+						</view>
+					</view>
+					<view class="find-padding" wx:else>
+						<view>
+							<view class="food-name ellips2">{{item.goods_name}}</view>
+							<view class="food-name food-desc ellips2 {{item.discount_name?'hot':''}}">{{item.introduction?item.introduction:item.discount_name}}</view>
+							<!-- <view class="flex-andmid" wx:if="{{isA}}"><text class="tag flex-all" wx:if="{{discount|| item.promotion_type==2}}">折扣</text><text class="tag flex-all tag1" hidden="{{item.shipping_fee>0}}">包邮</text></view> -->
+						</view>
+
+						<view class="flex-sb baseline">
+
+							<view wx:if="{{checkstate}}">
+								<view class="flex-sb">
+									<view class="food-price">
+										<text>￥</text>
+										<text>{{item.wholesaler_price}}</text>起
+									</view>
+									<view class="original-price">￥{{item.price}}起</view>
+								</view>
+
+								<text class="food-desc"  hidden="{{discount || isA}}">销量：{{item.sales}}</text>
+							</view>
+							<view wx:if="{{!checkstate}}">
+								<view class="food-price" wx:if="{{(discount&&!checkstate) || (item.promotion_type==2&&!checkstate)}}">￥{{item.promotion_price}}起</view>
+								<view class="food-price" wx:else>￥{{item.wholesaler_price}}起</view>
+								<text class="food-desc"  hidden="{{discount}}">销量：{{item.sales}}</text>
+							</view>
+							<view class="flex-andmid">
+								<view class="btn collect" wx:if="{{collected}}" catchtap="_collectFn" data-goods_id="{{item.goods_id}}">取消收藏</view>
+								<view class="btn" wx:else>购买</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<image wx:if="{{item.isFlag}}" class="promote-flag" mode="aspectFill" src="../../resource/images/promotion.png"></image>
+		</view>
+	</block>
+</view>

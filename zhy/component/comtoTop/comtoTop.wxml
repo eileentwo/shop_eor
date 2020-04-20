@@ -1,0 +1,2 @@
+<!--zhy/component/comtoTop/comtoTop.wxml-->
+<image src="../../resource/images/toTop.png" class="toTop"  wx:if="{{showToTop}}"  animation="{{toTop}}" bindtap="_toTop"></image>

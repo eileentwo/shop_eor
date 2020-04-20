@@ -1,0 +1,205 @@
+<import src="../../zhy/template/wxParse/wxParse.wxml"></import>
+
+<view class="{{isIphoneX?'hwrap':''}}">
+
+	<swiper class="ad-swiper" circular="true" bindchange="swiperChange" current="{{swiperCurrent}}">
+		<block wx:for="{{goodsInfo.img_list}}" wx:key="index">
+			<swiper-item>
+				<image mode="aspectFill" src="{{item.pic_cover_big?siteroot+item.pic_cover_big:'../../zhy/resource/images/none.png'}}" class="index-banner" bindtap="onAdTap"></image>
+				<!-- <image mode="aspectFill" src="{{item.pic_cover_big?item.pic_cover_big:'../../zhy/resource/images/none.png'}}" class="index-banner" bindtap="onAdTap"></image> -->
+			</swiper-item>
+		</block>
+	</swiper>
+	<view class="swiper-num">
+		<view class="v1">{{swiperCurrent*1+1}}</view>
+		<view class="v2">/{{goodsInfo.img_list.length}}</view>
+	</view>
+
+	<view class="info">
+		<!-- <button open-type="share" class="flex-all share bgw"> -->
+    <button class="flex-all share bgw" bindtap="toggleShare">
+			<image src="../../zhy/resource/images/mine11.png" class="shareimg"></image>
+			<text>分享</text>
+		</button>
+		<view class="price">
+			<view class="now-price">
+				<view class="v1">￥</view>
+				<view class="v2" wx:if="{{!checkstate}}">{{goodsInfo.promotion_type==2?goodsInfo.promotion_price:goodsInfo.wholesaler_price}}{{goodsInfo.point_exchange_type==1?'+'+goodsInfo.point_exchange:''}}</view>
+				<view class="v2" wx:else>{{goodsInfo.wholesaler_price}}{{goodsInfo.point_exchange_type==1?'+'+goodsInfo.point_exchange:''}}</view>
+				<view class="v3" wx:if="{{goodsInfo.point_exchange_type==1}}">/积分</view>
+			</view>
+			<view class="original-price">￥{{goodsInfo.price}}</view>
+		</view>
+		<view class="special" wx:if="{{goodsInfo.promotion_info}}">
+			<view class="red-box">直降</view>
+			<view class="v1">{{goodsInfo.promotion_info}}</view>
+		</view>
+		<view class="info-name">{{goodsInfo.goods_name}}</view>
+		<view class="flex-andmid tags">
+			<view class="tag" wx:if="{{goodsInfo.give_point>0}}">购买得{{goodsInfo.give_point}}积分</view>
+			<view class="tag" wx:if="{{goodsInfo.mansong_name.length>0}}">{{goodsInfo.mansong_name}}</view>
+		</view>
+		<view class="flex-andmid limit">
+			<view class="limitmin" wx:if="{{goodsInfo.min_buy>0}}"><text class="limitm">起购</text>{{goodsInfo.min_buy}}个/ </view>
+			<view wx:if="{{goodsInfo.max_buy>0}}"><text class="limitm">限购</text>{{goodsInfo.max_buy}}个</view>
+		</view>
+	
+		<!-- <view class="gray">
+
+			<view wx:if="{{goodsInfo.point_exchange_type==1}}">我的积分：{{integral_num}}</view>			
+		</view> -->
+
+	</view>
+
+
+	
+  <view class="gray flex shipping bgw">
+    <view class="v1">运费:</view>
+    <view class="w600">
+      <view wx:if="{{goodsInfo.shipping_fee_id==0}}">包邮</view>
+      <view wx:if="{{goodsInfo.shipping_fee_id==3}}">{{goodsInfo.baoyou_name?goodsInfo.baoyou_name:goodsInfo.shipping_fee+'元'}}</view>
+      <view  wx:if="{{free_shipping.is_open==1}}">不包邮地区：{{free_shipping.no_mail_province}}
+      </view>
+    </view>
+  </view>
+
+	<view class="parameter-item" wx:if="{{goodsInfo.goods_spec_format && goodsInfo.goods_spec_format.length>0}}">
+		<view class="parameter-list" bindtap="buyOrSpec">
+			<view class="v1">规格</view>
+			<view class="parameter-list-cont">
+				<view class="v2">
+					<text wx:if="{{attrChoiced.length>0}}">已选：{{choiceName}}</text>
+					<text wx:else>请选择规格</text>
+					<block wx:if="{{!attrChoiced}}">
+						<block wx:if="{{goodsInfo.goods_spec_format && info.goods_spec_format.length>0}}" wx:for="{{goodsInfo.goods_spec_format}}" wx:key="k">
+							{{item.name}}{{index+1==info.goods_spec_format.length?'':'/'}}
+						</block>
+					</block>
+				</view>
+			</view>
+			<image src="/zhy/resource/images/icon-arrow.png" class="point"></image>
+		</view>
+	</view>
+	<!--选规格-->
+	<!-- <view class="drawer-screen" bindtap="close" data-statu="close" wx:if="{{showModalStatus}}"></view> -->
+	<view class="drawer-screen" bindtap="onCloseTap" data-statu="close" wx:if="{{mask}}"></view>
+	<view w-extract class="drawer-box" wx:if="{{mask}}">
+		<form bindsubmit="formSubmit">
+			<view class="drawer-title">
+				<view class="goods-thumb" style="margin-top:{{app_type == 'app' ? '0' : ''}};">
+					<!-- <image src="{{attrChoicedPic || goodsInfo.img_list[0].pic_cover_mid}}" mode="aspectFill" class="thumb" /> -->
+					<image src="{{siteroot}}{{attrChoicedPic || goodsInfo.img_list[0].pic_cover_mid}}" mode="aspectFill" class="thumb" />
+				</view>
+				<view class="goods-detail">
+
+					<view class="goods-price">
+						<text>￥{{totalprice}}</text>
+					</view>
+
+					<view class="goods-gg" wx:if="{{goodsInfo.goods_spec_format&&goodsInfo.goods_spec_format.length>0}}">
+						<text wx:if="{{attrChoiced}}">已选：{{choiceName}}</text>
+						<text wx:if="{{!attrChoiced}}">未选择规格</text>
+					</view>
+				</view>
+				<image src="../../zhy/resource/images/close.png" class="icon-close" bindtap="onCloseTap" data-statu="close" />
+			</view>
+			<view w-scroll-y class="drawer-content">
+				<view class="spec" wx:for="{{goodsInfo.goods_spec_format}}" wx:key="group">
+					<view class="spec-name">
+						{{item.spec_name}}：
+					</view>
+					<view class="spec-value">
+						<text wx:for="{{item.value}}" wx:key="id" wx:for-item="itm" wx:for-index="idx" class="{{itm.status == true ? 'active' : ''}}" data-id="{{itm.id}}" data-idx="{{idx}}" data-index="{{index}}" data-pic_id="{{itm.spec_value_data}}" bindtap="spTap">{{itm.spec_value_name}}</text>
+					</view>
+				</view>
+				<view>
+					<view class="project-list">
+						<view>数量:</view>
+						<view class="choose">
+							<view class="reduce" bindtap="reduceNum" data-num="{{num}}">
+								-
+							</view>
+							<input type="number" value="{{num}}" id="choose-num" disabled="disabled" />
+							<view class="add" bindtap="addNum" data-num="{{num}}">
+								+
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="drawer-foot">
+					<view class="gsgouwus {{attrChoiced.stock==0?'nostock':''}}" style="margin-left: 20rpx;margin-right:20rpx;" wx:if="{{chooseIndex==2}}" bindtap="onAddCarTap">加入购物车</view>
+					<button formType="submit" class="{{attrChoiced.stock==0?'nostock':''}}" style="margin-left: {{chooseIndex==2?'20rpx':'210rpx'}}">立即购买</button>
+				</view>
+			</view>
+		</form>
+	</view>
+	<!--选规格-end-->
+	<view class="detail">
+		<view class="tabs">
+			<view class="tabs-list" data-index="0" bindtap="onTabTap">
+				<view class="v1" wx:if="{{cur == 0}}"></view>
+				<view class="v2" class="{{cur == 0?'nav-active':''}}">商品详情</view>
+				<view class="v3" wx:if="{{cur == 0}}"></view>
+			</view>
+			<view class="tabs-list" data-index="1" bindtap="onTabTap">
+				<view class="v1" wx:if="{{cur == 1}}"></view>
+				<view class="v2" class="{{cur == 1?'nav-active':''}}">评价</view>
+				<view class="v3" wx:if="{{cur == 1}}"></view>
+			</view>
+		</view>
+		<view wx:if="{{cur == 0}}" class="detail-pics-wrap {{cur == 0?'active':'hide'}}">
+			<template is="wxParse"  data="{{wxParseData:detail.nodes}}"></template>
+		</view>
+		<view wx:if="cur == 1" class="{{cur == 1?'active':'hide'}}">
+			<view wx:if="{{olist.length <= 0}}">暂无评价</view>
+			<scroll-view style="height:80vh" scroll-y="true" bindscrolltolower="pullUpLoad">
+				<block wx:for="{{olist}}" wx:key="comment">
+					<view class="cl-wrap">
+						<view class="comment-list">
+							<image class="cl-lef" src="{{item.headimg.length>0?item.headimg:'../../zhy/resource/images/none.png'}}" wx:if="{{item.is_anonymous==0}}"></image>
+							<image class="cl-lef" src="../../zhy/resource/images/none.png" wx:else></image>
+							<view class="cl-rig">
+								<view class="clr-top">
+									<view class="v1">{{item.member_name}}</view>
+									<view class="v2">{{item.addtime}}</view>
+								</view>
+								<view class="clr-cont">
+									<image wx:for="{{item.scores}}" class="stars" src="../../zhy/component/comStar/star-h.png" wx:key="star"></image>
+								</view>
+								<view class="clr-bot">{{item.content}}</view>
+							</view>
+						</view>
+						<view class="img-box">
+							<!-- <image wx:for="{{item.image}}" wx:key="imgs" src="{{item? item:'../../zhy/resource/images/none.png'}}" bindtap='prewImg' wx:for-index="idx" data-index="{{index}}" data-idx="{{idx}}" mode="aspectFill"></image> -->
+							<image wx:for="{{item.image}}" wx:key="imgs" src="{{siteroot + item?siteroot + item:'../../zhy/resource/images/none.png'}}" bindtap='prewImg' wx:for-index="idx" data-index="{{index}}" data-idx="{{idx}}" mode="aspectFill"></image>
+						</view>
+					</view>
+				</block>
+			</scroll-view>
+		</view>
+	</view>
+
+</view>
+
+<view class="foot flex-sb">
+	<view class="nav flex-all" bindtap="chooseFn" data-index="0">
+		<image class="img" wx:if="{{is_collect_goods ==1}}" src="../../zhy/resource/images/mine3.png"></image>
+		<image class="img" wx:else src="../../zhy/resource/images/mine10.png"></image>
+		<view class="{{is_collect_goods ==1?'active':''}}">收藏</view>
+	</view>
+	<view class="nav flex-all" bindtap="chooseFn" data-index="1">
+		<image class="img" src="../../zhy/resource/images/mine12.png"></image>
+		<view>购物车</view>
+	</view>
+	<view class="nav1 flex-all {{goodsInfo.stock==0?'nostock':''}}" bindtap="chooseFn" data-index="2">加入购物车</view>
+	<view class="nav1  flex-all nav2  {{goodsInfo.stock==0?'nostock':''}}" bindtap="chooseFn" data-index="3">立即购买</view>
+</view>
+
+  <poster poster-info="{{posterinfo}}" load="{{loadImgKey}}" bind:create="createPoster" />
+  <van-popup show="{{share}}" position="bottom" bind:click-overlay="toggleShare">
+    <view class="share-box">
+      <button class="share-item" bindtap="onPosterTab">生成海报</button>
+      <button class="share-item" open-type="share">分享</button>
+      <button class="share-item" bindtap="toggleShare">取消</button>
+    </view>
+  </van-popup>

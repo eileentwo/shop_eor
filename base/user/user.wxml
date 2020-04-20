@@ -1,0 +1,88 @@
+<!--base/user/user.wxml-->
+<view class="content">
+  <view class="ui-group flex-andmid">
+    <image src="{{userinfo.user_headimg?userinfo.user_headimg:'../../zhy/resource/images/mine/user.png'}}" class="avatar-bg"></image>
+    <view class="ui-group-rt flex1">
+      <view class="ui-list fb">{{userinfo.nick_name}}</view>
+      <view class="ui-list fb">{{userinfo.user_name}}</view>
+    </view>
+  </view>
+  <view class="ui-group">
+    <view bindtap="navigate" data-index="0" class="ui-list">
+      <view class="ui-title flex-sb">
+        <view class="flex-andmid">
+          <text>用户名称</text>
+        </view>
+        <text class="tr">修改用户名</text>
+      </view>
+    </view>
+  </view>
+  <view class="ui-group">
+    <view  bindtap="navigate" data-index="1" class="ui-list MCodeclass">
+      <view class="ui-title flex-sb">
+        <text>登录密码</text>
+        <view class="ui-right-inputbox flex-andmid">
+          <input type="text" name="updatePwd" value="" placeholder="修改密码" class="tr" id="updatePwd" readonly="true" />
+        </view>
+      </view>
+    </view>
+    <view  class="ui-list">
+    <!-- <view url="/base/userUpdateInfo/userUpdateInfo?value=2" class="ui-list"> -->
+      <view class="ui-title flex-sb">
+        <view class="flex-andmid">手机      
+          <text class="red ml20rpx" hidden="{{userinfo.user_tel_bind}}">未绑定</text>
+        </view>
+        <view class="ui-right-inputbox flex-andmid">
+          <text class="tr">{{userinfo.user_tel}}</text>
+          <!-- <input type="text" name="updateMobile" value="{{userinfo.user_tel}}" placeholder="未绑定" class="tr" id="updateMobile" readonly="true" /> -->
+        </view>
+      </view>
+      </view>
+    <!-- </view> -->
+    <!-- <view  url="/base/userUpdateInfo/userUpdateInfo?value=3"  class="ui-list">
+      <view class="ui-title flex-sb">
+        <view class="flex-andmid">邮箱
+          <text class="red ml20rpx">未绑定</text>
+        </view>
+        <view class="ui-right-inputbox flex-andmid">
+          <input type="text" name="updateEmail" value="未绑定" placeholder="请输入" class="tr" id="updateEmail" readonly="true"/>
+        </view>
+      </view>
+    </view> -->
+  </view>
+  <!-- <view class="ui-group">
+    <view class="ui-list pop-update" bindtap="showBoxFn" data-index="0" data-title="姓名">
+      <view class="ui-title flex-sb">
+        <text>姓名</text>
+        <view class="ui-right-inputbox flex-andmid">
+          <input type="text" name="contactor" value="{{changedValue}}" placeholder="请输入" class="tr" id="realName" readonly="true"/>
+          <text class="product-class-right-head-arrow"></text>
+        </view>
+      </view>
+    </view>
+    <view class="ui-list pop-update" bindtap="showBoxFn" data-index="1" data-title="职位">
+      <view class="ui-title flex-sb">
+        <text>职位</text>
+        <view class="ui-right-inputbox flex-andmid">
+          
+          <input type="text" name="position" value="{{changedValue}}" placeholder="请输入" class="tr" id="position" readonly="true"/>
+          
+          <text class="product-class-right-head-arrow"></text>
+        </view>
+      </view>
+    </view>
+    <view class="ui-list pop-update" bindtap="showBoxFn" data-index="2" data-title="QQ">
+      <view class="ui-title flex-sb">
+        <text>QQ</text>
+        <view class="ui-right-inputbox flex-andmid">
+          
+          <input type="text" name="qq" value="{{changedValue}}" placeholder="请输入" class="tr" id="qq" readonly="true"/>
+          <text class="product-class-right-head-arrow"></text>
+        </view>
+      </view>
+    </view>
+  </view> -->
+</view>
+
+<comshowbox showBox="{{showBox}}" showTitle="{{showTitle}}" showChange='true' changedValue="{{changedValue}}" />
+<comfooterbtn footText="{{footText}}" bind:changeBtn="changeBtn" />

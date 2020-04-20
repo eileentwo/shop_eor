@@ -1,0 +1,195 @@
+/* pages/my/myOrder/myOrder.wxss */
+@import '/zhy/template/order/order.wxss';
+
+page {
+  background: #f2f2f2
+}
+
+.swiper-tab {
+  display: flex;
+  height: 90rpx;
+  line-height: 90rpx;
+  justify-content: space-around;
+  font-size: 28rpx;
+  color: var(--fontb)
+}
+
+.tab-item {
+  position: relative;
+}
+
+.current-active {
+  position: absolute;
+  left: 20rpx;
+  bottom: 4rpx;
+  width: 52rpx;
+  height: 4rpx;
+  background: var(--tab);
+  color: var(--tab);
+}
+
+.olist {
+  margin: 30rpx 0 0 30rpx;
+  width: 690rpx;
+  background: #fff;
+  box-shadow: 0 4rpx 4rpx #eee, 0 -4rpx 4rpx #eee, 4rpx 0 4rpx #eee, -4rpx 0 4rpx #eee;
+  border-radius: 6rpx
+}
+
+.ol-top {
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #ececec
+}
+
+.ol-top .v1 {
+  flex: 1;
+  font-weight: 600
+}
+
+.ol-cont {
+  margin-top: 26rpx;
+  padding: 0 20rpx 30rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.olc-lef {
+  width: 186rpx;
+  height: 140rpx;
+  margin-right: 20rpx;
+  border-radius: 6rpx;
+}
+
+.olc-rig {
+  flex: 1
+}
+
+.olc-name {
+  width: 480rpx;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 32rpx;
+}
+
+.olc-name view:nth-child(1) {
+  width: 360rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+}
+
+.olc-name view:nth-child(2) {
+  font-size: 24rpx;
+}
+
+.olc-name text {
+  font-size: 24rpx;
+  color: #999;
+  font-weight: 400
+}
+
+.olc-specification {
+  margin-top: 25rpx;
+  display: flex;
+  font-size: 26rpx;
+}
+
+.olc-specification .v1 {
+  color: #999
+}
+
+.olc-price {
+  margin-top: 20rpx;
+  display: flex;
+  color: var(--skin);
+  font-size: 30rpx;
+  font-weight: 600
+}
+
+.ol-bot {
+  padding: 15rpx 30rpx 30rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.black-btn,
+.red-btn {
+  padding: 0 23rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 26rpx;
+  border-radius: 6rpx;
+}
+
+.black-btn {
+  width: 160rpx;
+  background: #e3e3e3;
+  color: #444;
+}
+
+.red-btn {
+  color: #fff;
+  background: #d4a85d;
+  border: 1rpx solid #d4a85d
+}
+
+/* .ol-bot view:nth-child(2){ margin-left: 20rpx;} */
+
+.olt-order {
+  padding-left: 30rpx;
+  flex: 1;
+  box-sizing: border-box;
+  height: 110rpx;
+  position: relative;
+}
+
+.olt-order .v1 {
+  width: 27rpx;
+  height: 26rpx;
+  position: absolute;
+  left: 0;
+  top: 42rpx;
+  background: #2ea7ee;
+  border-top-right-radius: 13rpx;
+  border-bottom-right-radius: 13rpx;
+  font-size: 18rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.olt-order .v2 {
+  margin-top: 25rpx;
+}
+
+.olt-order .v2,
+.olt-order .v3 {
+  font-size: 22rpx;
+  color: #999
+}
+
+.olc-pricetxt view {
+  margin-right: 30rpx;
+  padding: 0 14rpx;
+  height: 46rpx;
+  background: #f5f6f7;
+  border-radius: 6rpx;
+  text-align: center;
+  line-height: 46rpx;
+}
+
+.olc-num {
+  margin-top: 20rpx;
+  display: flex;
+  font-size: 26rpx;
+}
+
+.olc-num .v1 {
+  color: #999;
+  font-family: Arial, Helvetica, sans-serif;
+}

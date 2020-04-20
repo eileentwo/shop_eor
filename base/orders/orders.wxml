@@ -1,0 +1,27 @@
+<!--base/orders/orders.wxml-->
+<view class="countList">
+  <block wx:for-items="{{orders}}" wx:for-item="items" wx:key="index">
+    <view class="p30rpx fb">{{items.years}}年</view>
+    <view class="ui-group bgw" wx:for="{{items.order}}" wx:key="index">
+      <view class="ui-list orderCountli">
+        <view class="ui-title flex-andmid">
+          <text class="orderCountli-l">{{item.month}}月</text>
+          <view class="orderCountli-r">
+            <view class="orderCountli-d flex-andmid">
+              <text class="orderCount-tit ell l f2">订货{{item.type1.num}}笔</text>
+              <view class="f4 l">¥{{item.type1.money}}
+                <text class="fsmall">元</text>
+              </view>
+            </view>
+            <view class="orderCountli-t c5 f2 flex-andmid">
+              <text class="orderCount-tit ell l">退货{{item.type2.num}}笔</text>
+              <view class="l">¥{{item.type2.money}}
+                <text class="fsmall">元</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

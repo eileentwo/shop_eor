@@ -1,0 +1,82 @@
+<!--base/editaddress/editaddress.wxml-->
+<view class="content">
+	<view class="min-loading min-loading-fnbase" style="display: none;">数据加载中...</view>
+	<view class="ui-group ui-group-full customer-address-edit">
+		<!-- <view class="ui-list pop-update">
+			<view class="ui-title flex-sb">
+				<text class="l">客户名称</text>
+				<view class="ui-right-inputbox" bindtap="changeValueFn" data-index="0" data-title="客户名称"  data-value="{{cTitle}}">
+					<input type="text" class="tr" name="label" value="{{cTitle}}" placeholder="请输入" readonly=""></input>
+				</view>
+			</view>
+		</view> -->
+		<view class="ui-list pop-update" data-rule="name(联系人);length(60);isneed">
+			<view class="ui-title  flex-sb"  bindtap="changeValueFn" data-index="1" data-title="联系人" >
+				<text class="l">联系人</text>
+				<view class="ui-right-inputbox" data-value="{{cName}}">
+					<input type="text" class="tr" name="mobile" value="{{cName}}" placeholder="姓名" readonly="" wx:if="{{!showFixed}}"></input>
+          <text wx:else>{{cName}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="ui-list pop-update" data-rule="name(手机号码);isPhone;isneed">
+			<view class="ui-title  flex-sb"  bindtap="changeValueFn" data-index="2" data-title="联系方式"  >
+				<text class="l">联系方式</text>
+				<view class="ui-right-inputbox" data-value="{{cNum}}">
+					<input type="text" class="tr" name="mobile" value="{{cNum}}" placeholder="手机号码" readonly="" wx:if="{{!showFixed}}"></input>
+          <text wx:else>{{cNum}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="ui-list" id="areaSelect" readonly="readonly">
+			<view class="ui-title  flex-sb">
+				<text class="l">省/市/区</text>
+				
+				<picker  class="ui-right-inputbox" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+					<input type="text" class="tr" name="area" value="{{region[0]+region[1]+region[2]}}" placeholder="选择省市区"/>
+				</picker>
+			</view>
+		</view>
+
+		<view class="ui-list location-ui-list">
+			<view class="ui-title  flex-sb">
+				<text class="l">详细地址</text>
+			</view>
+			<view class="location-smart-address-box">
+				<textarea data-latitude="" data-longitude="" placeholder-class="holder" class="location-address-area" rows="3" placeholder="定位一下，收货地址更精准" value="{{cAddress1}}" bindinput="changecAddress" wx:if="{{!showFixed}}"></textarea>
+        <text wx:else>{{cAddress1}}</text>
+				<!-- <button class="location-button flex-all"  bindtap="map"><image src="../../zhy/resource/images/locationg.png" class="location-img"></image> 定位</button> -->
+			</view>
+			<view class="smart-address-footer">
+			</view>
+		</view>
+
+		<view class="ui-list flex-sb" bindtap="setChecked">
+			<view class="ui-title">设为默认地址</view>
+			<radio checked="{{checked}}"></radio>
+		</view>
+	</view>
+	<!-- <view class="ui-group ui-group-full smart-address">
+		<view class="smart-address-title">智能地址填写</view>
+		<view class="smart-address-box">
+			<textarea rows="4"  placeholder-class="holder holder1" id="textarea" bindinput="getAddress" placeholder="粘贴如“小明，15521188888，深圳市南山区深圳大学”的信息，可智能识别姓名、电话、地址。" value="{{smart}}"></textarea>
+		</view>
+		<view class="smart-address-footer">
+			<text class="clear-btn" bindtap="clearSmart">清空</text>
+			<text class="ui-btn c-btn-full confirm-btn '+ disabledCls + '">智能填写</text>
+		</view>
+	</view> -->
+  <view class="footer flex"><button class="ui-btn c-btn-full" bindtap="saveAddrBtn">保存</button></view>
+</view>
+<view class="fixedBox" wx:if="{{showFixed}}">
+	<view class="fixedContent">
+		<view class="popup-title">{{changeTitle}}</view>
+		<view class="popup-content">
+			<input placeholder="{{changeValue}}" bindinput="changeInput"  value="{{changeValue}}"></input>
+		</view>
+		<view class="popup-panel flex-sb">
+			<button bindtap="hideFixed">取消</button>
+			<button class="popup-ok" bindtap="popupOk">确定</button>
+		</view>
+	</view>
+</view>

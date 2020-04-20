@@ -1,0 +1,84 @@
+<!-- <import src="/zhy/template/comSearch/comSearch.wxml"></import> -->
+<view class="{{isIphoneX?'hwrap':''}}" id="box">
+  <include src="/zhy/template/comSearch/comSearch.wxml" />
+  <swiper class="ad-swiper" circular="true" wx:if="{{homeData.ad_list}}">
+    <block wx:for="{{homeData.ad_list}}" wx:key="index">
+      <swiper-item wx:if="{{item.ad_image}}">
+        <image mode="aspectFill" src="{{siteroot+item.ad_image}}" class="index-banner" bindtap="onAdTap" data-ap_id="{{item.ap_id}}"></image>
+        <!-- <image mode="aspectFill" src="{{item.ad_image}}" class="index-banner" bindtap="onAdTap" data-ap_id="{{item.ap_id}}"></image> -->
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="message" wx:if="{{homeData.notice.length>0}}">
+    <image src="../../zhy/resource/images/notice.png" class="icon-notice"></image>
+    <swiper class="v1" circular="true" vertical='true' autoplay="true" interval='3000'>
+      <block wx:for="{{homeData.notice}}" wx:key="index">
+        <swiper-item bindtap='toNotice' data-id='{{item.id}}'>{{item.notice_title}}</swiper-item>
+      </block>
+
+    </swiper>
+    <image src="../../zhy/resource/images/right-arrow.png" class="icon-arrow"></image>
+  </view>
+
+  <view class="nav">
+    <view class="nav-list flex-all" bindtap="toOther" data-index="0">
+      <image src="../../zhy/resource/images/nav1.png" mode="aspectFit" class="icon-nav"></image>
+      <view class="v1">限时折扣</view>
+    </view>
+    <view class="nav-list flex-all" bindtap="toOther" data-index="1">
+      <image src="../../zhy/resource/images/nav2.png" mode="aspectFit" class="icon-nav"></image>
+      <view class="v1">优惠券</view>
+    </view>
+    <view class="nav-list flex-all" bindtap="toOther" data-index="2">
+      <image src="../../zhy/resource/images/nav4.png" mode="aspectFit" class="icon-nav"></image>
+      <view class="v1">满减送</view>
+    </view>
+    <view class="nav-list flex-all" bindtap="toOther" data-index="3">
+      <image src="../../zhy/resource/images/nav3.png" mode="aspectFit" class="icon-nav"></image>
+      <view class="v1">收藏商品</view>
+    </view>
+  </view>
+
+  <view class="food-title bgw" wx:if="{{homeData.new_list.length>0}}">新品推荐</view>
+  <view class="bgw">
+    <comlist goodsList="{{homeData.new_list}}" siteroot="{{siteroot}}" isA1="true" isBig="true"  checkstate="{{checkstate}}"/>
+
+  </view>
+
+  <!-- <view class="ad">
+    <image src="../../zhy/resource/images/img/banner2.jpg" mode="aspectFill"></image>
+    <image src="../../zhy/resource/images/img/banner3.jpg" mode="aspectFill"></image>
+  </view> -->
+
+  <view class="food-title bgw" wx:if="{{homeData.rec_list.length>0}}"> 精品推荐</view>
+  <view class="bgw">
+    <comlist goodsList="{{homeData.rec_list}}"  siteroot="{{siteroot}}" isB="true"  checkstate="{{checkstate}}"/>
+  </view>
+
+  <view class="food-title bgw" wx:if="{{homeData.hot_list.length>0}}">热卖推荐</view>
+  <view class="bgw find-box">
+    <comlist goodsList="{{homeData.hot_list}}"  siteroot="{{siteroot}}" isA="true"  checkstate="{{checkstate}}"/>
+  </view>
+
+
+</view>
+<comtotop toTop="{{ani}}" showToTop="{{showToTop}}" />
+
+<view class="drawer-screen flex-andmid" catchtap="toggleCouponTap" wx:if="{{showMask}}" hidden="{{coupons.length==0}}">
+  <view class="maskContent">
+    <view class="radius bgw"></view>
+    <view class="pb bgw">
+      <view class="masktitle">优惠券</view>
+      <view class="coupons">
+        <coupon coupons="{{coupons}}" bind:useFn="useFn" getcoupon="true" />
+      </view>
+      <view class="more" bindtap="toOther" data-index="1">查看更多</view>
+    </view>
+    
+    <view class="flex-all"><image class="closeimg" src="../../zhy/resource/images/close1.png"></image></view>
+  </view>
+</view>
+<!-- <view class="footerBox" id="footerBox"><foot /> </view> -->
+
+<tabbar />

@@ -1,0 +1,102 @@
+<view class="{{isIphoneX?'hwrap':''}}">
+
+  <view class="flex-all headbox bgw">
+    <view class="head flex-sb">
+    <view class="flex-andmid" bindtap="navigate" data-index="0">
+      <image src="{{userinfo.user_headimg?userinfo.user_headimg:'../../zhy/resource/images/mine2.png'}}" class="icon-user"></image>
+      <view class="head-con">
+        <view class="v1">{{role_name?role_name:'普通用户'}}</view>
+        <view class="v2" wx:if="{{userinfo.nick_name}}">{{userinfo.nick_name}}~uid:{{uid}}</view>
+        <view class="v2" wx:else>点击登录</view>
+      </view>
+    </view>
+    <!-- <view class="account" bindtap="navigate" data-index="2" wx:if="{{personal.balance}}">
+      <view class="v2">¥
+        <view class="v3">{{personal.balance[0]}}</view>
+        <view class="v4">.{{personal.balance[1]}}</view>
+      </view>
+      <view class="v1">我的账户</view>
+    </view> -->
+  </view>
+  </view>
+
+  
+
+  <view class="mid-box flex-sb">
+    <view class="mlist" bindtap="navigate" data-index="3">
+      <view class="flex-all">
+        <view  class="icon40">
+          <text class="num">{{personal.coupon_num}}</text>
+          <image src="../../zhy/resource/images/mine4.png" class="icon30"  mode="aspectFit"></image>
+        </view>
+        <view class="v1">优惠券</view>
+      </view>
+    </view>
+    <view class="mlist" bindtap="navigate" data-index="4">
+      <view class="flex-all">
+        <view class="text">{{personal.integral_num?personal.integral_num:0}}</view>
+        <view class="v1">积分</view>
+      </view>
+    </view>
+    
+      <view class="mlist" bindtap="navigate" data-index="9">
+        <view class="flex-all">
+          <image src="../../zhy/resource/images/mine3.png" class="icon30"   mode="aspectFit"></image>
+          <view class="v1">我的收藏</view>
+        </view>
+      </view>
+  </view>
+
+  <!-- <view class="service">
+    <view class="service-tit">客户服务</view>
+    <view class="service-con">
+      <view class="service-tel" bindtap="makePhone">
+        <image src="../../zhy/resource/images/mine/phone.png" class="icon70"></image>
+        <view class="v1">服务热线</view>
+      </view>
+      <view class="service-back" bindtap="navigate" data-index="5">
+        <image src="../../zhy/resource/images/mine/feedback.png" class="icon70"></image>
+        <view class="v1">意见反馈</view>
+      </view>
+    </view>
+  </view> -->
+
+  <view class="bot-box">
+    <view class="bot-item flex-all">
+      <view class="mlist" bindtap="navigate" data-index="7">
+
+        <view class="flex-andmid">
+          <image src="../../zhy/resource/images/mine1.png" class="icon40"  mode="aspectFit"></image>
+          <view class="v1">收货地址</view>
+        </view>
+        <view>
+          <image src="../../zhy/resource/images/icon-arrow1.png" class="icon-arrow"></image>
+        </view>
+      </view>
+      <view class="mlist" bindtap="navigate" data-index="8">
+        <view class="flex-andmid">
+          <image src="../../zhy/resource/images/mine5.png" class="icon40"  mode="aspectFit"></image>
+          <view class="v1">供应商信息</view>
+        </view>
+        <view>
+          <image src="../../zhy/resource/images/icon-arrow1.png" class="icon-arrow"></image>
+        </view>
+      </view>
+      <!-- <view class="mlist" bindtap="navigate" data-index="10"> -->
+      <view class="mlist" bindtap="navigate" data-index="10" hidden="{{check_state==2}}">
+        <view class="flex-andmid">
+          <image src="../../zhy/resource/images/mine6.png" class="icon40"  mode="aspectFit"></image>
+          <view class="v1">申请批发商{{personal.wholsaler_info.check_state==1?'(审核中)':personal.wholsaler_info.check_state==3?'(审核失败)':''}}</view>
+        </view>
+        <view>
+          <image src="../../zhy/resource/images/icon-arrow1.png" class="icon-arrow"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- <view class="footerBox" id="footerBox"><foot /> </view> -->
+
+<tabbar />

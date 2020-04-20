@@ -1,0 +1,94 @@
+<view>
+  <view class="control" wx:if="{{cartList.length>0}}">
+    <view bindtap="controlFn">
+      <text class="method " data-index="1">{{method1?'折叠':'展开'}}</text>
+      <text class="method method1" data-index="2">{{method2?'完成':'编辑'}}</text>
+    </view>
+  </view>
+  <scroll-view class="scroll-view  " scroll-y bindscrolltolower="pullUpLoad" style="height: {{isIphoneX?iphoneXH:'calc(76vh)'}};">
+    <view class="car-item" wx:if="{{cartList.length>0}}">
+      <block wx:for="{{cartList}}" wx:key="index">
+        <view class="car-list">
+          <view class="car-goods">
+            <checkbox checked="{{item.isCheck}}" class="car-check" bindtap="checkFn" data-cart_id="{{item.cart_id}}"></checkbox>
+            <view class="car-goods-img">
+              <!-- <image src="{{item.picture_info?item.picture_info.pic_cover_mid:'../../zhy/resource/images/none.png'}}" mode="aspectFill" class="img1"></image> -->
+              <image src="{{siteroot+item.picture_info?siteroot+item.picture_info.pic_cover_mid:'../../zhy/resource/images/none.png'}}" mode="aspectFill" class="img1"></image>
+              <!-- <view class="v1">2种货品</view> -->
+            </view>
+            <view class="car-rig" bindtap="toggle" data-cart_id="{{item.cart_id}}">
+              <view class="car-goods-name">
+                <view class="v1 ellips2">{{item.goods_name}}</view>
+                <view class="btn-fold">
+                  <view class="v2">{{item.isOff?'折叠':'展开'}}</view>
+                  <image src="../../zhy/resource/images/arrow-up1.png" class="icon-arrow" wx:if="{{item.isOff}}"></image>
+                  <image src="../../zhy/resource/images/arrow-d2.png" class="icon-arrow" wx:else></image>
+                </view>
+              </view>
+              <view class="car-buy-num">x{{item.num}}</view>
+            </view>
+          </view>
+          <view class="check-goods flex-sb" wx:if="{{item.isOff}}">
+            <view class="flex-andmid">
+              <!-- <checkbox checked="{{item.isCheck}}" class="car-check" bindtap="checkFn" data-cart_id="{{item.cart_id}}"></checkbox> -->
+              <view class="flex-andmid ml60">
+                <view>{{item.sku_name}}</view>
+                <view class="now-price">
+                  <view class="v1">￥</view>
+                  <view class="v2">{{item.price}}</view>
+                  <view class="v3">/件</view>
+                </view>
+              </view>
+            </view>
+            <view class="operation-box" bindtap="changeNumFn" data-idx="{{index}}" data-cart_id="{{item.cart_id}}">
+              <image src="../../zhy/resource/images/minus.png" class="icon-minus" data-index="0"></image>
+              <view class="v1" data-index="2">{{item.num}}</view>
+              <image src="../../zhy/resource/images/add.png" class="icon-add" data-index="1"></image>
+            </view>
+          </view>
+          <!-- <view class="check-goods">
+          <checkbox checked="" class="car-check"></checkbox>
+          <view class="now-price">
+            <view class="v1">￥</view>
+            <view class="v2">120</view>
+            <view class="v3">起/件</view>
+          </view>
+          <view class="operation-box">
+            <image src="../../zhy/resource/images/minus.png" class="icon-minus"></image>
+            <view class="v1">0</view>
+            <image src="../../zhy/resource/images/add.png" class="icon-add"></image>
+          </view>
+        </view> -->
+        </view>
+      </block>
+    </view>
+    <view wx:else class="flex-andmid nodata" style="height:calc(100vh - 160px)">
+      <comnodata />
+    </view>
+
+    <view class="car-footer flex-sb {{isIphoneX?'':'car-footer1'}}" wx:if="{{cartList.length>0}}">
+      <view class="flex-andmid" bindtap="checkAll">
+        <checkbox checked="{{allCheck}}" class="car-check"></checkbox>
+        <view class="v4">全选</view>
+      </view>
+      <view wx:if="{{!method2}}" class="flex-andmid">
+        <view class="car-footer-con">
+          <view class="now-price">
+            <view class="v1">￥</view>
+            <view class="v2">{{allCost[0]?allCost[0]:0}}</view>
+            <view class="v3">.{{allCost[1]?allCost[1]:'00'}}</view>
+          </view>
+          <view class="v5">种类{{totalType}},数量{{totalNum}}</view>
+        </view>
+        <view class="car-order  {{totalNum>0?'car-order1':''}}" bindtap="submitFn">下单</view>
+      </view>
+      <view class="flex-andmid" wx:else>
+        <view class="car-footer-con">种类{{totalType}},数量{{totalNum}}</view>
+        <view class="car-order {{method2?'car-order2':''}} " bindtap="deleteFn">删除</view>
+      </view>
+    </view>
+  </scroll-view>
+  <comshowbox showBox="{{showBox}}" showTitle="确定删除?" showBtns="true" bind:hideBox="_hideBox" bind:popupok="popupok" />
+</view>
+
+<tabbar />

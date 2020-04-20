@@ -1,0 +1,113 @@
+/* base/Fund/Fund.wxss */
+.content{
+  min-height: 100vh;
+}
+.account-header-up {
+  color: #fff;
+  padding: 10rpx 0;
+}
+.c-header-bg {
+  background-color:  var(--blue);
+  color: #fff;
+}
+.j-num{
+  display: flex;
+  align-items: center;
+}
+.question{
+  width: 42rpx;
+  height: 42rpx;
+  margin-left: 10rpx;
+  margin-top: 4rpx;
+}
+.account-header-up .fsmall2 {
+  font-size: 36rpx;
+  font-weight: 500;
+}
+
+.f0 {
+  font-size: 48rpx;
+}
+
+.ui-tab2 {
+  white-space: nowrap;
+}
+
+.ui-tab2 .tc {
+  display: inline-block;
+  width: 300rpx;
+  height: 119rpx;
+  opacity: 0.5;
+  text-align: center;
+  position: relative;
+}
+
+.ui-tab2 .opacity{
+  opacity: 1;
+}
+
+.fsmall2 {
+  font-size: 24rpx;
+}
+
+.dn {
+  display: none;
+}
+
+.trangle {
+  width: 0;
+  height: 0;
+  border-bottom: 17rpx solid #fff;
+  border-left: 17rpx solid transparent;
+  border-right: 17rpx solid transparent;
+  transform: translate(-50%,0);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+.filter-box {
+    position: relative;
+    height: 70rpx;
+    padding: 0 24rpx;
+    margin-left: 24rpx;
+    line-height: 70rpx;
+    font-size: 24rpx;
+    color: #888;
+    border-bottom: 1px solid #eee;
+}
+.js-account-filter-time{
+  margin-top: 10rpx;
+}
+.wd-rq{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 4rpx;
+}
+.noData{
+  height: 70vh;
+  overflow: hidden;
+}
+
+.popup-content1{
+    padding: 50rpx 50rpx 100rpx !important;
+}
+
+.mtitle{
+  font-size: 32rpx;
+  margin:20rpx 0 0 20rpx;
+  line-height: 60rpx;
+}
+.mlist{ height: 90rpx; border-bottom: 1rpx solid #eee;padding: 10rpx 0;}
+.mid-box{ margin-top:20rpx; padding: 0 20rpx; line-height: 40rpx; background: #fff;box-sizing: border-box}
+
+.list_title{
+  color: #444;
+}
+.gray{
+  color: #666;
+  font-size: 24rpx;
+}
+.red{
+  font-size: 32rpx;
+  color: #fa401f;
+}

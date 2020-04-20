@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "商品",
+  "usingComponents": {
+    
+    "tabbar": "/zhy/component/comFooter/comFooter",
+    "comlist": "../../zhy/component/comList/comList",
+    "comnodata": "/zhy/component/comnodata/comnodata",
+    "comfilters": "/zhy/component/comfiters/comfilters",
+    "comshowbox": "/zhy/component/comShowBox/comshowBox"
+  }
+}

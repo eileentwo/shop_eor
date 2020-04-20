@@ -1,0 +1,8 @@
+<!--base/discountList/discountList.wxml-->
+<scroll-view wx:if="{{goodsList.length>0}}"  scroll-y='true' class="scroll-view"  style="height:96vh;"  bindscrolltolower="pullUpLoad">
+  <comlist goodsList="{{goodsList}}" isA="true" checkstate="{{checkstate}}" discount="true"  siteroot="{{siteroot}}"/>
+</scroll-view>
+<view class="nodata flex-all" style="height:100vh;" wx:else>
+  <comnodata nodata1="nodata2" />
+</view>
+

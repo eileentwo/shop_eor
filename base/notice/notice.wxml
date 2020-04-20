@@ -1,0 +1,10 @@
+<!--base/notice/notice.wxml-->
+<view class="bgw notice" style="height:100vh;">
+  <import src="../../zhy/template/wxParse/wxParse.wxml"></import>
+  <view class="title">{{notice.notice_title}}</view>
+  <view class="time">{{notice.create_time}}</view>
+  <view>
+    
+  <template is="wxParse"  data="{{wxParseData:detail.nodes}}"></template>
+  </view>
+</view>

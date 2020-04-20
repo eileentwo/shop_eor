@@ -1,0 +1,11 @@
+/* zhy/component/comtoTop/comtoTop.wxss */
+
+.toTop {
+  position: fixed;
+  bottom: 240rpx;
+  right: 33rpx;
+  height: 106rpx;
+  width: 106rpx;
+  z-index: 8;
+  opacity: 0;
+}

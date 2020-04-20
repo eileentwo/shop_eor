@@ -1,0 +1,37 @@
+<view class="content bgw">
+	<view class="ui-group ui-group-full">
+		<view class="ui-list selectTime" data-type="start" id="mobiscroll1583283764965">
+			<view class="ui-title flex-sb"><text>开始时间</text>
+				<picker mode="date" value="{{beginDate}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange" data-index="0">
+					<input class="tr" name="beginDate" placeholder="请选择" readonly="" value="{{beginDate}}" />
+				</picker>
+			</view>
+		</view>
+		<view class="ui-list selectTime" data-type="end" id="mobiscroll1583283764966">
+			<view class="ui-title flex-sb"><text>结束时间</text>
+				<picker mode="date" value="{{endDate}}" start="2015-09-01" end="2020-09-01" bindchange="bindDateChange" data-index="1">
+					<input class="tr" name="endDate" placeholder="请选择" readonly="" value="{{endDate}}" />
+				</picker>
+			</view>
+		</view>
+		<view class="ui-list" id="orderStatus">
+			<view class="ui-title flex-sb"><text>订单状态</text><text class="tr c3" bindtap="showFixedBox" data-index="0">{{oStatus}}</text></view>
+		</view>
+		<view class="ui-list" id="orderAway">
+			<view class="ui-title flex-sb"><text>下单方式</text><text class="tr c3"  bindtap="showFixedBox" data-index="1">{{oAway}}</text></view>
+		</view>
+	</view>
+	<view class="pt80rem"><button class="ui-btn ui-btn-big c-btn-thin" id="searchBtn">订单查询</button></view>
+</view>
+<view class="moveMask"  animation="{{ani}}">
+	<view class="mask" bindtap="hideFixedBox"></view>
+	<view class="moveContent bgw"  animation="{{ani1}}">
+		<view>
+			<view class="moveInCon-ul">
+				<block wx:for="{{orderStatus}}" wx:key='index'>
+					<view class="moveInCon-li" data-item="{{item}}" bindtap="selectStatus">{{item}}</view>
+				</block>
+			</view>
+		</view>
+	</view>
+</view>

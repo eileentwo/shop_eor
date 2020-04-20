@@ -1,0 +1,47 @@
+/* base/coupon/coupon.wxss */
+/* @import "/zhy/template/comcoupon/comcoupon.wxss"; */
+.coupons{
+  font-size: 26rpx;
+  height: 100vh;
+}
+.coupon-detail-wrap ,.coupon-detail{
+  margin: 0 auto;
+}
+.coupon-status{
+  height: 90rpx;
+  font-size: 26rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #415161;
+  background-color: #fff;
+}
+.coupon-status-count {
+  color: #ff2b00;
+}
+
+.coupon-no-more-data {
+  padding: 50rpx 0 10rpx;
+  text-align: center;
+  color: #747474;
+  font-size: 27rpx;
+  line-height: 1.414;
+}
+.coupon-no-more-data .navigator{
+  color: #333;
+  margin-left:6rpx ;
+}
+.nav{
+  background-color: #fff;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  justify-content: space-around;
+}
+.tab{
+  text-align: center;
+  border-bottom:2px solid #fff;
+}
+.active{
+  color:  var(--blue);
+  border-bottom-color: var(--blue);
+}

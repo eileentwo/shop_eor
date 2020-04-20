@@ -1,0 +1,182 @@
+@import "/zhy/template/comSearch/comSearch.wxss";
+.ad-swiper{
+  height: 350rpx;
+}
+.index-banner {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.icon-arrow {
+  width: 12rpx;
+  height: 20rpx;
+}
+
+.icon-notice {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.message {
+  margin-top: 20rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.message .icon-notice {
+  margin: 0 10rpx 0 25rpx;
+}
+
+.message .v1 {
+  width: 660rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.message .icon-arrow {
+  margin: 0 25rpx;
+}
+
+.nav {
+  margin-top: 20rpx;
+  height: 220rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #fff;
+}
+
+.icon-nav {
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.nav-list .v1 {
+  margin-top: 15rpx;
+  color: #666;
+}
+
+.nav-list {
+  flex-direction: column;
+}
+
+.ad {
+  margin-top: 20rpx;
+  display: flex;
+}
+
+.ad image {
+  display: block;
+  width: 375rpx;
+  height: 200rpx;
+}
+
+.promotion-name {
+  padding: 0 20rpx;
+  width: 710rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon-promotion {
+  width: 66rpx;
+  height: 49rpx;
+}
+
+.promotion-img {
+  position: relative;
+  width: 750rpx;
+  overflow: hidden;
+}
+
+.promotion-img .icon-promotion {
+  position: absolute;
+  top: 0;
+  left: 18rpx;
+  z-index: 1;
+}
+
+.promotion-img .img1 {
+  display: block;
+  width: 750rpx;
+  height: 750rpx;
+}
+
+.promotion-list {
+  padding-bottom: 20rpx;
+}
+
+.find-box {
+  margin-bottom: 120rpx;
+}
+
+
+
+.food-title {
+  padding-left: 26rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  color: #000;
+  border-left: 10rpx solid var(--blue);
+  margin: 20rpx 0 2rpx;
+}
+
+.footerBox {
+  position: fixed;
+  bottom: 0;
+  height: 98rpx;
+  width: 100%;
+  left: 0;
+}
+
+.drawer-screen {
+  justify-content: center;
+}
+
+.maskContent {
+  font-size: 20rpx;
+  width: 640rpx;
+  max-height: 900rpx;
+}
+.radius{
+  height: 48rpx;
+  border-radius: 50% / 100% 100% 0 0;
+}
+.masktitle {
+  font-size: 38rpx;
+  color: rgba(52, 147, 255, 1);
+  line-height: 56rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.coupons{
+  padding: 0 34rpx ;
+  overflow-y: scroll;
+  max-height: 600rpx;
+  background-color: #fff;
+}
+.pb{
+  border-radius:0 0 20rpx 20rpx;
+}
+.more{
+  line-height: 60rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: rgba(52, 147, 255, 1);
+
+}
+.closeimg{
+  width:68rpx;
+height:68rpx;
+margin-top: 65rpx;
+}

@@ -1,0 +1,19 @@
+<!--base/selection/selection.wxml-->
+<!-- <import src="/zhy/template/comSearch/comSearch.wxml"></import> -->
+<view class="bgw">
+  <!-- <template is="comSearch" data="{{isToSearch:false,showClose,searchVal}}"></template> -->
+ 
+  <include  src="/zhy/template/comSearch/comSearch.wxml"  ></include>
+  <view class="historyBox">
+    <view class="historyTitle flex-sb">
+      <text>历史记录</text>
+      <image class="delete" bindtap="deleteFn" src="/zhy/resource/images/delete.png"></image>
+    </view>
+    <view class="searchmain-list" >
+      <block wx:for="{{historyData}}" wx:key="index">
+        <view class="searchmain-list-item" bindtap="search" data-value="{{item}}">{{item}}</view>
+      </block>
+      <view  class="searchmain-list-no" hidden="{{historyData.length>0}}">暂无历史搜索记录</view>
+    </view>
+  </view>
+</view>

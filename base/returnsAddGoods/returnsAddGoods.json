@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "选择商品",
+  "usingComponents": {
+    "comreturngoods": "/zhy/component/comReturnGoods/comReturnGoods",
+    "comfixbox": "/zhy/component/comFixBox/comFixBox"
+  }
+}

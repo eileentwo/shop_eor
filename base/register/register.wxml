@@ -1,0 +1,77 @@
+<!--base/register/register.wxml-->
+<view class="register flex-andmid">
+  <!-- <view class="describe">{{text}}<view class="showmore flex-andmid" wx:if="{{showmore}}">查看更多 <image src="../../zhy/resource/images/arrow-lef.png" class="arrowdown {{showmore?'':'arrowup'}}"></image> </view>
+  </view> -->
+  <view class="form">
+    <view class="form_title flex-andmid">
+      <view class="leftbor"></view>手机验证
+    </view>
+    <view class="form_list">
+      <view class="form_item flex-andmid">
+        <view class="form_item_left flex-andmid"><text class="red">*</text>手机号码</view>
+        <view>
+          <input  type="text" bindinput="change" index='0' value="{{phone}}" placeholder="请输入手机号"></input>
+        </view>
+      </view>
+    </view>
+    <view class="form_title flex-andmid">
+      <view class="leftbor"></view>申请等级
+    </view>
+    <view class="form_list">
+      <view class="form_item flex-andmid">
+        <view class="form_item_left  flex-andmid"><text class="red">*</text>等级:</view>
+        <picker bindchange="bindPickerChange" value="{{index}}"  range="{{level}}">
+          <view class="picker ellipss1">{{level[index]?level[index]:'请选择'}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="form_title flex-andmid">
+      <view class="leftbor"></view>详细信息
+    </view>
+    <view class="form_list">
+      <view class="form_item flex-andmid">
+        <view class="form_item_left flex-andmid"><text class="red">*</text>公司名称</view>
+        <view><input  type="text" bindinput="change1" index='1' value="{{company_name}}" placeholder="请输入公司名称"></input></view>
+      </view>
+    </view>
+    <view class="form_list">
+      <view class="form_item flex-andmid">
+        <view class="form_item_left flex-andmid"><text class="red">*</text>联系人</view>
+        <view>
+          <input  type="text" bindinput="change2" index='2' value="{{link_name}}" placeholder="请输入联系人"></input></view>
+      </view>
+    </view>
+    
+    <view class="form_list">
+      <view class="form_item flex-andmid">
+        <view class="form_item_left flex-andmid"><text class="red">*</text>所属地区</view>
+        <view class="pickerbox">
+          <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view   class="flex-sb"><input type="text" class="tr" name="area" value="{{region[0]+region[1]+region[2]}}" placeholder="请选择省市区"/>
+            <text class="dot">●●●</text></view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="form_list">
+      <view class="form_item flex-andmid">
+        <view class="form_item_left flex-andmid"><text class="red">*</text>详细地址</view>
+        <view>
+          <input  type="text" bindinput="change3" index='3' value="{{address}}" placeholder="请输入详细地址"></input>
+        </view>
+      </view>
+    </view>
+    <view class="form_title flex-andmid">
+      <view class="leftbor"></view>加盟原因
+    </view>
+    <view class="form_list">
+      <view class="form_item flex-andmid">
+        <textarea class="textarea"  bindinput="change4" index='4' value="{{join_reason}}" placeholder="请输入加盟原因"></textarea>
+        
+      </view>
+    </view>
+
+    <button class="submit" bindtap="submit">提交申请</button>
+  </view>
+  <view class="infos" wx:if="{{level[index]}}">申请条件：{{level[index]}} </view>
+</view>

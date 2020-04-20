@@ -1,0 +1,133 @@
+/* base/returnsDetail/returnsDetail.wxss */
+.ui-group {
+  position: relative;
+  background: #fff;
+  margin:20rpx 0 16rpx;
+}
+.ui-list {
+  padding: 0 24rpx 0 0;
+  margin: 0 0 0 24rpx;
+  border-bottom: 1px solid #ebeef4;
+}
+.ui-title {
+  padding: 16rpx 0;
+  line-height: 56rpx;
+  font-size: 30rpx;
+  color: #222;
+}
+.c-theme-font {
+  color:  var(--blue);
+}
+.f1 {
+  font-size: 30rpx;
+}
+.ui-content {
+  color: #999;
+  line-height: 40rpx;
+  margin-top: 10rpx;
+}
+.ui-content .ell {
+  line-height: 1.7;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.c-btn-full {
+  color: #fff;
+  background-color:  var(--blue);
+  line-height: 1;
+  padding: 14rpx 40rpx;
+  border-radius: 40rpx;
+  margin-right: 0;
+  margin-bottom: 6rpx;
+  align-self: flex-end;
+
+}
+.ui-list .tr {
+  color: #999;
+}
+.pr30rem{
+  padding-right: 30rpx;
+}
+.ui-more{
+  display: inline-block;
+  width: 16rpx;
+  height: 16rpx;
+  border: 1px solid #999;
+  border-width: 1px 1px 0 0;
+  transform: rotate(45deg) translateY(-4rpx);
+  margin-left: 8rpx;
+}
+.footer{
+  height: 128rpx;
+}
+
+.footer .ui-btn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  font-size: 36rpx;
+  line-height: 98rpx;
+  border-radius: 0;
+  color: #fff;
+  background-color:  var(--blue);
+  margin-bottom: 0;
+}
+
+
+.mask {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,.3);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+}
+.popup-container {
+  position: fixed;
+  top: 150rpx;
+  left: 30rpx;
+  right: 30rpx;
+  -webkit-animation-duration: .6s;
+  animation-duration: .6s;
+  background-color: #fff;
+  z-index: 1001;
+  border-radius: 2px;
+}
+.popup-title {
+  padding: 40rpx 0;
+  color: #555;
+  text-align: center;
+  font-size: 36rpx;
+}
+.popup-container .popup-content {
+  padding: 0 50rpx 50rpx;
+  box-sizing: border-box;
+  color: #444;
+  font-size: 32rpx;
+  text-align: center;
+}
+.ui-txtarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border: 1px solid #eee;
+}
+.popup-container .popup-panel {
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+.popup-panel button{
+  font-size: 29rpx;
+  width: 50%;
+  line-height: 98rpx;
+  box-sizing: border-box;
+  border-radius: 0;
+  margin-bottom: 0;
+  background-color: transparent;
+}
+.popup-panel .popup-ok{
+  background-color:  var(--blue);
+}

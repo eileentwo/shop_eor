@@ -1,0 +1,61 @@
+.icon-user{ width: 120rpx; height: 120rpx; border-radius:60rpx;}
+.icon-trend{ margin:10rpx 28rpx 0 0; width: 37rpx; height: 34rpx;}
+.head{ padding:70rpx 30rpx 60rpx 35rpx; display: flex;justify-content: space-between; align-items: center; background:  var(--blue);width: 690rpx;border-radius: 20rpx;height: 255rpx; box-sizing: border-box;}
+.headbox{
+  padding-top: 20rpx;
+}
+
+.icon30{
+  width: 50rpx;
+height: 50rpx;
+
+}
+.icon40{ width: 44rpx; height: 40rpx;}
+.icon40 .num{
+  position: absolute;
+  left: 52rpx;
+  top: 0;
+  background: #FF0002;
+  color: #fff;
+  padding: 0rpx 8rpx;
+  border-radius: 30rpx;
+  font-size: 22rpx;
+
+}
+.icon-arrow{ margin:0 0 0 25rpx; width: 16rpx; height: 28rpx;}
+.mlist{width:710rpx; height: 120rpx;padding: 0 30rpx;box-sizing: border-box; background: var(--white); display: flex; align-items: center; justify-content: space-between;border-radius: 10rpx; margin-bottom: 20rpx;}
+.mid-box .flex-all{
+  position: relative;
+  flex-direction: column;
+  padding-top: 10rpx;
+}
+.mid-box .mlist{
+  justify-content: center;
+}
+.mid-box{ padding-top:60rpx; justify-content: space-around; background: var(--white);}
+.icon70{ margin:0 auto; display: block; width:70rpx; height: 70rpx}
+.service-con .v1{ font-size: 24rpx; color: var(--fontb)}
+.service{ margin-top:20rpx; background: var(--white)}
+.service-tit{ padding-left:25rpx; height: 80rpx; line-height: 80rpx; border-bottom: 1rpx solid #eee; color: var(--fonta)}
+.service-con{ height:220rpx; display: flex; justify-content: space-around; align-items: center;}
+.bot-tit{ padding-left: 25rpx; line-height: 80rpx; border-bottom: 1rpx solid #eee;}
+.bot-box{ margin-top:20rpx;}
+.bot-item{ padding-left:20rpx; flex-direction: column;}
+.head-con{ margin-left:20rpx; color: var(--white)}
+.head-con .v1{ font-size: 30rpx}
+.head-con .v2{ margin-top:6rpx; font-size: 26rpx}
+.account{ margin:-66rpx 0 0 25rpx; padding-top:30rpx; position: relative;  height: 100rpx; border-radius: 12rpx; color: var(--white);}
+.account .v1{ text-align: center;  font-size: 26rpx}
+.account .v2{ margin-top:10rpx; display: flex; justify-content: center; align-items: baseline;font-size: 36rpx}
+.account .v3{ font-size: 48rpx;}
+.mlist .v1{
+  font-size: 26rpx;
+  line-height: 76rpx;
+}
+.bot-box .v1{  
+  margin-left: 28rpx;
+}
+.mid-box .text{
+  color: #7B7B7B;
+  font-size: 30rpx;
+}

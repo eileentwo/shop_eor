@@ -1,0 +1,22 @@
+<!--base/feedback/feedback.wxml-->
+<view>
+  <view class="feedbackList" wx:if="{{feedBack.length>0}}">
+    <navigator url="../feedbacklist/feedbacklist.wxml" class="ui-group flex-andmid" wx:for="{{feedBack}}" wx:key="index">
+      <image class="img-avatar" src="../../zhy/resource/images/nav1.png"></image> 
+      <view class="ui-group-rt bbe">
+        <view class="ui-list">
+          <view class="ui-title ell">1</view>
+          <view class="ui-content flex-andmid">
+           <image class="ui-r3" src="../../zhy/resource/images/s_cir1.png"></image> 待回复</view>
+        </view>
+      </view>
+    </navigator>
+    
+    <comfooter footText="{{footText}}" isGreen="{{isGreen}}" />
+  </view>
+  <view wx:else>
+    <nodata  />
+    <comfooter footText="{{footText}}"  isGreen="{{isGreen}}"/>
+  </view>
+
+</view>

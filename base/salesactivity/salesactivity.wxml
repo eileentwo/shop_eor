@@ -1,0 +1,40 @@
+<!--base/salesactivity/salesactivity.wxml-->
+<view class="wrap">
+	<!-- <import src="../../zhy/template/customhead/customhead.wxml"></import>
+	<template is="customhead" data="{{statusBarHeight,title}}"></template> -->
+  
+  <include  src="/zhy/template/customhead/customhead.wxml"  />
+	<view class="sales-activity-nav  bgw">
+		<view class="flex-andmid">
+			<view class="sales-activity-nav-item is-headtitandlabel active" data-type="promotion">活动促销 <text class="border"></text></view>
+			<view class="sales-activity-nav-item is-headtitandlabel" data-type="reward">大转盘 <text class="border"></text></view>
+			<view class="sales-activity-nav-item is-headtitandlabel" data-type="coupon">优惠券 <text class="border"></text></view>
+		</view>
+	</view>
+	<scroll-view scroll-y="true"  class="goods-item {{isIphoneX?'hwrap':''}}" >
+		<view class="sales-activity-list bgw" wx:if="{{!nodata}}">
+			<view class="sales-activity-list-item">
+				<view class="sales-activity-item-content">
+					<view class="sales-activity-item-header"><text>感恩大回馈</text></view>
+				</view>
+				<view class="sales-activity-item-footer flex-andmid">
+				<image  class="icon-time" src="../../zhy/resource/images/time-on.png"></image><text class="sales-activity-item-data isStart">4天后结束</text></view>
+			</view>
+			<view class="sales-activity-list-item">
+				<view class="sales-activity-item-content">
+					<view class="sales-activity-item-header"><text>开工利是</text></view>
+				</view>
+				<view class="sales-activity-item-footer flex-andmid">
+				<image class="icon-time" src="../../zhy/resource/images/time.png"></image>
+				<text class="sales-activity-item-data" >4天后结束</text></view>
+			</view>
+		</view>
+
+		<view style="min-height:{{windowHeight-statusBarHeight-48}}px;"  class="nodata-wrap"  wx:if="{{nodata}}">
+			<view class="nodata ">
+				<image src="../../zhy/resource/images/nodata1.png" class="icon-nodata"></image><view class="pt30rem">暂无数据</view>
+			</view>
+		</view>
+	</scroll-view>
+
+</view>

@@ -1,0 +1,19 @@
+<!--base/paybank/paybank.wxml-->
+<view class="content">
+  <view class="ui-group ui-group2 pt20rem">
+    <view class="ui-list flex-andmid bgw">
+      <radio class="radio"></radio>
+      <view class="ui-content">
+        <view class="c1">开户银行：
+          <text class="c4" name="bankName">中国建设银行深圳市中旅公馆支行</text>
+        </view>
+        <view class="c1">账户名称：
+          <text class="c4" name="bankAccountName">深圳市铱云云计算有限公司</text>
+        </view>
+        <view class="c1">开户账号：
+          <text class="c4" name="bankAccount">44201015700052508420</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

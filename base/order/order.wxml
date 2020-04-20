@@ -1,0 +1,81 @@
+<view class="wrap" wx:if="{{show}}">
+
+  <include src="/zhy/template/order/order.wxml"></include>
+
+  <view class="swiper-tab">
+    <view class="tab-item" data-status="{{item.status}}" bindtap="swichNav" wx:for="{{nav}}" wx:key="nav">
+      <text>{{item.title}}</text>
+      <text wx:if="{{curHdIndex == item.status}}" class="current-active" ></text>
+    </view>
+  </view>
+
+  <block wx:for="{{olist}}" wx:for-item="item" wx:key="id">
+    <view class="olist" data-id="{{item.id}}" bindtap="onOrderinfoTap">
+
+      <view class="ol-top">
+        <view class="olt-order">
+          <view class="v2">订单号</view>
+          <view class="v3">{{item.order_no}}</view>
+        </view>
+        <view class="olc-pricetxt">
+          <view wx:if="{{item.order_status == 10}}">待支付</view>
+          <view wx:if="{{item.order_status == 20 && item.delivery_type == 1 && item.after_sale != 1}}">待发货</view>
+          <view wx:if="{{item.order_status == 20 && item.delivery_type == 3 && item.after_sale != 1}}">待服务</view>
+          <view wx:if="{{item.order_status == 20 && item.delivery_type == 2 && item.after_sale != 1}}">待使用</view>
+          <view wx:if="{{item.order_status == 30 && item.delivery_type == 1}}">待收货</view>
+          <view wx:if="{{item.order_status == 40 || item.order_status == 60}}">完成</view>
+          <view wx:if="{{item.order_status == 5}}">取消订单</view>
+          <view wx:if="{{item.after_sale == 1}}">{{ item.refund_status == 0 ? '退款处理中' :item.refund_status == 1 ? '退款成功' :item.refund_status == 2 ? '退款失败' : '售后'}}</view>
+        </view>
+      </view>
+
+      <block wx:for="{{item.detail}}" wx:for-item="detail" wx:key="detail">
+        <view class="ol-cont">
+          <image src="{{img_root}}{{detail.pic || item.goods.pic}}" mode="aspectFill" class="olc-lef"></image>
+          <view class="olc-rig">
+            <view class="olc-name">{{detail.gname}}<text wx:if="{{detail.goodsinfo.is_virtual == 1}}">(虚拟商品)</text></view>
+            <view class="olc-specification" wx:if="{{detail.attr_list}}">
+              <view class="v1">规格：</view>
+              <view class="v2">{{detail.attr_list}}</view>
+            </view>
+            <view class="olc-specification" wx:if="{{!detail.attr_list}}">
+              <view class="v1">规格：</view>
+              <view class="v2">无</view>
+            </view>
+            <view class="olc-num">
+              <view class="v1">数量：</view>
+              <view class="v2">×{{detail.num}}</view>
+            </view>
+            <view class="olc-num" wx:if="{{item.delivery_type == 3}}">
+              <view class="v1">服务时间：</view>
+              <view class="v2">{{item.service_time}}</view>
+            </view>
+            <view class="olc-num">
+              <view class="v1">单价：</view>
+              <view class="v2">{{detail.unit_price}}元</view>
+            </view>
+          </view>
+        </view>
+      </block>
+
+      <view class="ol-bot" wx:if="{{item.after_sale != 1 && !isShopowner}}">
+        <view class="black-btn" wx:if="{{item.order_status == 10}}">取消订单</view>
+        <view class="red-btn" wx:if="{{item.order_status == 10}}">立即支付</view>
+        <view class="black-btn" wx:if="{{item.order_status == 20 && item.can_refund && item.after_sale != 1}}">申请退款</view>
+        <view class="red-btn" wx:if="{{item.order_status == 20 && item.delivery_type == 2 && item.after_sale != 1}}">立即使用</view>
+        <view class="red-btn" wx:if="{{item.order_status == 20 && item.delivery_type == 1 && item.after_sale != 1}}">待发货</view>
+        <view class="red-btn" wx:if="{{item.order_status == 20 && item.delivery_type == 3 && item.after_sale != 1}}">待服务</view>
+        <view class="red-btn" wx:if="{{item.order_status == 30 && (item.delivery_type == 1 || item.delivery_type == 4)}}">查看物流</view> 
+        <view class="red-btn" wx:if="{{item.order_status == 30 && (item.delivery_type == 1 || item.delivery_type == 4)}}">确认收货</view>      
+        <view class="black-btn" wx:if="{{item.order_status == 40 ||item.order_status == 60}}">删除订单</view>
+        <view class="red-btn" wx:if="{{item.order_status == 40 && item.is_evaluation == 0}}">立即评价</view>
+      </view>
+
+    </view>
+  </block>
+
+  <view class='no-more' wx:if="{{nomore}}">没有更多了~</view>
+
+</view>
+<import src="/zhy/template/temloading/temloading.wxml" />
+<template is="temloading" wx:if="{{!show}}" />

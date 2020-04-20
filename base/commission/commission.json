@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的积分",
+  "usingComponents": {
+    "comshowbox": "/zhy/component/comShowBox/comshowBox",
+    "comfixbox": "/zhy/component/comFixBox/comFixBox",
+    "comnodata": "/zhy/component/comnodata/comnodata",
+    "timepicker": "/zhy/component/comDataPicker/comDataPicker"}
+}

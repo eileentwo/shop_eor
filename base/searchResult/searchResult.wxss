@@ -1,0 +1,120 @@
+/* base/searchResult/searchResult.wxss */
+@import "/zhy/template/comSearch/comSearch.wxss";
+.bgw{
+  height:100vh;
+}
+.filter {
+  height: 64rpx;
+  line-height:64rpx;
+  text-align: center;
+  font-size: 24rpx;
+  position: relative;
+}
+.filter-bar-item{
+  flex: 1;
+}
+.arrow-down{
+  width: 12rpx;
+  height: 8rpx;
+  margin-left: 16rpx;
+}
+.find-itema{
+  height:88vh ;
+}
+.filter-box{
+  width: 100%;
+  position: absolute;
+  top:0 ;
+  left: 0;
+  z-index: 99;
+  overflow: hidden;
+  background-color: rgba(0,0,0,.38);
+  transform: translate(0,-9999px);
+}
+.filter-modal{
+  background-color: #fff;  
+  transform: translate(0,-9999px);
+}
+.filter-modal-header{
+  padding: 0 15rpx 0 32rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size:28rpx;
+  color: #888;
+}
+
+.arrow-up{
+  width: 24rpx;
+  height: 16rpx;
+  padding: 28rpx 20rpx;
+}
+.filter-modal-checkbox{
+  padding:0 26rpx 30rpx 0;
+  max-height: 660rpx;
+  overflow: hidden;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.filter-modal-checkbox-empty{
+  padding: 20rpx 20rpx 30rpx;
+  color: #888;
+}
+.filter-modal-lable{
+  width: 50%;
+  padding:18rpx 0 0 24rpx;
+  box-sizing: border-box;
+}
+.filter-modal-lable text{
+  display: block;
+  height: 68rpx;
+  line-height: 68rpx;
+  background: #ededed;
+  font-size:  28rpx;
+  padding-left:  20rpx;
+  border-radius:  6rpx;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+.filter-modal-btn{
+  -webkit-box-flex: 1;
+  flex: 1;
+  background-color: transparent;
+  height: 97rpx;
+  line-height: 97rpx;
+  font-size: 34rpx;
+  color: #888;
+}
+.filter-modal-btn1{
+  background-color: var(--blue);
+  color: #fff;
+}
+.filter-mask{
+  height: 100%;
+}
+.filter-modal-lable-active text{
+  background-color: var(--blue);
+  color: #fff;
+}
+.filter-modal-sort{
+  padding: 0 15rpx 0 10rpx;
+
+}
+
+.filter-bar-list .green{
+  color: var(--blue);
+}
+.filter-modal-sort-item{    
+  line-height: 88rpx;
+  height:  88rpx;
+  position: relative;
+  text-align: center;
+  font-size:  28rpx;
+  color: #222;
+  border-top: 1px solid #e5eaf2;
+}
+.filter-modal-sort-item-active{
+  color: var(--blue);
+}

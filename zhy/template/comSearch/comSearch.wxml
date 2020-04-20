@@ -1,0 +1,26 @@
+<!-- <template name="comSearch"> -->
+<view class="searchLine">
+	<view class="search {{isToSearch?'search1':''}}" wx:if="{{isToSearch}}">
+    <view class="search-box" bindtap="tosearch">
+      <image src="../../zhy/resource/images/search.png" class="icon-search"></image>
+      <input type="text" placeholder="请输入商品名称" placeholder-class="holder" value="{{searchVal}}" class="search-inp selectBtn"></input>      
+    </view>
+    <!-- <navigator url="/base/message/message" wx:if="{{homeIndex}}" class="mesBox"><image src="../../zhy/resource/images/mes.png" class="icon-mes"></image>
+      <text class="message-num">10</text>
+    </navigator>
+    
+		<view class="carBox flex-all" wx:else>
+    	<image src="../../zhy/resource/images/cart.png"  class="icon-car"></image>
+      <text class="carNum">3</text>
+		</view> -->
+  </view>	
+  <view class="search flex-sb" wx:else>
+    <view class="search-box flex-andmid search-box1 ">
+      <image src="../../zhy/resource/images/search.png" class="icon-search"></image>
+      <input type="text" placeholder="请输入商品名称" placeholder-class="holder" bindinput="changeVal" value="{{searchVal}}" class="search-inp selectBtn"></input>
+      <image wx:if="{{searchVal.length>0}}" class="selectClose" src="../../zhy/resource/images/selectClose.png" bindtap="clearInput"></image>      
+    </view>
+    <button class="selectBtn" bindtap="search">搜索</button>
+  </view>
+</view>
+<!-- </template> -->

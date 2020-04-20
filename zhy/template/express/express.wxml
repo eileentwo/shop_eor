@@ -1,0 +1,20 @@
+<view class="logistics-mask" wx:if="{{logmask}}">
+  <view class="logistics">
+    <view class="log-tit">订单跟踪</view>
+    <view class="log-con">
+      <view class="log-con-head">
+        <view class="v1">快递公司:{{order.express_delivery || info.express_delivery || info.info.express_delivery}}</view>
+        <view class="v2">快递单号:{{order.order_no || info.order_no || info.info.order_no}}</view>
+      </view>
+      <view class="log-con-main">
+        <view class="v3">物流状态:{{express_info.State == 2 ? '在途中' : express_info.State == 3 ? '已签收' : express_info.State == 4 ? '问题件' : '您的快递已到火星了'}}</view>
+        <block wx:for="{{express_info.Traces}}" wx:key="express">
+          <view class="v6" wx:if="{{item.Remark}}">{{item.Remark}}</view>
+          <view class="v4">{{item.AcceptStation}}</view>
+          <view class="v5">{{item.AcceptTime}}</view>
+        </block>
+      </view>
+    </view>
+    <view class="log-con-close" bindtap="onLogCloseTap">关闭</view>
+  </view>
+</view>

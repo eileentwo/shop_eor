@@ -1,0 +1,51 @@
+/* base/orders/orders.wxss */
+@import "/zhy/template/temgroup/temgroup.wxss";
+.ui-group{
+  margin-bottom: 1px;
+}
+.fb {
+  font-size: 27rpx;
+}
+
+.p30rpx {
+  padding: 30rpx;
+}
+
+.orderCountli-l {
+  width: 100rpx;
+  height: 100rpx;
+  font-size: 27rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #bbb;
+  border-radius: 100%;
+}
+.ui-group:nth-of-type(1) .orderCountli-l {
+    background-color: #004ba5;
+}
+.ui-group:nth-of-type(2) .orderCountli-l {
+    background-color: #e53996;
+}
+.ui-group:nth-of-type(3) .orderCountli-l {
+    background-color: #00a9e7;
+}
+.orderCountli-r{
+  padding-left: 40rpx;
+}
+.orderCountli .orderCount-tit {
+    width: 180rpx;
+}
+.f2{
+  
+    font-size: 32rpx;
+}
+.f4 {
+    font-size: 40rpx;
+}
+.fsmall {
+    font-size:23rpx;
+}
+.c5 {
+    color: #a2a2a2;
+}

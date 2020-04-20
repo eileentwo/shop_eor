@@ -1,0 +1,11 @@
+<!--base/returnsNoteList/returnsNoteList.wxml-->
+<view class="content bgw">
+	<view class="ui-group ui-group-full" id="pList">
+		<view class="ui-list">
+			<view class="ui-title">已提交退货单，等待退货单审核</view>
+			<view class="ui-content">
+				<view class="flex-sb"> <text class="l">谢亚</text> <text class="tr">2020-03-05 09:21:44</text> </view>
+			</view>
+		</view>
+	</view>
+</view>

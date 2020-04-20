@@ -1,0 +1,23 @@
+.msg_head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color:  var(--blue);
+  color: #fff;
+  height: 88rpx;
+}
+
+.msg_head .backArrow {
+  width: 40rpx;
+  height: 40rpx;
+  padding: 10rpx;
+  position: absolute;
+  left: 20rpx;
+}
+
+.msg_head .headText {
+  flex: 1;
+  text-align: center;
+  font-size: 36rpx;
+}

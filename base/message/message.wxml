@@ -1,0 +1,148 @@
+<!--base/message/message.wxml-->
+<view class="msg_wrap">
+	<view id="messageWrap" class="content bgw" wx:if="{{showMsg == 0}}">
+		<view class="flex-andmid msg_head " style="padding-top:{{statusBarHeight}}px">
+			<image class="backArrow" src="../../zhy/resource/images/arrow-lef.png" bindtap="reback"></image>
+			<view class="headText">消息</view>
+		</view>
+		<view style="padding-top:{{statusBarHeight}}px;height:88rpx"></view>
+		<view>
+			<scroll-view class="message-viewst">
+				<view class="message-item flex-andmid" bindtap="showSecMsgPage" data-titletext="业务消息" >
+					<view class="icon_wrap">
+						<image class="msg_icon" src="../../zhy/resource/images/icon1.png"></image>
+					</view>
+					<view class="flex-sb">
+						<view class=" message-text">
+							<view class="dt">业务消息</view>
+							<view class="ell">暂无内容</view>
+						</view>
+						<image class="arrow_right" src="../../zhy/resource/images/icon-arrow.png"></image>
+					</view>
+				</view>
+				<view class="message-item flex-andmid " bindtap="showSecMsgPage" data-titletext="系统公告">
+					<view class="icon_wrap">
+						<image class="msg_icon" src="../../zhy/resource/images/icon2.png"></image>
+					</view>
+					<view class="flex-sb">
+						<view class=" message-text">
+							<view class="dt">系统公告</view>
+							<view class="ell">关于在线支付服务的重要通知</view>
+						</view>
+						<image class="arrow_right" src="../../zhy/resource/images/icon-arrow.png"></image>
+					</view>
+				</view>
+				<view class="message-item flex-andmid " bindtap="showSecMsgPage" data-titletext="公司制度">
+					<view class="icon_wrap">
+						<image class="msg_icon" src="../../zhy/resource/images/icon3.png"></image>
+					</view>
+					<view class="flex-sb">
+						<view class=" message-text">
+							<view class="dt">公司制度</view>
+							<view class="ell">员工请假制度通知</view>
+						</view>
+						<image class="arrow_right" src="../../zhy/resource/images/icon-arrow.png"></image>
+					</view>
+				</view>
+				<view class="message-item flex-andmid " bindtap="showSecMsgPage" data-titletext="政策发文">
+					<view class="icon_wrap">
+						<image class="msg_icon" src="../../zhy/resource/images/icon4.png"></image>
+					</view>
+					<view class="flex-sb">
+						<view class=" message-text">
+							<view class="dt">政策发文</view>
+							<view class="ell">关于交易手续费优惠政策的通知</view>
+						</view>
+						<image class="arrow_right" src="../../zhy/resource/images/icon-arrow.png"></image>
+					</view>
+				</view>
+				<view class="message-item flex-andmid " bindtap="showSecMsgPage" data-titletext="最新通知">
+					<view class="icon_wrap">
+						<image class="msg_icon" src="../../zhy/resource/images/icon5.png"></image>
+					</view>
+					<view class="flex-sb">
+						<view class=" message-text">
+							<view class="dt">最新通知</view>
+							<view class="ell">关于微信订货端正式上线的通知</view>
+						</view>
+						<image class="arrow_right" src="../../zhy/resource/images/icon-arrow.png"></image>
+					</view>
+				</view>
+				<view class="message-item flex-andmid " bindtap="showSecMsgPage" data-titletext="营销物料">
+					<view class="icon_wrap">
+						<image class="msg_icon" src="../../zhy/resource/images/icon1.png"></image>
+					</view>
+					<view class="flex-sb">
+						<view class=" message-text">
+							<view class="dt">营销物料</view>
+							<view class="ell">新品上市易拉宝营销物料</view>
+						</view>
+						<image class="arrow_right" src="../../zhy/resource/images/icon-arrow.png"></image>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+	<view wx:if="{{showMsg == 1}}">
+		<view class="flex-andmid msg_head " style="padding-top:{{statusBarHeight}}px">
+			<image class="backArrow" src="../../zhy/resource/images/arrow-lef.png" bindtap="hideSecMsgPage"></image>
+			<view class="headText">{{titleText}}</view>
+		</view>
+		<view style="padding-top:{{statusBarHeight}}px;height:88rpx"></view>
+		<scroll-view class="secMsgPage">
+			<view class="content page-pos top1 pt20rem">
+				<view class="scroll page-scroll">
+					<view id="secMsgPageList">
+						<view class="ui-group" bindtap="showThirdMsg">
+							<view class="notice-item">
+								<view class="item-title  bold-text ellipss1"><text class="red-dot"></text>关于在线支付服务的重要通知</view>
+								<view class="item-info"><text class="date">2016-05-03 20:56:28</text></view>
+							</view>
+						</view>
+						<view class="ui-group" bindtap="showThirdMsg" >
+							<view class="notice-item">
+								<view class="item-title  bold-text ellipss1"><text class="red-dot"></text>关于在线支付服务的重要通知</view>
+								<view class="item-info"><text class="date">2016-05-03 20:56:28</text></view>
+							</view>
+						</view>
+						<view class="ui-group" bindtap="showThirdMsg">
+							<view class="notice-item">
+								<view class="item-title  bold-text ellipss1">系统公告（2015-04-14）</view>
+								<view class="item-info"><text class="date">2016-05-03 20:56:28</text></view>
+							</view>
+						</view>
+						<view class="ui-group" bindtap="showThirdMsg">
+							<view class="notice-item">
+								<view class="item-title  bold-text ellipss1">系统公告（2015-04-01）</view>
+								<view class="item-info"><text class="date">2016-05-03 20:56:28</text></view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+
+	<view  class="content bgw" wx:if="{{showMsg == 2}}">
+		<view class="flex-andmid msg_head " style="padding-top:{{statusBarHeight}}px">
+			<image class="backArrow" src="../../zhy/resource/images/arrow-lef.png" bindtap="hideThirdMsgPage"></image>
+			<view class="headText">{{thirdText}}</view>
+		</view>
+		<view style="padding-top:{{statusBarHeight}}px;height:88rpx"></view>
+		<view>
+			<view class="info-detail-wrap">
+				<view class="title">
+					<view class="thirdH3">关于在线支付服务的重要通知</view>
+					<view class="thirdP"><text class="type">系统公告</text><text class="date">2016-05-03 20:56:28</text></view>
+				</view>
+				<view class="info-main">
+					<view class="thirdH3">关于易极付支付额度临时下调的通知</view>
+					<view class="thirdP">
+						<view class="thirdStrong">因银行系统将于<text style="color: #ff0000;">今晚(2016年05月03日)23:00—0:00</text>巡检，此时段内使用易极付快捷支付交易额度暂调为 <text style="color: #ff0000;">笔日限5000元</text>，超过此额度将无法支付。 巡检时段过后，将恢复正常。</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+	</view>
+</view>

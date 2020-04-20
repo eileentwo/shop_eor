@@ -1,0 +1,14 @@
+<navigator url="/plugin/coupon/list/list?id={{store_id}}&use_range=2" class="benefit" wx:if="{{couponList.length > 0}}">
+  <view class="benefit-coupon">
+    <view class="benefit-coupon-tit">优惠</view>
+    <view class="benefit-coupon-item">
+      <image src="../../zhy/resource/images/coupon.png"></image>
+      <view class="benefit-coupon-list" wx:if="{{couponList[0]}}">满{{couponList[0].full}}减{{couponList[0].money}}</view>
+      <!-- <view class="benefit-coupon-list" wx:if="{{couponList[1]}}">满{{couponList[1].full}}减{{couponList[1].money}}</view> -->
+    </view>
+    <image src="../../zhy/resource/images/arrow3.png" class="arrow3"></image>
+    <!-- <view class="benefit-coupon-btn">
+      <navigator url="/plugin/coupon/list/list?id={{store_id}}">领券</navigator>
+    </view> -->
+  </view>
+</navigator>

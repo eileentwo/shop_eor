@@ -1,0 +1,17 @@
+<!--base/newfeedback/newfeedback.wxml-->
+<view class="content">
+  <view class="ui-group" id="fbTxt" data-id="">
+    <textarea name="feedbackCont" placeholder="请输入反馈意见" class="ui-input" id="feedbackCont" value="{{feedText.feedbackCont}}" bindinput="changeCont"></textarea>
+  </view>
+  <view class="ui-group bbe">
+    <view class="ui-upload webuploader-container">
+      <view class="webuploader-pick flex-sb"  bindtap="filePicker"><view class="flex-andmid"><image src="../../zhy/resource/images/mix.png" class="icons"></image> 添加附件</view><text class="product-class-right-head-arrow"></text></view>
+      <block wx:for="{{feedText.filePickerVal}}" wx:key="index">
+        <view class="ui-upload-list flex-sb" ><text class="ui-upload-name">{{item.name}}</text>
+          <image src="../../zhy/resource/images/mix.png" bindtap="deleteImage" data-index="{{index}}" class="icons icons1"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <comfooterbtn footText="{{footText}}" feedText="{{feedText}}" bind:changeBtn="changeBtn"/>
+</view>

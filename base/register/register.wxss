@@ -1,0 +1,105 @@
+/* base/register/register.wxss */
+
+.register {
+  background-color:  var(--blue);
+  font-size: 28rpx;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.describe {
+  padding: 30rpx 28rpx;
+  position: relative;
+  color: #fff;
+  line-height: 2;
+}
+
+.showmore {
+  position: absolute;
+  right: 30rpx;
+  bottom: 36rpx;
+  padding: 0 10rpx 0 20rpx;
+  line-height: 40rpx;
+  border: 1px solid #fff;
+  border-radius: 40rpx;
+  font-size: 20rpx;
+}
+
+.arrowdown {
+  transform: rotate(270deg);
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 4rpx;
+}
+
+.arrowup {
+  transform: rotate(90deg);
+}
+
+.form {
+  width: 680rpx;
+  background-color: #fff;
+  padding: 40rpx;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  
+}
+
+.form_title {
+  font-size: 30rpx;
+  padding: 20rpx 0;
+}
+
+.leftbor {
+  width: 12rpx;
+  height: 44rpx;
+  background-color:  var(--blue);
+  border-radius: 6rpx;
+  margin-right: 8rpx;
+}
+
+.form_list {
+  background-color: #eee;
+  border-radius: 6rpx;
+  line-height: 98rpx;
+  margin-bottom: 30rpx;
+  padding-left: 10rpx;
+}
+
+.form_item_left {
+  width: 150rpx;
+}
+
+.red {
+  display: flex;
+  color:  var(--blue);
+  width: 20rpx;
+}
+
+.pickerbox {
+  width: 480rpx;
+}
+
+.dot {
+  margin-right: 20rpx;
+  font-size: 16rpx;
+}
+
+.textarea {
+  padding: 20rpx;
+}
+
+.submit {
+  background-color:  var(--blue);
+  color: #fff;
+}
+.picker{
+  width: 400rpx;
+}
+.infos {
+  line-height: 2.4;
+  color: #fff;
+  font-size: 30rpx;
+}

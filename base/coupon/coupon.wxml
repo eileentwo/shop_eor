@@ -1,0 +1,14 @@
+<!--base/coupon/优惠券.wxml-->
+<!-- <import src="/zhy/template/comcoupon/comcoupon.wxml"></import> -->
+<view class="nav flex-sb" bindtap="getCouFn"  hidden="{{formHome}}">
+  <view class="tab {{cur==0?'active':''}}" data-index="0">可使用</view>
+  <view class="tab {{cur==1?'active':''}}" data-index="1">已使用</view>
+  <view class="tab {{cur==2?'active':''}}" data-index="2">已过期</view>
+</view>
+<scroll-view scroll-y="true"  class="coupons" style="height:90vh;" bindscrolltolower="pullUpLoad">
+	<view class="coupon-status" wx:if="{{cur==0}}" hidden="{{formHome}}">
+		<view>您共有<text class="coupon-status-count">{{total_count}}</text>张可用优惠券</view>
+	</view>
+	<coupon coupons="{{coupons}}" getcoupon="{{getcoupon}}" bind:useFn="useFn"/>
+	<view class="coupon-no-more-data flex-all">没有更多优惠券了</view>
+</scroll-view>

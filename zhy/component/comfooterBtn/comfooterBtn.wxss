@@ -1,0 +1,25 @@
+/* zhy/component/comfooterBtn/comfooterBtn.wxss */
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height:98rpx;
+    background-color: #fff;
+    color: #999;
+    border-top: 1px solid #ebebeb;
+    z-index: 9;
+    text-align: center
+}
+.footer .ui-btn {
+    font-size: 36rpx;
+    line-height: 90rpx;
+}
+.c-btn-full{
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.c-theme-font .ui-btn{
+    color:  var(--blue);
+}

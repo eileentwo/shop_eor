@@ -1,0 +1,36 @@
+<view class="nav" wx:if="{{na.length > 0}}">
+  <swiper indicator-active-color="#fe433f" indicator-dots="{{na.length > 1}}" style="height:{{na.length > 1 ? 332 : na[0].length > 5 ? 302 : 162}}rpx">
+    <block wx:for="{{na}}" wx:key="nav">
+      <swiper-item>
+        <view class="swiper-box">
+          <block wx:for="{{item}}" wx:key="id" wx:for-index="idx" wx:for-item="it">
+            <block wx:if="{{it.types == 1}}">
+              <view class="item" data-index="{{index}}" data-idx="{{idx}}" data-cid="{{it.storecat_id}}" bindtap="_onNavTap">
+                <view class="img-box">
+                  <image class="item-img" src="{{it.icon}}"></image>
+                </view>
+                <view class="item-txt">{{it.txt}}</view>
+              </view>
+            </block>
+            <block wx:if="{{it.types == 2}}">
+              <view class="item" target="miniProgram" data-id="{{it.appid}}" data-path="{{it.path}}" bindtap='onOtherAppTab'>
+                <view class="img-box">
+                  <image class="item-img" src="{{it.icon}}"></image>
+                </view>
+                <view class="item-txt">{{it.txt}}</view>
+              </view>
+            </block>
+            <block wx:if="{{it.types == 3}}">
+              <button class="item" open-type="contact" style="background:#fff" type="default" session-from='{"nickName":"{{user.nickname}}","avatarUrl":"{{user.avatar}}"}'>
+                <view class="img-box">
+                  <image class="item-img" src="{{it.icon}}"></image>
+                </view>
+                <view class='item-txt'>{{it.txt}}</view>
+              </button>
+            </block>
+          </block>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

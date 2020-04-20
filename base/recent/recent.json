@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "最近购买",
+  "usingComponents": {
+    "comlist": "/zhy/component/comList/comList"
+  }
+}

@@ -1,0 +1,41 @@
+/* base/ordersSearchResult/ordersSearchResult.wxss */
+
+.content {
+  min-height: 100vh;
+  color: #747474;
+      font-size: 27rpx;
+    line-height: 1.414;
+}
+
+.orderCount {
+  height: 54vh;
+  color: #fff;
+  text-align: center;
+}
+.orderBackCount {
+    height: 46vh;
+  text-align: center;
+}
+.c-theme-bg {
+  background-color: rgba(32, 201, 150, 0.8);
+}
+
+.fbiger {
+  font-size: 55rpx;
+}
+
+.mb20rpx {
+  margin-bottom: 20rpx;
+}
+
+.mt20rpx {
+  margin-top: 20rpx;
+}
+.footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 98rpx;
+  text-align: center;
+  color: #a2a2a2;
+}

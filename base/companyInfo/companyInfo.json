@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "供应商基本信息",
+  "usingComponents": {
+    "comshowbox": "/zhy/component/comShowBox/comshowBox"
+  }
+}

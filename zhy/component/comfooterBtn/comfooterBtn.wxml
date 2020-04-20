@@ -1,0 +1,4 @@
+<!--zhy/component/comfooterBtn/comfooterBtn.wxml-->
+<view class="footer flex {{isGreen?'c-theme-font':'c-btn-full'}}" bindtap="_changeBtn">
+  <view class="ui-btn ">{{footText}}</view>
+</view>

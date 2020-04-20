@@ -1,0 +1,146 @@
+button::after {
+  border: none;
+  border-radius: 0;
+}
+
+button {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0;
+  border: none;
+  overflow: hidden;
+}
+
+.fans-group {  
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0 0 0;
+  padding: 40rpx 30rpx 38rpx 30rpx;
+  background:#fff;    
+  border-top:1rpx solid #f8f8f8;
+}
+
+.group-left{
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+}
+.group-right {
+  display: block;
+  width: 49rpx;
+  height: 49rpx;
+}
+
+.group-center {
+  flex: 1;
+  margin: 0 20rpx;
+}
+
+.group-center>view:nth-child(1) {
+  font-size: 28rpx;
+}
+
+.group-center>view:nth-child(2) {
+  margin-top:6rpx;
+  font-size: 26rpx;
+  color: #C5C5C5;
+}
+
+.fans-service {
+  position: fixed;
+  top: 300rpx;
+  left: 85rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500rpx;
+  padding: 50rpx 40rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  color: #fe433f;
+  z-index: 102;
+}
+
+.fans-service>view:nth-child(2) {
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.fans-service>button:nth-child(3) {
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 40rpx;
+  text-align: center;
+  background: #fe433f;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}
+
+.fans-qr {
+  position: fixed;
+  top: 300rpx;
+  left: 135rpx;
+  z-index: 103;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40rpx;
+}
+
+.fans-qr>image {
+  display: block;
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.fans-qr>view:nth-child(2) {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.fans-qr>button:nth-child(3) {
+  width: 400rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #fe433f;
+  color: #fff;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+}
+
+.ellips1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  font-size:28rpx;
+  color: #2F2F2F
+}
+
+.ellips2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 101;
+}

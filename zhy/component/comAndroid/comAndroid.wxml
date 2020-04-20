@@ -1,0 +1,10 @@
+<!--没啥卵用-->
+<view bindtap="onAndroid">点我啊</view>
+<view class="wrap" wx:if="{{app}}" bindtap="onAndroid">
+  <image src="../../zhy/resource/images/android/bg.jpg" mode="aspectFill" class="bg"></image>
+  <view class="qr">
+    <image src="../../zhy/resource/images/android/qr.jpg"></image>
+    <view class="v1">扫一扫,下载APP</view>
+    <view class="v2">（目前只支持安卓手机）</view>
+  </view>
+</view>

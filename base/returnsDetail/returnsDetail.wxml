@@ -1,0 +1,86 @@
+<!--base/returnsDetail/returnsDetail.wxml-->
+<view class="content">
+	<view class="ui-group">
+		<view class="ui-list">
+			<view class="ui-title flex-sb"> <text>退单状态</text> <text class="tr c-theme-font f1" id="dispalyStatus">待退款确认</text> </view>
+			<view class="ui-content flex-sb">
+				<view id="orderStateDetail" data-status="2">
+					<view class="ell">公司名称 圆方源环保科技有限公司</view>
+					<view class="ell">退货单号 DH-R-20160223-001708</view>
+					<view class="ell">下单时间 2016-02-23 10:39:50</view>
+				</view>
+				<button class="ui-btn c-btn-full" bindtap="urgency">催办</button>
+			</view>
+		</view>
+		<view class="ui-list">
+			<view class="ui-title  flex-sb"> <text>退款金额</text> <text class="tr">¥154.00</text> </view>
+			<view class="ui-content">
+				<view class=" flex-sb"> <text>商品金额</text> <text class="tr">¥154.00</text> </view>
+				<view class=" flex-sb"> <text>审批金额</text> <text class="tr">¥154.00</text> </view>
+			</view>
+		</view>
+	</view>
+	<view class="ui-group" id="returnOrderStatus">
+		<view class="ui-list">
+			<view class="ui-title flex-sb">
+				<view>退款状态</view>
+				<view class="tr c4 pr30rem">未退款</view>
+			</view>
+		</view>
+	</view>
+	<view class="ui-group" id="goodsList">
+		<view class="ui-list">
+			<view class="ui-title flex-sb">
+				<view>商品清单</view>
+				<view class="tr c4 ">共1款1，总数1<text class="ui-more"></text></view>
+			</view>
+		</view>
+	</view>
+	<view class="ui-group" id="noteList" data-rule="name(备注信息)">
+		<view class="ui-list">
+			<view class="ui-title flex-sb flex-sb">
+				<view>退单备注</view>
+				<view class="tr c4 ">0<text class="ui-more"></text></view>
+			</view>
+			<view class="ui-content">
+				<view>1111</view>
+				<view class="flex-sb"><text class="l">谢亚</text><text class="r">2020-03-05 09:21:44</text></view>
+			</view>
+		</view>
+	</view>
+	<view class="ui-group">
+		<view class="ui-list">
+			<view class="ui-title flex-sb"><text>退款信息</text><text class="tr c4 fsmall"></text></view>
+			<view class="ui-content">
+				<view class="flex-sb"><text>联系人</text><text class="tr">张总</text></view>
+				<view class="flex-sb"><text>联系电话</text><text class="tr">18899999999</text></view>
+				<view class="flex-sb"><text>开户名称</text><text class="tr">圆方源环保科技有限公司</text></view>
+				<view class="flex-sb"><text>开户银行</text><text class="tr">中国建设银行深圳分行香蜜湖支行</text></view>
+				<view class="flex-sb"><text>银行账号</text><text class="tr">44201015700052508420</text></view>
+			</view>
+		</view>
+	</view>
+	<view class="ui-group">
+		<view class="ui-list" id="logList">
+			<view class="ui-title flex-sb">
+				<view>操作日志</view>
+				<view class="tr c4">
+					<text id="logLen">3</text>
+					<text class="ui-more"></text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="footer">
+		<button class="ui-btn c-btn-full" id="orderCancle" data-poptype="2" data-rule="isneed;name(作废原因)" bindtap="orderCancle">退单作废</button>
+	</view>
+</view>
+
+<view class="mask" id="popMask" wx:if="{{showPopMask}}">
+	<view class="popup-container popup-container-update  iosTop">
+		<view class="popup-title">作废原因</view>
+		<view class="popup-content"><textarea class="ui-txtarea" placeholder="" bindinput="inputTarget"></textarea></view>
+		<view class="popup-panel flex-andmid"><button href="javascript:;" class="popup-cancel" bindtap="hidePopMask">取消</button>
+			<button href="javascript:;" class="popup-ok c-btn-full" bindtap="changeNode">确定</button></view>
+	</view>
+</view>

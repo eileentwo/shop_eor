@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "tabbar": "/zhy/component/comFooter/comFooter",
+    "comshowbox": "/zhy/component/comShowBox/comshowBox",
+    "comnodata": "/zhy/component/comnodata/comnodata"}
+}

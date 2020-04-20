@@ -1,0 +1,20 @@
+<view class="content page-pos top1 bgw">
+  <view class="orderCount  c-theme-bg flex-all">
+    <view class="orderCountInner">
+      <view>订单金额（¥）</view>
+      <view class="mt20rpx mb20rpx fbiger">0.00</view>
+      <view>0 笔</view>
+    </view>
+  </view>
+  <view class="orderBackCount  flex-all">
+    <view class="orderCountInner">
+      <view>退货金额（¥）</view>
+      <view class="mt20rpx mb20rpx fbiger">0.00</view>
+      <view>0 笔</view>
+    </view>
+  </view>
+  <view class="footer flex-all">
+    <text>2020年03月02日</text>-
+    <text>2020年03月09日</text>
+  </view>
+</view>

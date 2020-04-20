@@ -1,0 +1,7 @@
+/* base/collect/collect.wxss */
+.scroll-view{
+  margin-top: 10rpx;
+}
+.nodata{
+  height: 100vh;
+}

@@ -1,0 +1,313 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.1",
+	"appid": "wx31eac17b29a82901",
+	"projectname": "eorder",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 35,
+			"list": [
+				{
+					"id": 0,
+					"name": "商品详情",
+					"pathName": "base/goodsdetail/goodsdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "商品列表",
+					"pathName": "base/goodslist/goodslist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "base/car/car",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "订货单orderlist",
+					"pathName": "pages/orderlist/orderlist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "营销活动salesactivity",
+					"pathName": "base/salesactivity/salesactivity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "信息",
+					"pathName": "base/message/message",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "活动促销详情",
+					"pathName": "base/activitydetail/activitydetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "搜索selection",
+					"pathName": "base/selection/selection",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "searchResult",
+					"pathName": "base/searchResult/searchResult",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "coupon优惠券",
+					"pathName": "base/coupon/coupon",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "最近购买",
+					"pathName": "base/recent/recent",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "address收货地址",
+					"pathName": "base/address/address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "editaddress",
+					"pathName": "base/editaddress/editaddress",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "returns退货单",
+					"pathName": "base/returns/returns",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "searchReturns退单查询",
+					"pathName": "base/searchReturns/searchReturns",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "returnsDetail退单详情",
+					"pathName": "base/returnsDetail/returnsDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "returnsGoods商品清单",
+					"pathName": "base/returnsGoods/returnsGoods",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "returnsNote备注信息",
+					"pathName": "base/returnsNote/returnsNote",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "returnsNoteList操作日志",
+					"pathName": "base/returnsNoteList/returnsNoteList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "returnsAddGoods选择商品（退单）",
+					"pathName": "base/returnsAddGoods/returnsAddGoods",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "companyInfo公司基本信息",
+					"pathName": "base/companyInfo/companyInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "feedback意见反馈",
+					"pathName": "base/feedback/feedback",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "newfeedback新建意见反馈",
+					"pathName": "base/newfeedback/newfeedback",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 24,
+					"name": "feedbacklist意见反馈",
+					"pathName": "base/feedbacklist/feedbacklist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "commission积分",
+					"pathName": "base/commission/commission",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 26,
+					"name": "fund我的账户",
+					"pathName": "base/fund/fund",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pay充值",
+					"pathName": "base/pay/pay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "paybank",
+					"pathName": "base/paybank/paybank",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "orders订单统计",
+					"pathName": "base/orders/orders",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "ordersSearch订单统计查询",
+					"pathName": "base/ordersSearch/ordersSearch",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "ordersSearchResult订单统计",
+					"pathName": "base/ordersSearchResult/ordersSearchResult",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "user账号管理",
+					"pathName": "base/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "userUpdateInfo修改",
+					"pathName": "base/userUpdateInfo/userUpdateInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "register",
+					"pathName": "base/register/register",
+					"scene": null
+				}
+			]
+		}
+	}
+}

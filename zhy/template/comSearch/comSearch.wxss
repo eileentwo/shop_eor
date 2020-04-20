@@ -1,0 +1,112 @@
+.holder {
+  color: #fff
+}
+
+.searchLine{
+  height: 90rpx;
+}
+.search {
+  padding: 0 30rpx 0 24rpx;
+  display: flex;
+  align-items: center;
+  background:  var(--blue);
+  /* background: linear-gradient(to right,#259afa,#024ee0); */
+  height: 90rpx;
+}
+.search1{  
+  width: 700rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.search-box {
+  width:650rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 30rpx;
+  background: rgba(255, 255, 255, 0.3)
+}
+
+
+.search1 .search-box{width: 700rpx}
+.search-box1{
+  width:630rpx;
+}
+.search-box1 .search-inp{
+  width: 520rpx;
+}
+.icon-search,
+.selectClose {
+  padding: 12rpx 15rpx 12rpx 20rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+.mesBox{
+  position: relative;
+}
+.icon-mes {
+  width: 48rpx;
+  height: 48rpx;
+  margin-left: 34rpx;
+
+}
+.message-num{
+    position: absolute;
+    background: #fff;
+    height: 260rpx;
+    top: -12rpx;
+    right: -12rpx;
+    font-size: 180rpx;
+    line-height: 260rpx;
+    padding: 0 80rpx;
+    border-radius: 200rpx;
+    color: #ff512c;
+    border: 30rpx  solid  var(--blue);
+    box-sizing: content-box;
+    transform-origin: 100% 0;
+    -webkit-transform-origin: 100% 0;
+    transform: scale(.1);
+    -webkit-transform: scale(.1);
+
+}
+.search-inp {
+  width: 580rpx;
+  height: 60rpx;
+}
+
+.selectBtn {
+  background-color: transparent;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.selectClose {
+  opacity: .6;
+}
+.carBox{
+  width: 56rpx;
+  height: 90rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 0;
+}
+.icon-car {
+  width: 56rpx;
+  height: 54rpx;
+}
+
+.carNum {
+  position: absolute;
+  color:  var(--blue);
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  top: 10rpx;
+  right: -8rpx;
+  font-size: 24rpx;
+  background-color: #fff;
+  border-radius: 50%;
+}

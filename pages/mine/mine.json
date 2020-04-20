@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "tabbar": "/zhy/component/comFooter/comFooter",
+    "foot": "/zhy/component/comFooter/comFooter",
+    "van-popup": "/zhy/vant/popup/index"
+  }
+}

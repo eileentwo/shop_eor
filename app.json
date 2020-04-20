@@ -1,0 +1,68 @@
+{
+  "pages": [ 
+    "pages/home/home",   
+    "pages/mine/mine",
+    "pages/login/login",
+    "pages/orders/orders",
+    "pages/car/car",
+    "pages/goodslist/goodslist",
+    "pages/orderlist/orderlist"
+  ],
+  "subPackages": [
+    {
+      "root": "base",
+      "pages": [
+        "notice/notice",
+        "comment/comment",
+        "discountList/discountList",
+        "register/register",
+        "payment/payment",
+        "collect/collect",
+        "goodsorderinfo/goodsorderinfo",
+        "mygoodsorder/mygoodsorder",
+        "order/order",
+        "userUpdateInfo/userUpdateInfo",
+        "user/user",
+        "ordersSearchResult/ordersSearchResult",
+        "ordersSearch/ordersSearch",
+        "paybank/paybank",
+        "fund/fund",
+        "commission/commission",
+        "feedbacklist/feedbacklist",
+        "newfeedback/newfeedback",
+        "feedback/feedback",
+        "companyInfo/companyInfo",
+        "returnsAddGoods/returnsAddGoods",
+        "returnsNoteList/returnsNoteList",
+        "returnsNote/returnsNote",
+        "returnsGoods/returnsGoods",
+        "returns/returns",
+        "returnsDetail/returnsDetail",
+        "searchReturns/searchReturns",
+        "editaddress/editaddress",
+        "address/address",
+        "coupon/coupon",
+        "recent/recent",
+        "searchResult/searchResult",
+        "selection/selection",
+        "goodsdetail/goodsdetail",
+        "message/message",
+        "activity/activity",
+        "salesactivity/salesactivity",
+        "activitydetail/activitydetail"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundColor": "#f8f8f8",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": []
+}

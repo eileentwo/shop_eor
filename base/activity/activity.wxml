@@ -1,0 +1,33 @@
+<!--base/activity/activity.wxml-->
+<scroll-view scroll-y="true" bindscrolltolower="pullUpLoad" style="height:96vh;">
+  <view class="activity flex-all">
+    <block wx:for-items="{{dataList}}" wx:for-item="items" wx:key="index">
+      <view class="activity_item activity_item1">
+
+        <view class="activity_title">{{items.mansong_name}}</view>
+        <view wx:for="{{items.rules}}" wx:for-index="idx" class="flex-andmid {{idx!=items.rules.length-1?'border':''}}" wx:key="index">
+          <view class="item_left">优惠{{idx*1+1}}</view>
+          <view class="item_right">
+            <view>满{{item.price}}元减{{item.discount}}元</view>
+            <view>免邮费</view>
+            <view wx:if="{{item.give_coupon>0}}">送优惠卷</view>
+            <view wx:if="{{item.gift_id>0}}">送礼品</view>
+          </view>
+        </view>
+        <!-- <view class="flex-andmid ">
+        <view  class="item_left">优惠一</view>
+        <view class="item_right">
+          <view>1.优惠一优惠一优惠一优惠一</view>
+          <view>1.优惠一优惠一优惠一优惠一</view>
+          <view>1.优惠一优惠一优惠一优惠一</view>
+        </view>
+      </view> -->
+      </view>
+      <view class="flex-sb activity_bottom">
+        <view wx:if="{{items.type==1}}">适用于所有商品参与</view>
+        <view wx:else>适用于部分商品参与</view>
+        <view>有效期至{{items.end_time}}</view>
+      </view>
+    </block>
+  </view>
+</scroll-view>

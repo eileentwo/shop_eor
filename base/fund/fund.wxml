@@ -1,0 +1,19 @@
+<!--base/Fund/Fund.wxml-->
+<view class="content">
+  <scroll-view scroll-y="true" wx:if="{{balance.length>0}}" style="height:90vh;"  bindscrolltolower="pullUpLoad">
+    <view class="mid-box">
+      <view class="mlist flex-sb" wx:for="{{balance}}" wx:key="index">
+        <view class="list_title">
+          <view>{{item.text}}</view>
+          <text class="gray">{{item.create_time}}</text>
+        </view>
+        <view class="number">
+          <view class="red">{{item.number}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="noData flex-all" wx:else>
+    <nodata nodata1="nodata1" />
+  </view>
+</view>

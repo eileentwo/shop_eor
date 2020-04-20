@@ -1,0 +1,161 @@
+page {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  font-size: 24rpx;
+}
+
+.wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  width: 470rpx;
+  height: 390rpx;
+  margin: 100rpx 0 50rpx;
+}
+
+.login-cont .v1{
+  line-height: 50rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.login-cont .v2{
+  line-height: 50rpx;
+  color: rgb(245, 240, 240);
+  font-size: 26rpx;
+}
+
+.btn {
+  width: 304rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  
+}
+.back-btn {
+  text-align: center;
+  background: #ccc;
+  border-radius: 10rpx;
+  margin-right: 34rpx;
+}
+.button-hover {
+  opacity: 0.8;
+}
+
+/*-------*/
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--blueL);
+}
+
+.content {
+  position: absolute;
+  top: 200rpx;
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.wx-btn {
+  background: rgba(255, 255, 255, 0);
+  margin-bottom: 20rpx;
+}
+
+.wx-btn image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.btn1 {
+  width: 670rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10rpx;
+  font-size: 36rpx;
+}
+
+.fixed .back-btn{
+  margin-right: 0
+}
+.wx-title {
+  line-height: 100rpx;
+}
+
+.input-box {
+  width: 670rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-bottom: 40rpx;
+  border-bottom: 1px solid #fff;
+}
+.input-box .v1{ white-space: nowrap}
+.input-box view {
+  width: 160rpx;
+  font-size: 30rpx;
+}
+.input-box view.get-code{ margin-left: 20rpx; padding:0 20rpx; height: 60rpx; line-height: 60rpx; color: #fff; border:1rpx solid #fff; border-radius: 6rpx; font-size: 22rpx;text-align: center;}
+
+.input {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  text-align: left;
+}
+
+.warm {
+  margin-top: 20rpx;
+  font-size: 22rpx;
+  margin-bottom: 20rpx;
+}
+
+.login-tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 670rpx;
+  padding-bottom: 30rpx;
+}
+.login-tab-item {
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-left: 20rpx;
+  border-radius: 6rpx;
+  border: 1px solid #fe433f;
+  text-align: center;
+  color: #fe433f;
+}
+.btn-item{ margin-top:80rpx; display: flex;}
+.bg{position: absolute; z-index: -1; width:750rpx; height: 1334rpx;}
+.no-bg{position: absolute; z-index: -1; top:0; right:0; bottom:0; left:0;
+  background:var(--blueL);
+}
+.login-cont{ margin-top:400rpx; text-align: center;}
+.title{
+  font-size: 64rpx;
+  font-weight: bold;  
+  color: #fff;
+  margin-bottom: 200rpx;
+}

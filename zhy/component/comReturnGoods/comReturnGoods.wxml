@@ -1,0 +1,69 @@
+<!--zhy/component/comReturnGoods/comReturnGoods.wxml-->
+<scroll-view id="" class="productlistFn productlist productlist-1" style="min-height: 636px;">
+	<block wx:for="{{goodsList}}" wx:key="index">
+		<view class="one-list" data-productauxunit="undefined" data-sid="31859744151">
+			<image class="imgbox" src="{{item.src}}"></image>
+			<view class="contbox flex-sb">
+				<view class="title c2 r2">{{item.title}}</view>
+				<view class="spec">{{item.stands.length}}个规格可选</view>
+				<view class="moneybox  flex-sb"><text class="fnmoney-main">{{item.money}}</text><text class="btn-return-cart fastcartFn" bindtap="_showFilterBox" data-item="{{item}}">退货</text></view>
+			</view>
+		</view>
+	</block>
+</scroll-view>
+
+<view class="mask moveInContjs moveInContainer" animation="{{ani}}" id="popCart" data-pop="true">
+	<view class="maskg" bindtap="_hideFilterBox"></view>
+	<view class="main pop-prodetail" animation="{{ani1}}">
+		<view class="footer fix"><button class="ui-btn bge" bindtap="_hideFilterBox">取消</button><button class="ui-btn c-btn-full" id="proAddCart" data-return="true">确定</button></view>
+		<view class="content native-scroll page-pos">
+			<view class="pro-detail-box">
+				<view id="proBox2" class="prodetail-titlebox fix">
+					<view class="l proquick-imgbox">
+						<image class="proquick-imgbox" src="{{showItem.src}}" />
+					</view>
+					<view class="proquick-titlebox">
+						<view class="prodetail-title bold-text c2">{{showItem.title}}</view>
+						<view class="prodetail-moneybox"><text class="dib prodetail-showprice prodetail-showprice-m0 ell">¥{{showItem.money}}</text></view>
+						<view class="proquick-ku"></view>
+					</view>
+				</view>
+				<view id="proBox3" class="prodetail-choosebox" wx:for-items="{{showItem.stands}}" wx:for-item="items" wx:key="index">
+					<view class="prodetail-attrbox">
+						<view class="c2 bold-text">材质</view>
+						<view id="proAttr0" class="prodetail-attrbox-one">
+							<block wx:for="{{items.type1}}" wx:key="index">
+								<text class="prodetail-attr prodetail-selectcls bold-text {{index==0?'cur':''}}" data-row="0" data-id="1">{{item}}</text>
+							</block>
+						</view>
+						<view class="c2 bold-text">颜色</view>
+						<view id="proAttr1" class="prodetail-attrbox-one">
+							<block wx:for="{{items.colors}}" wx:key="index">
+								<text class="prodetail-attr prodetail-selectcls bold-text {{index==0?'cur':''}}" data-row="0" data-id="1">{{item}}</text>
+							</block>
+						</view>
+					</view>
+				</view>
+				<view id="proBoxMulUnit" class="prodetail-choosebox">
+					<view class="c2">单位</view>
+					<view class="prodetail-attrbox-one"><text class="prodetail-mulunit prodetail-selectcls bold-text cur" data-unitid="195762088" data-rate="1">{{showItem.unit}}</text></view>
+				</view>
+				<view id="proBoxMid" class="prodetail-midbox"></view>
+				<view id="proBoxMore" class="prodetail-morebox flex-andmid">
+					<radio checked="{{checked}}" class="checklabel"></radio><text class="ui-check" > 启用多选</text>
+				</view>
+				<view id="proBox4" class="prodetail-numbox">
+					<view class="prodetail-orderNumBox c4 "><text class="c2 f0">订购数量</text></view>
+					<view class="prodetail-typingbox flex-andmid">
+						<view class="ui-typingbox flex-all">
+							<text class="ui-typing-btn-min">-</text>
+							<text class="ui-typing-input ell" data-rate="1" data-baseunitname="件" data-min="0" data-max="0">1</text>
+							<text class="ui-typing-btn-add">+</text>
+						</view>
+						<text class="l c4 fsmall2 ui-typing-right ell">件</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

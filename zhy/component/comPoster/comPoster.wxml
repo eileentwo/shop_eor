@@ -1,0 +1,4 @@
+<view class='poster-box'>
+  <canvas canvas-id="poster" style=" width: 750px; height: 1330px; background: #f2f2f2;" wx:if="{{show}}">
+  </canvas>
+</view>

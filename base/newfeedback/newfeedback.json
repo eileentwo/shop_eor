@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新建意见反馈",
+  "usingComponents": {
+    "comfooterbtn": "/zhy/component/comfooterBtn/comfooterBtn"
+  }
+}

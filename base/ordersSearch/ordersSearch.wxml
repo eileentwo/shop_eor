@@ -1,0 +1,36 @@
+<view class="content bgw">
+  <view class="ui-group ui-group-full">
+    <view class="ui-list">
+      <view class="ui-title flex-andmid" bindtap="limitFn">
+        <block wx:for='{{limit}}' wx:key="index">
+          <text class="ui-btn {{curId===index?'c-theme-font':''}}" data-id="{{index}}">{{item}}</text>
+        </block>
+      </view>
+    </view>
+    <view class="ui-list selectTime" data-type="start" id="mobiscroll1583715783915">
+      <view class="ui-title flex-sb"   bindtap="pickerShow" data-index="0">
+        <text class="l">开始时间</text>
+         <input class="tr" name="beginDate" placeholder="请选择" readonly="" value="{{startTime}}"/>
+      </view>
+    </view>
+    <view class="ui-list selectTime" data-type="end" id="mobiscroll1583715783916">
+        <view class="ui-title flex-sb" data-index="1"   bindtap="pickerShow">
+        <text class="l">结束时间</text>
+        <input class="tr" name="endDate" placeholder="请选择" readonly="" value="{{endTime}}"/>
+      </view>
+    </view>
+  </view>
+  <view class="pt80rpx plr30rpx">
+    <button class="ui-btn ui-btn-big c-btn-thin" data-reload="true" id="searchBtn">统计查询</button>
+  </view>
+</view>
+<comfooter footText="{{footText}}" bind:changeBtn="changeBtn" />
+<datapicker   
+sensorTypePicker1="sensorTypePicker1"
+id="picker" 
+pickerShow="{{isPickerShow}}"  
+wx:if="{{isPickerRender}}"
+ config="{{pickerConfig}}" 
+ bind:hidePicker="pickerHide" 
+ bind:setPickerTime="setPickerTime"  
+ bind:pickerReset="resetPicker" />

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "tabbar": "/zhy/component/comFooter/comFooter",
+    "comlist": "../../zhy/component/comList/comList",
+    "coupon": "../../zhy/component/comcoupon/comcoupon",
+    "comtotop": "../../zhy/component/comtoTop/comtoTop"
+  }
+}

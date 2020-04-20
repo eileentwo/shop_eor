@@ -1,0 +1,43 @@
+<view class="wrap">
+  <!-- <image class="image" src="./login.png"></image> -->
+  <image wx:if="{{oset.login_type == 2}}" src="{{siteroot+oset.login_bgpic}}" mode="aspectFill" class="bg"></image>
+  <view class="no-bg" wx:if="{{oset.login_type == 1 || !oset.login_bgpic}}" style="background: {{oset.login_bgcolor}}"></view>
+  <view class="login-cont">
+    <view class="v1">我们的小程序将获取您的以下权限：</view>
+    <view class="v2">获取您的公开信息（昵称和头像等）</view>
+    <view class="btn-item">
+      <view class="btn back-btn" bindtap="onBackTap">暂不登录</view>
+      <button class="btn" open-type="getUserInfo" bindgetuserinfo='onLoginTap'>确定授权</button>
+    </view>
+  </view>
+</view>
+<view class="wrap" wx:if="{{bindphone}}">
+  <view class="fixed">
+    <view class="content">
+      <!-- <view class="input-box flex-andmid  ">
+        <view class="v1">手机号码：</view>
+        <input class="input" value="{{tel}}" placeholder-class="input" placeholder="请输入要绑定的手机号码" type="number" maxlength="11" bindinput="getTel"></input>
+      </view> -->
+      
+      <!-- <view class="input-box flex-andmid ">
+        <view>批发商等级:</view>
+        <picker bindchange="bindPickerChange" value="{{index}}"  range="{{level}}">
+          <view>{{level[index]?level[index]:'请选择'}}</view>
+        </picker>
+      </view> -->
+
+     
+      <!-- <view class="btn1" bindtap="onBindTap">绑定该号码</view>
+      <view class="warm" >（该手机号后续用于APP登录,请确认填写正确的手机号,不可更改！）</view> -->
+      <block wx:if="{{showkuaij}}">
+        <view class="wx-title">——— 微信授权快速绑定手机号码 ———</view>
+        <view class="warm" >（该手机号后续用于APP登录,请确认填写正确的手机号,不可更改！）</view>
+        <button class="wx-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+          <image src="../../zhy/resource/images/pay/wx.png"></image>
+          <view class="btn">立即获取</view>
+        </button>
+      </block>
+      <view class="btn back-btn" bindtap="onBackTap">暂不登录</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+/* base/user/user.wxss */
+
+@import "/zhy/template/temgroup/temgroup.wxss";
+.avatar-bg{
+      width: 120rpx;
+    height: 120rpx;
+    margin-left: 29rpx;
+    border-radius: 120rpx;
+}
+.red {
+    color: red;
+}
+.ui-title{
+  text-align: right;
+}
+.ml20rpx {
+    margin-left: 20rpx;
+}
+.product-class-right-head-arrow{
+  margin-left: 10rpx;
+}

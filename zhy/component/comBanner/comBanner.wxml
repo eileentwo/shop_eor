@@ -1,0 +1,23 @@
+<!-- style="height:{{height}}rpx"-->
+<view class="banner" wx:if="{{ban.length > 0}}">
+  <swiper indicator-color="rgba(255,255,255,0.2)" indicator-active-color="#fe433f" indicator-dots="{{false}}" autoplay circular="true">
+    <block wx:for="{{ban}}" wx:key="*this">
+      <swiper-item>
+        <block wx:if="{{item.types  == 1}}">
+          <view class="inner-box" bindtap='_onNavTap' data-index='{{index}}'>
+            <image class='banner-img' src="{{item.icon}}" mode='aspectFill'></image>
+          </view>
+        </block>
+        <block wx:if="{{item.types == 2}}">
+          <navigator class="inner-box" target="miniProgram" app-id="{{item.appid}}" path="{{item.path}}">
+            <image class='banner-img' src="{{item.icon}}" mode='aspectFill'></image>
+          </navigator>
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="search" wx:if="{{showSearch}}" bindtap="_onSearchTap">
+    <van-icon custom-class="van-icon-banner" name="search" size="30rpx" />
+    <view class="search-txt">搜索商品名称</view>
+  </view>
+</view>

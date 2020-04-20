@@ -1,0 +1,9 @@
+<!--base/collect/collect.wxml-->
+
+<scroll-view scroll-y='true' class="scroll-view {{isIphoneX?'hwrap':''}}" wx:if="{{collectData.length>0}}" style="height:98vh;"  bindscrolltolower="pullUpLoad">
+  <comlist goodsList="{{collectData}}" collected="true" isA="true" bind:collectFn="collectFn" checkstate="{{checkstate}}"  siteroot="{{siteroot}}"/>
+</scroll-view>
+
+<view class="nodata flex-all" wx:else>
+  <comnodata nodata1="nodata2" />
+</view>

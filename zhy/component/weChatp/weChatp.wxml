@@ -1,0 +1,22 @@
+<!-- 公众号引导关注 组件 -->
+<view class="gz-gzh" wx:if="{{iswechats}}">
+  <view class="fs-boxs">
+    <image src="{{gzsset.share_icon}}"  mode='aspectFill'></image>
+    <view>
+      <text class="gz-tjs">{{gzsset.share_name}}</text>
+      <text>{{gzsset.share_desc}}</text>  
+    </view>
+  </view>
+  <a wx:if="{{!gzsset.qrcode}}" href="{{gzsset.follow_page}}" class="gz-btns">立即关注</a>
+  <view wx:if="{{gzsset.qrcode}}" class="gz-btns" catchtap="gztapss">
+    立即关注
+  </view>
+</view>
+<!-- 公众号二维码 -->
+<view class="gz-masks" wx:if="{{gzerweimas}}">
+  <view>
+    <image src="{{gzsset.qrcode}}" mode='aspectFill'></image>
+    <text>长按识别二维码关注</text>
+    <text class="gz-guanbis" catchtap="gztapss">点我关闭</text>
+  </view>
+</view>

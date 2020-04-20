@@ -1,0 +1,7 @@
+<!-- <template name="customhead"> -->
+	<view class="flex-andmid msg_head " style="padding-top:{{statusBarHeight}}px">
+		<image class="backArrow" src="../../zhy/resource/images/arrow-lef.png"></image>
+		<view class="headText">{{title}}</view>
+	</view>
+	<view style="padding-top:{{statusBarHeight}}px;height:88rpx"></view>
+<!-- </template> -->

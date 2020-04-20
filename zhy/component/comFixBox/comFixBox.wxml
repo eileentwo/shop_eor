@@ -1,0 +1,5 @@
+<!--zhy/component/comFixBox/comFixBox.wxml-->
+<view class="mask dirmask"  animation="{{ani}}">
+  <view class="maskg" bindtap="_hideFilterBox"></view>  
+  <slot name="slot1" ></slot>
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "账户余额",
+  "usingComponents": {
+    "comshowbox": "/zhy/component/comShowBox/comshowBox",
+    "nodata": "/zhy/component/comnodata/comnodata",
+    "comfooter": "/zhy/component/comfooterBtn/comfooterBtn"
+  }
+}

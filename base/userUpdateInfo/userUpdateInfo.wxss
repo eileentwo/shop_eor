@@ -1,0 +1,51 @@
+/* base/userUpdateInfo/userUpdateInfo.wxss */
+.content {
+  min-height: 100vh;
+}
+.plr30rpx {
+    padding-left: 36rpx;
+    padding-right: 30rpx;
+}
+.ui-input {
+    width: 100%;
+    height: 70rpx;
+    padding: 30rpx 0;
+    line-height: normal;
+    border: none;
+    color: #474747;
+    border-bottom: 1px solid #eee;
+}
+.c9{
+    color: #999;
+}
+.ui-btn {
+    margin-top: 90rpx;
+    box-sizing: border-box;
+    line-height: 1;
+}
+.ui-btn-big {
+    width: 100%;
+    padding: 32rpx 0;
+    font-size: 32rpx;
+    border-radius: 45rpx;
+}
+.c-btn-thin {
+    border: 1px solid  var(--blue);
+    color:  var(--blue);
+    background-color: #fff;
+}
+.ui-btn-verify {
+    width: 230rpx;
+    background: 0 0;
+    border: 1px solid #eee;
+    border-width: 0 0 1px 1px;
+    padding: 10rpx;
+    height: 112rpx;
+    line-height: 112rpx;
+}
+.f1{
+  font-size: 30rpx;
+}
+.c-theme-font {
+    color:  var(--blue);
+}

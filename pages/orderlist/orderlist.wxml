@@ -1,0 +1,75 @@
+<!--base/orderlist/orderlist.wxml-->
+<view>
+  <view style="height:88rpx">
+    <scroll-view scroll-x='true' class="fixed" scroll-left="{{toView+'rpx'}}">
+      <view class="order-nav flex-sb">
+        <view class="tab">
+          <text class="text {{status=='all'?'active':''}}" data-id="0" bindtap="changeData" data-index="all">全部</text>
+        </view>
+        <view class="tab">
+          <text class="text {{status==0?'active':''}}" data-id="1" bindtap="changeData" data-index="0">待付款</text>
+        </view>
+        <view class="tab">
+          <text class="text {{status==1?'active':''}}" data-id="3" bindtap="changeData" data-index="1">待发货</text>
+        </view>
+        <view class="tab">
+          <text class="text {{status==2?'active':''}}" data-id="4" bindtap="changeData" data-index="2">待收货</text>
+        </view>
+        <view class="tab">
+          <text class="text {{status==3?'active':''}}" data-id="5" bindtap="changeData" data-index="3">已收货</text>
+        </view>
+        <view class="tab">
+          <text class="text {{status==4?'active':''}}" data-id="6" bindtap="changeData" data-index="4">退款/售后</text>
+        </view>
+        <view class="tab">
+          <text class="text {{status==5?'active':''}}" data-id="7" bindtap="changeData" data-index="5">交易完成</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="orderlist" wx:if="{{orderList.length>0}}">
+    <!-- style="height:calc(100vh - 100px)" -->
+    <scroll-view scroll-y="true" bindscrolltolower="pullUpLoad" style="height:86vh;" class="order-list {{isIphoneX?'hwrap':''}}">
+      <view class="order-item" wx:for-items="{{orderList}}" wx:for-item="items" wx:key="index" catchtap="toOrderDetail" data-order_id="{{items.order_id}}" data-order_status="{{items.order_status}}">
+        <view class="flex-sb item-head">
+          <view class="item-head-left flex-andmid">
+            <!-- <view class="order-mark flex-all">{{}}代</view> -->
+            <text>订单号:{{items.order_no}}</text>
+          </view>
+          <view class="item-head-right">{{items.status_name}}</view>
+        </view>
+        <view class="item-body">
+          <view class="flex-andmid">
+            <view class="new-order-picture-box" wx:for="{{items.order_item_list}}" wx:key="index">
+              <image src="{{siteroot+item.picture.pic_cover_small}}" mode="aspectFill" class="order-img"></image>
+              <!-- <image src="{{item.picture.pic_cover_small}}" mode="aspectFill" class="order-img"></image> -->
+              <view class="ellipss1">{{item.goods_name}}</view>
+            </view>
+          </view>
+          <view class="new-order-desc">
+            <text class="f0"> 数量:{{items.order_item_list.length}} 总计:</text>
+            <text class="f2">￥</text>
+            <text class="f3">{{items.pay_money[0]}}</text>
+            <text class="f1">.{{items.pay_money[1]}}</text>
+            <text class="f0"> ({{items.status_name}})</text>
+          </view>
+        </view>
+        <view class="item-foot">
+          <button class="order-btn" catchtap="cancelFn" data-order_id="{{items.order_id}}" wx:if="{{items.order_status==0}}">取消订单</button>
+          <button class="order-btn order-paynow" wx:if="{{items.order_status==0}}">立即付款</button>
+          <button class="order-btn" catchtap="toReceiving" data-order_id="{{items.order_id}}" wx:if="{{items.order_status==2}}">确认收货</button>
+          <button class="order-btn" catchtap="toEvaluate" data-order_id="{{items.order_id}}" wx:if="{{items.order_status==3&&items.is_evaluate==0}}">去评价</button>
+          <button class="order-btn order-paynow" wx:if="{{items.order_status==5}}" catchtap="deleteFn" data-order_id="{{items.order_id}}">删除订单</button>
+          <button class="order-btn" data-order_id="{{items.order_id}}"  wx:else>查看订单</button>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="nodata flex-all" wx:else>
+    <comnodata nodata1="nodata2" />
+  </view>
+  <time-picker data-id="picker" pickerShow="{{isPickerShow}}" wx:if="{{isPickerRender}}" config="{{pickerConfig}}" bind:hdata-idePicker="pickerHdata-ide" bind:setPickerTime="setPickerTime" bind:pickerReset="resetPicker"></time-picker>
+</view>
+
+<tabbar />

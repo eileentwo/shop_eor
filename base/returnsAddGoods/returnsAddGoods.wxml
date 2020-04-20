@@ -1,0 +1,78 @@
+<!--base/returnsAddGoods/returnsAddGoods.wxml-->
+<view>
+	<view class="header">
+		<view class="headerfix flex-sb">
+			<navigator class="headbox head-classify l">
+				<image src="../../zhy/resource/images/list.png" class="ic-head-classify"></image><text class="head-classify-word">分类</text>
+			</navigator>
+			<view class="flex-sb">
+				<image src="../../zhy/resource/images/search.png" class="searchImg"></image>
+				<image src="../../zhy/resource/images/cart.png" class="cartImg"></image>
+			</view>
+		</view>
+		<view class="filter flex-andmid">
+			<view class="one-filter {{onefilter==0?'c-theme-font':''}} flex-1 default-reset" data-type="listSortGeneral"  bindtap="filterFn" data-index="0"><text class="dib vm">综合</text></view>
+			<view class="one-filter ui-arrow-box flex-1 flex-all  {{onefilter==1?'c-theme-font':''}}" data-type="listSortPrice"  bindtap="filterFn" data-index="1">
+				<text class="dib vm mr5">价格</text>
+				<image src="../../zhy/resource/images/arrows_1.png" class="icons" wx:if="{{arrowdir==0}}"></image>
+				<image src="../../zhy/resource/images/arrows_2.png" class="icons" wx:elif="{{arrowdir==1}}"></image>
+				<image src="../../zhy/resource/images/arrows_3.png" class="icons"wx:else></image>
+			</view>
+			<view class="one-filter ui-arrow-box flex-1 flex-all  {{onefilter==2?'c-theme-font':''}}" data-type="listSortCoding"  bindtap="filterFn" data-index="2">
+        <text class="dib vm mr5">商品编码</text>			
+				<image src="../../zhy/resource/images/arrows_1.png" class="icons" wx:if="{{arrowdir1==0}}"></image>
+				<image src="../../zhy/resource/images/arrows_2.png" class="icons" wx:elif="{{arrowdir1==1}}"></image>
+				<image src="../../zhy/resource/images/arrows_3.png" class="icons"wx:else></image>
+			</view>
+			<view class="one-filter ui-arrow-box flex-1 flex-all  {{onefilter==3?'c-theme-font':''}}" data-type="listFilter" bindtap="showFilterBox">
+				<image src="../../zhy/resource/images/ic-select.png" class="ic-select"></image><text class="dib vm mr5">筛选</text>
+			</view>
+			<p class="head-shop-close-tips" style="display: none;"><text><image src="../../zhy/resource/images/ic-select.png" class="icon i-shop-close"></image>店铺打烊，暂不接单</text></p>
+		</view>
+	</view>
+	<comfixbox ani="{{ani}}"   bind:hideFilterBox="get_ani1">
+		<view class="movebox in" animation="{{ani1}}" >
+			<scroll-view class="main native-scroll" scroll-y="true" id="listFilter" style="height:100%" >
+				<view class="product-quick-filter-title mlr30 pb20 bbe pt30 flex-sb"  bindtap="toggle" data-index="0"><text class="dib vm">品牌</text><text class="product-class-right-head-arrow {{showMore?'product-class-top-head-arrow':''}}"></text></view>
+				<view class="ui-group" wx:if="{{showMore}}">
+					<view class="ui-checklabel flex-sb mlr30"><text class="product-quick-filter-name dib">羽合</text>
+						<radio checked="{{checked}}"></radio>
+					</view>
+					<view class="ui-checklabel flex-sb mlr30"><text class="product-quick-filter-name dib">好伴侣</text>
+						<radio checked="{{checked}}"></radio>
+					</view>
+					<view class="ui-checklabel flex-sb mlr30">
+						<text class="product-quick-filter-name dib">西门子（SIEMENS）</text>
+						<radio checked="{{checked}}"></radio>
+					</view>
+					<view class="ui-checklabel flex-sb mlr30"><text class="product-quick-filter-name dib">敷轻松</text>
+						<radio checked="{{checked}}"></radio>
+					</view>
+					<view class="ui-checklabel flex-sb mlr30"><text class="product-quick-filter-name dib">DP久量（Duration power）</text>
+						<radio checked="{{checked}}"></radio>
+					</view>
+					<view class="ui-checklabel flex-sb mlr30"><text class="product-quick-filter-name dib">唯舒（WSJF）</text>
+						<radio checked="{{checked}}"></radio>
+					</view>
+				</view>        
+        <view class="product-quick-filter-title mlr30 pb20 bbe pt30 flex-sb"   bindtap="toggle" data-index="1"><text class="dib vm">标签</text><text class="product-class-right-head-arrow  {{showMore1?'product-class-top-head-arrow':''}}"></text></view>
+        <view class="ui-group"  wx:if="{{showMore1}}">
+          <view class="ui-checklabel flex-sb mlr30"><text class="product-quick-filter-name dib">新品上架</text>
+            <radio checked="{{checked}}"></radio>
+          </view>
+          <view class="ui-checklabel flex-sb mlr30"><text class="product-quick-filter-name dib">热卖推荐</text>
+            <radio checked="{{checked}}"></radio>
+          </view>
+          <view class="ui-checklabel flex-sb mlr30"><text class="product-quick-filter-name dib">清仓优惠</text>
+            <radio checked="{{checked}}"></radio>
+          </view>
+        </view>
+			</scroll-view>
+      <view class="footer flex-all">
+        <button class="ui-btn c1" id="filtReset">重置</button><button class="ui-btn c-btn-full" id="flitComplete">完成</button>
+      </view>
+		</view>
+	</comfixbox>
+
+</view>
+<comreturngoods goodsList="{{goodsList}}" />

@@ -1,0 +1,241 @@
+.scroll-view{
+  position: relative;
+  height: 100vh;
+}
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: none;
+  background:  var(--blue);
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.icon-arrow {
+  display: block;
+  width: 20rpx;
+  height: 11rpx;
+}
+
+.car-goods-img .img1 {
+  display: block;
+  width: 142rpx;
+  height: 142rpx;
+}
+
+.car-list {
+  margin-bottom: 20rpx;
+  padding: 20rpx 15rpx 0 15rpx;
+  background: #fff;
+}
+
+.car-goods {
+  padding-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+
+.car-check {
+  margin: 0 22rpx 0 12rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.car-goods-img {
+  margin-right: 18rpx;
+  position: relative;
+}
+
+.car-goods-img .v1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 36rpx;
+  text-align: center;
+  line-height: 36rpx;
+  color: #fff;
+  font-size: 22rpx;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.car-rig {
+  height: 142rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.car-goods-name {
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.car-goods-name .v1 {
+  width: 350rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.btn-fold {
+  width: 88rpx;
+  height: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 44rpx;
+  border: 1rpx solid #a5a5a5;
+  color: #666;
+  font-size: 20rpx;
+}
+
+.btn-fold .v2 {
+  margin-right: 6rpx;
+}
+
+.operation-box {
+  width: 200rpx;
+  height: 66rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 33rpx;
+  background: #f4f4f4;
+}
+
+.icon-minus, .icon-add {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.food-box {
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.operation-box .v1 {
+  flex: 1;
+  text-align: center;
+}
+
+.operation-box .icon-minus {
+  margin-left: 13rpx;
+}
+
+.operation-box .icon-add {
+  margin-right: 13rpx;
+}
+
+.now-price {
+  display: flex;
+  align-items: baseline;
+  color: #fe3a0d;
+}
+.ml60{
+  margin-left: 60rpx;
+}
+
+.now-price .v1 {
+  font-size: 20rpx;
+}
+
+.now-price .v2 {
+  font-size: 28rpx;
+}
+
+.now-price .v3 {
+  font-size: 24rpx;
+}
+
+.check-goods {
+  height: 100rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+
+.car-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 11;
+  width: 100%;
+  height: 99rpx;
+  background: #fff;
+  border-top: 1rpx solid #f4f4f4;
+}
+.car-footer1{
+  position: fixed;
+  bottom: 98rpx;
+}
+
+.car-order {
+  width: 250rpx;
+  height: 99rpx;
+  text-align: center;
+  line-height: 99rpx;
+  font-size: 36rpx;
+  background: #bbb;
+  color: #fff;
+}
+
+.car-order1 {
+  background:  var(--blue);
+}
+.car-order2{
+  background: #fd4141;
+}
+
+.car-footer .v4 {
+  flex: 1;
+  font-size: 28rpx;
+}
+
+.car-footer .car-check {
+  margin: 0 16rpx 0 26rpx;
+}
+
+.car-footer-con {
+  margin-right: 8rpx;
+}
+
+.car-footer-con .now-price {
+  justify-content: flex-end;
+}
+
+.car-footer .v5 {
+  color: #999;
+}
+
+.nodata {
+  justify-content: center;
+}
+
+.control {
+  display: flex;
+  justify-content: flex-end;
+  line-height: 98rpx;
+  background-color:var(--blue);
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.method {
+  padding-right: 20rpx;
+}

@@ -1,0 +1,9 @@
+<!--zhy/component/comnodata/comnodata.wxml-->
+<view class="content">
+  <view class="nodata">
+    <view>
+      <image src="../../resource/images/nodata1.png" class="ic-nodata "></image>
+      <view class="pt30rpx tc">暂无数据</view>
+    </view>
+  </view>
+</view>

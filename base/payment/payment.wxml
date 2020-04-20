@@ -1,0 +1,128 @@
+<!--base/payment/payment.wxml-->
+<scroll-view scroll-y="true" style="height:90vh">
+  <!-- 配送方式 -->
+  <view class="express">
+    <!-- <view class="express-title">配送方式</view> -->
+    <view class="bgw">
+      <!-- <view class="flex-andmid  expressBtns">
+          <view class="expressBtn active">快递</view>
+          <view class="expressBtn">到店消费</view>
+        <view class="expressBtn">上门服务</view>
+        </view> -->
+      <view class='userinfo  flex-sb' wx:if="{{!address.consigner}}" bindtap="toAddress">
+        <view class='flex-andmid'>
+          <image class="expressimg" src="../../zhy/resource/images/locationg.png"></image>
+          <view>请选择收货地址</view>
+        </view>
+        <image class="arrowR" src='../../zhy/resource/images/icon-arrow.png'></image>
+      </view>
+      <view class="userinfo flex-sb" wx:else bindtap="toAddress">
+        <view class=" flex-andmid">
+          <image class="expressimg" src="../../zhy/resource/images/locationg.png"></image>
+          <view>
+            <view>收货人：{{address.consigner}}</view>
+            <view>{{address.address1}}</view>
+          </view>
+        </view>
+        <view class="phone">{{address.mobile}}</view>
+      </view>
+      <view class="linebg"></view>
+    </view>
+  </view>
+  <block wx:for="{{orderData}}" wx:key="index">
+    <view class="goodsInfo bgw">
+      <view class="shop flex-andmid">
+        <image class="shopimg" src="../../zhy/resource/images/none.png"></image>
+        <text>{{item.shop_name}}</text>
+      </view>
+      <view class="goods flex-andmid">
+        <!-- <image class="goodsimg" src="{{item.picture_info.pic_cover_mid?item.picture_info.pic_cover_mid:'../../zhy/resource/images/none.png'}}"></image> -->
+        <image class="goodsimg" src="{{item.picture_info.pic_cover_mid?siteroot+item.picture_info.pic_cover_mid:'../../zhy/resource/images/none.png'}}"></image>
+        <view class="flex-sb">
+          <view class="ellips1">{{item.goods_name}}</view>
+          <view>×{{item.num}}</view>
+          <view class="red">￥{{item.wholesaler_price?item.wholesaler_price:item.price}}</view>
+        </view>
+      </view>
+      <view  class="flex-sb activity" wx:if="{{item.mansong_money>0}}">
+      <text>活动：</text>
+      <text class="coupon-num" >已减免{{item.mansong_money}}元</text>
+    </view>
+    </view>
+
+    
+
+    <view class="coupon-type bgw flex-sb" wx:if="{{item.point_exchange_type==1}}">
+      <text>我的积分：{{integral}}</text> <text class="item-right-time">使用{{item.point_exchange*item.num}}积分</text>
+    </view>
+  </block>
+  <!-- 优惠券 -->
+  <view class="coupon-type flex-sb" bindtap="showCouponTap">
+    <view>
+      <text>优惠券</text>
+      <text class="coupon-num" wx:if="{{coupon_price > 0}}">已选1张</text>
+    </view>
+    <view class="flex-andmid">
+      <text wx:if="{{coupon_price}}">优惠：￥{{coupon_price}}</text>
+      <text wx:else class="item-right-time">不使用优惠券</text>
+      <image class="arrowR" src='../../zhy/resource/images/icon-arrow.png'></image>
+    </view>
+  </view>
+
+  <view class="coupon-type flex-sb bgw ">
+    <text>物流公司</text>
+    <picker  class="ui-right-inputbox"  range="{{expressopion}}" bindchange="bindRegionChange" value="{{index}}" >
+					<input type="text" class="tr" name="area" value="{{index}}" placeholder="{{expressopion[0]}}"/>
+				</picker>
+  </view>
+    <!-- 备注 -->
+  <view class="flex-sb bgw message">
+    <text>备注</text>
+    <input class="tr" value="{{leavemessage}}" bindinput="changemsg" placeholder="请输入备注信息"></input>
+  </view>
+  
+</scroll-view>
+
+<view class="footer flex-sb bgw">
+  <view>
+    总计：￥{{totalCost>0?totalCost:'0.00'}}
+    <text class="gray">(含运费{{deliver_price}})</text>
+  </view>
+  <button class="submit" bindtap="submitFn">提交订单</button>
+</view>
+<view class="maskBox" catchtap="hideCouponTap" wx:if="{{showMask}}">
+  <view class="maskContent">
+    <view class="couponnum flex-sb"><text>{{coupons.length}}张可用</text><text catchtap="nouseFn">不使用优惠券</text></view>
+    <scroll-view class="scrollView" scroll-y="true">
+      <coupon coupons="{{coupons}}" bind:useFn="useFn" />
+    </scroll-view>
+  </view>
+</view>
+
+<!-- <view class="maskBox" catchtap="hidePay" wx:if="{{showMask1}}">
+  <view class="maskContent maskContent1">
+    <view >请选择支付方式</view>
+    <view class="flex-sb">
+      <view class="flex-andmid"><image mode="aspectFit" class="wechat" src='../../zhy/resource/images/paytype4.png'></image>微信支付</view>
+      <image class="right" src='../../zhy/resource/images/right.png'></image>
+    </view>
+    <view class="flex-all"><view class="btn" catchtap="payment">{{buttonName}}</view></view>
+  </view>
+</view> -->
+<form report-submit="true" bindsubmit="onBuyMoneyTab" reportSubmit="true">
+  <van-popup-gray show="{{choosePay.alert}}" position="bottom" bind:click-overlay="toggleAlertPay">
+    <view class='choicepayTit'>请选择支付方式</view>
+    <view class='webChat flex-sb' wx:for="{{choosePay.type}}" wx:key="type" bindtap='changePayType' data-index="{{index+1}}">
+      <view class="flex-andmid">
+        <image src='{{item.pic}}' class='payIcon'></image>
+        <view>{{item.name}}</view>
+      </view>
+      <!-- <view>{{index == 1? '余额：' + user.balance : ''}}</view> -->
+      <image src='/zhy/resource/images/pay/right.png' class='iconRight' wx:if="{{choosePay.curr == index+1}}"></image>
+    </view>
+    <view class="pay-footer">
+      <button form-type="submit">确定支付</button>
+    </view>
+    <!-- <view style="height: 100rpx;"></view> -->
+  </van-popup-gray>
+</form>

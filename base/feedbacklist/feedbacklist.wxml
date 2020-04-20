@@ -1,0 +1,33 @@
+<!--base/feedbacklist/feedbacklist.wxml-->
+<view>
+  <view class="content">
+    <view class="min-loading min-loading-fnbase" style="display: none;">数据加载中...</view>
+    <view class="fb-box fb-box-r">
+      <view class="fb-top tc">03-06 13:48</view>
+      <view class="fb-content">
+        <view class="fb-con">
+          <view class="fb-txt c-header-bg">1
+            <text class="c-border"></text>
+            <view class="flex-andmid imgList">
+              <view class="imgbox flex-all">
+                <image class="img" mode="widthFix" src="https://oss.dinghuo123.com/question/images/1000129/ae34ecd4-03f0-4295-930d-c35b304d7a44.png@50w_50h.jpg" />
+              </view>
+              <view class="imgbox flex-all">
+                <image class="img" mode="widthFix" src="https://oss.dinghuo123.com/question/images/1000129/ae34ecd4-03f0-4295-930d-c35b304d7a44.png@50w_50h.jpg" />
+              </view>
+              <view class="imgbox flex-all">
+                <image class="img" mode="widthFix" src="https://oss.dinghuo123.com/question/images/1000129/ae34ecd4-03f0-4295-930d-c35b304d7a44.png@50w_50h.jpg" />
+              </view>
+              <view class="imgbox flex-all">
+                <image class="img" mode="widthFix" src="https://oss.dinghuo123.com/question/images/1000129/ae34ecd4-03f0-4295-930d-c35b304d7a44.png@50w_50h.jpg" />
+              </view>
+            </view>
+          </view>
+        </view>
+        <image src="../../zhy/resource/images/nav1.png" class="img-avatar"></image>
+      </view>
+      
+    </view>
+  </view>
+  <comfooter footText="{{footText}}" isGreen="{{isGreen}}" />
+</view>

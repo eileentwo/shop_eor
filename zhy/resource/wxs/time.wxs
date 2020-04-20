@@ -1,0 +1,84 @@
+// t // 时间戳10位数
+/**
+ * t 时间戳（10位数）
+ * flag （0 年月日时分秒 1 年月日 2 分秒）
+ */
+var toTime = function(t = 0, flag) {
+  t = (t - 0) * 1000;
+  t = getDate(t);
+  var year = t.getFullYear();
+  var month = (t.getMonth() + 1) > 9 ? (t.getMonth() + 1) : '0' + (t.getMonth() + 1);
+  var day = t.getDate() > 9 ? t.getDate() : '0' + t.getDate();
+  var h = t.getHours() > 9 ? t.getHours() : '0' + t.getHours();
+  var m = t.getMinutes() > 9 ? t.getMinutes() : '0' + t.getMinutes();
+  if (flag == 1) {
+    return year + '-' + month + '-' + day;
+  } else if (flag == 2) {
+    return h + ':' + m;
+  } else {
+    return year + '-' + month + '-' + day + ' ' + h + ':' + m;
+  }
+}
+
+var toTimeChinese = function (t = 0) {
+  t = (t - 0) * 1000;
+  t = getDate(t);
+  var year = t.getFullYear();
+  var month = (t.getMonth() + 1) > 9 ? (t.getMonth() + 1) : '0' + (t.getMonth() + 1);
+  var day = t.getDate() > 9 ? t.getDate() : '0' + t.getDate();
+  var h = t.getHours() > 9 ? t.getHours() : '0' + t.getHours();
+  var m = t.getMinutes() > 9 ? t.getMinutes() : '0' + t.getMinutes();
+  return year + '年' + month + '月' + day + '日';
+}
+
+/**
+ * return 天
+ */
+var day = function (t = 0) {
+  var time = parseInt(t / 86400);
+  return time;
+}
+/**
+ * return 时
+ */
+var hours = function (t = 0) {
+  var time = parseInt(t % 86400 / 3600);
+  return time > 9 ? time : '0' + time;
+}
+/**
+ * return 分
+ */
+var min = function (t = 0) {
+  var time = parseInt(t % 3600 / 60);
+  return time > 9 ? time : '0' + time;
+}
+/**
+ * return 秒
+ */
+var second = function (t = 0) {
+  var time = parseInt(t % 60);
+  return time > 9 ? time : '0' + time;
+}
+
+var countDown = function (t) {
+  var t = t - 0;
+  if (t < 0) {
+    return '00:00';
+  } else {
+    var min = Math.floor(t / 60);
+    min = min > 9 ? min : '0' + min;
+    var second = parseInt(t % 60);
+    second = second > 9 ? second : '0' + second;
+    return min + ':' + second;
+  }
+}
+
+module.exports = {
+  toTime: toTime,
+  toTimeChinese: toTimeChinese,
+  day: day,
+  hours: hours,
+  min: min,
+  second: second,
+  countDown: countDown
+}

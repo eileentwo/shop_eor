@@ -1,0 +1,25 @@
+.all-order {
+  white-space: nowrap;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  font-size: 30rpx;
+  color: var(--fontb);
+}
+
+.all-order-list {
+  position: relative;
+  width: 120rpx;
+  padding: 0 50rpx;
+  display: inline-block;
+  text-align: center;
+}
+
+.all-order-line {
+  position: absolute;
+  left: 50rpx;
+  bottom: 0;
+  width: 120rpx;
+  height: 5rpx;
+  background: var(--tab);
+}

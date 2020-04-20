@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "意见反馈",
+  "usingComponents": {
+    "nodata": "/zhy/component/comnodata/comnodata",
+    "comfooter": "/zhy/component/comfooterBtn/comfooterBtn"}
+}

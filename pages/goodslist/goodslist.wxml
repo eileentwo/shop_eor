@@ -1,0 +1,146 @@
+<view>
+	<include src="/zhy/template/comSearch/comSearch.wxml" />
+	<view class="main">
+		<view class="main-lef">
+
+			<view class="category-list {{cidx == 0 ? 'active':''}}" data-cidx="0" bindtap="onCategoryTap">
+				<view class="green-box" wx:if="{{cidx == 0}}" data-category_id=""></view>
+				<view class="v1">全部商品</view>
+				<image src="../../zhy/resource/images/arrow-rig.png" class="icon-arrow-r" wx:if="{{isTrue}}"></image>
+			</view>
+			<block wx:for="{{group_list}}" wx:key="index">
+				<view class="category-list {{cidx == (index*1+1) ? 'active':''}}" data-group_id="{{item.group_id}}" data-cidx="{{index*1+1}}" bindtap="onCategoryTap">
+					<!-- <image src="../../zhy/resource/images/green-box.png" class="green-box" wx:if="{{cidx == (index*1+1)}}"></image> -->
+					<view class="v1">{{item.group_name}}</view>
+					<image src="../../zhy/resource/images/arrow-rig.png" class="icon-arrow-r" wx:if="{{isTrue}}"></image>
+				</view>
+			</block>
+		</view>
+		<view class="main-rig">
+			<view class="nav">
+				<!-- <view class="nav" wx:if="{{cidx != 1}}"> -->
+				<view class="nav-list" bindtap="onShowTap" data-index="0">
+					<view class="v1 {{brand_id !=''?'active':''}}">品牌</view>
+					<image src="../../zhy/resource/images/arrow-d1.png" class="arrow-down" wx:if="{{brand_id ==''}}"></image>
+					<image src="../../zhy/resource/images/arrow down.png" class="arrow-down" wx:else></image>
+				</view>
+				<!-- <view class="nav-list" bindtap="onShowTap" data-index="1">
+					<view class="v1 {{selectGoodsLabelId !=''?'active':''}}">商品分类</view>
+					<image src="../../zhy/resource/images/arrow-d1.png" class="arrow-down" wx:if="{{selectGoodsLabelId ==''}}"></image>
+					<image src="../../zhy/resource/images/arrow down.png" class="arrow-down" wx:else></image>
+				</view> -->
+				<view class="nav-list" bindtap="onShowTap" data-index="2">
+					<view class="v1 {{sort_order >0?'active':''}}">排序</view>
+					<image src="../../zhy/resource/images/arrow-d1.png" class="arrow-down" wx:if="{{sort_order ==0}}"></image>
+					<image src="../../zhy/resource/images/arrow down.png" class="arrow-down" wx:else></image>
+				</view>
+			</view>
+			<scroll-view scroll-y class="goods-item {{isIphoneX?'hwrap':''}}" wx:if="{{goodsList.length>0}}" bindscrolltolower="pullUpLoad" style="height:calc(100vh - 130px)">
+				<comlist goodsList="{{goodsList}}" goodsList="{{goodsList}}" goodsList="{{goodsList}}" isA="true" isC="true" bind:changeNum="changeNum" checkstate="{{checkstate}}" siteroot="{{siteroot}}"/>
+			</scroll-view>
+			<view class="nodata flex-all" wx:else>
+				<comnodata nodata1="nodata2" />
+			</view>
+		</view>
+	</view>
+
+	<comshowbox showBox="{{showBox}}" showChange="true" changedValue="{{changedNum}}" isNum="true" bind:inputTarget="inputTarget" bind:popupok="popupok" />
+	<view class="productquick-footer  flex-andmid" wx:if="{{productquick}}">
+		<view class="productquick-footer-info-box">
+			<view class="productquick-footer-pirce-box">
+				<view class="productquick-footer-pirce flex-andmid">
+					<text class="f24">¥</text>
+					<view class="f1 quick-footer-w2" id="quickOrderMoney" data-value="0">
+						<text class="productquick-footer-pirce-integer">1,800</text>
+						<text class="f24"></text>
+					</view>
+				</view>
+			</view>
+			<view class="f20 productquick-footer-num  flex-andmid">
+				品类:
+				<text id="quickOrderKlass" data-value="0">1</text> 数量:
+				<text id="quickOrderCount" data-value="0">1</text>
+			</view>
+		</view>
+		<button class="productquick-footer-order" id="quickListOrder">下单</button>
+	</view>
+	<!-- <view class="car-footer" catchtap="showTotalList">
+		<view class="flex-sb">
+			<view>种类:{{totaltype?totaltype:0}}</view>
+			<view>数量:{{totalnum?totalnum:0}}</view>
+			<view>总价:￥{{totalcost?totalcost:0}}</view>
+			<view class="buy" catchtap="toBuy">立即购买</view>
+		</view>
+	</view> -->
+	<comfilters brand="{{brand}}" olable="{{olable}}" rank="{{rank}}" group_list="{{group_list}}" brandList="{{brandList}}" bind:selectBrand="selectBrand" bind:onLable="onLable" bind:onRankTap="onRankTap" bind:hideLable="hideLable" bind:hideBrand="hideBrand" />
+	<view class="drawer-screen" bindtap="onCloseShowType" data-statu="close" wx:if="{{showType}}"></view>
+	<view w-extract class="drawer-box bgw" wx:if="{{showType}}">
+		<view class="flex-sb listtitle">
+			<view class="listitem listitem1">商品信息</view>
+			<view class="listitem">价格</view>
+			<view class="listitem">数量</view>
+			<view class="listitem closeimg"> </view>
+		</view>
+		<view class="totallist">
+			<view class="flex-sb  " wx:for="{{totalList}}" wx:key="index">
+				<view class="listitem listitem1 ellips1">{{item.sku_name+' '+item.goods_name}}</view>
+				<view class="listitem">{{item.price}}</view>
+				<view class="listitem"> {{item.num}}</view>
+				<image class="listitem closeimg" bindtap="changeTotalList" data-goods_id="{{item.goods_id}}" data-index="{{index}}" src="../../zhy/resource/images/icon11.png"></image>
+			</view>
+		</view>
+	</view>
+
+	<view class="drawer-screen" bindtap="onCloseTap" data-statu="close" wx:if="{{mask}}"></view>
+	<view w-extract class="drawer-box" wx:if="{{mask}}">
+		<form bindsubmit="formSubmit">
+			<view class="drawer-title">
+				<view class="goods-thumb" style="margin-top:{{app_type == 'app' ? '0' : ''}};">
+					<image src="{{siteroot}}{{attrChoicedPic?attrChoicedPic:showItem.pic_cover_mid}}" mode="aspectFill" class="thumb" />
+				</view>
+
+				<view class="goods-detail">
+
+					<view class="goods-price">
+						<text>￥{{showItem.totalprice?showItem.totalprice:showItem.promotion_type==2&&showItem.promotion_price<showItem.wholesaler_price?showItem.promotion_price:showItem.wholesaler_price}}</text>
+					</view>
+
+					<view class="goods-gg" wx:if="{{showItem.goods_spec_format&&showItem.goods_spec_format.length>0}}">
+						<text wx:if="{{attrChoiced}}">已选：{{choiceName}}</text>
+						<text wx:if="{{!attrChoiced}}">未选择规格</text>
+					</view>
+				</view>
+				<image src="../../zhy/resource/images/close.png" class="icon-close" bindtap="onCloseTap" data-statu="close" />
+			</view>
+			<view w-scroll-y class="drawer-content">
+				<view class="spec" wx:for="{{showItem.goods_spec_format}}" wx:key="group">
+					<view class="spec-name">
+						{{item.spec_name}}：
+					</view>
+					<view class="spec-value">
+						<text wx:for="{{item.value}}" wx:key="id" wx:for-item="itm" wx:for-index="idx" class="{{itm.status == true ? 'active' : ''}}" data-id="{{itm.id}}" data-idx="{{idx}}" data-index="{{index}}" data-pic_id="{{itm.spec_value_data}}" bindtap="spTap">{{itm.spec_value_name}}</text>
+					</view>
+				</view>
+				<view>
+					<view class="project-list">
+						<view>数量:</view>
+						<view class="choose">
+							<view class="reduce" bindtap="reduceNum1" data-num="{{showItem.num}}">
+								-
+							</view>
+							<input type="number" value="{{showItem.num}}" id="choose-num" disabled="disabled" />
+							<view class="add" bindtap="addNum1" data-num="{{showItem.num}}">
+								+
+							</view>
+						</view>
+					</view>
+				</view>
+
+			</view>
+			<view class="drawer-foot flex-all">
+				<view class="gsgouwus {{attrChoiced.stock==0?'nostock':''}}" style="margin-left: 20rpx;margin-right:20rpx;" bindtap="onAddCarTap">加入购物车</view>
+			</view>
+		</form>
+	</view>
+</view>
+<tabbar />

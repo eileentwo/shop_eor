@@ -1,0 +1,91 @@
+/* zhy/component/comfiters.wxss */
+.nav-mask {
+  position: fixed;
+  left: 0;
+  top: 90rpx;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.nav-box {
+  position: fixed;
+  left: 0;
+  top: 90rpx;
+  width: 100%;
+  background: #fff;
+}
+
+.icon-arrow-up {
+  display: block;
+  width: 23rpx;
+  height: 15rpx;
+}
+
+.nav-title {
+  padding: 0 35rpx;
+  display: flex;
+  align-items: center;
+  height: 70rpx;
+}
+
+.nav-title .v1 {
+  flex: 1;
+  color: #666;
+}
+
+.nav-cont {
+  max-height: 670rpx;
+}
+
+.brand-item {
+  padding: 0 0 20rpx 25rpx;
+}
+
+.brand-list {
+  margin: 15rpx 20rpx 0 0;
+  padding: 0 20rpx;
+  display: inline-block;
+  width: 300rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 8rpx;
+  background: #eee;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-btn {
+  border-top: 1rpx solid #f4f4f4;
+  display: flex;
+}
+
+.nav-btn .v1, .nav-btn .v2 {
+  flex: 1;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.nav-btn .v1 {
+  color: #777;
+}
+
+.nav-btn .v2 {
+  color: #fff;
+  background:  var(--blue);
+}
+
+.rank-list {
+  height: 89rpx;
+  line-height: 89rpx;
+  text-align: center;
+  font-size: 28rpx;
+  border-top: 1rpx solid #eee;
+}
+.active {
+  color:  var(--blue);
+}

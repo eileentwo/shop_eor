@@ -1,0 +1,19 @@
+/* zhy/component/comnodata/comnodata.wxss */
+
+@import "../../../app.wxss";
+.nodata {
+  /* min-height: 92vh; */
+  text-align: center;
+  line-height: 1.414;
+  color: #747474;
+}
+.ic-nodata {
+  width: 180rpx;
+  height: 180rpx; 
+}
+
+
+.pt30rpx {
+  padding-top: 30rpx;
+  font-size: 30rpx;
+}

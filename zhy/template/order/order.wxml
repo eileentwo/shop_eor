@@ -1,0 +1,26 @@
+<scroll-view class="all-order" scroll-x>
+  <view class="all-order-list" data-allidx="0" bindtap="onTabTap">
+    <text>商品订单</text>
+    <text wx:if="{{allidx == 0}}" class="all-order-line"></text>
+  </view>
+  <view class="all-order-list" data-allidx="1" bindtap="onTabTap">
+    <text>抢购订单</text>
+    <text wx:if="{{allidx == 1}}" class="all-order-line"></text>
+  </view>
+  <view class="all-order-list" data-allidx="2" bindtap="onTabTap">
+    <text>拼团订单</text>
+    <text wx:if="{{allidx == 2}}" class="all-order-line"></text>
+  </view>
+  <view class="all-order-list" data-allidx="3" bindtap="onTabTap">
+    <text>免单订单</text>
+    <text wx:if="{{allidx == 3}}" class="all-order-line"></text>
+  </view>
+  <view class="all-order-list" data-allidx="4" bindtap="onTabTap">
+    <text>预约订单</text>
+    <text wx:if="{{allidx == 4}}" class="all-order-line"></text>
+  </view>
+  <view class="all-order-list" data-allidx="5" bindtap="onTabTap">
+    <text>礼包订单</text>
+    <text wx:if="{{allidx == 5}}" class="all-order-line"></text>
+  </view>
+</scroll-view>

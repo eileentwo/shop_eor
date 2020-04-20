@@ -1,0 +1,29 @@
+.fixed-box {
+  margin-bottom: 120rpx;
+  position: fixed;
+  bottom: 80rpx;
+  right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100rpx;
+  z-index: 99;
+}
+
+.fixed-box button {
+  padding: 0;
+  width: 96rpx;
+  height: 96rpx;  
+  border-radius: 50%;
+  box-shadow: 0 6rpx 8rpx rgba(236, 113, 113, 0.1),
+                0 -6rpx 8rpx rgba(218, 80, 80, 0.1),
+                6rpx 0 8rpx rgba(218, 80, 80, 0.1),
+                -6rpx 0 8rpx rgba(218, 80, 80, 0.1);
+}
+
+.fixed-box image {
+  width: 96rpx;
+  height: 96rpx; 
+  border-radius: 50%;
+}

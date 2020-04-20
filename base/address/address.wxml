@@ -1,0 +1,42 @@
+<!--base/address/address.wxml-->
+<view>
+	<view class="header flex-andmid">
+		<view class="headerTitleBox flex-all" wx:if="{{search}}">
+			<view class="headerTitle flex1">收货地址</view>
+			<!-- <image class="searchImage" src="../../zhy/resource/images/search.png" bindtap="toSearch"></image> -->
+		</view>
+		<view class="searchBox  flex-all" wx:else>
+			<image class="searchImg" src="../../zhy/resource/images/search.png"></image>
+			<input placeholder-class="searchHold" class="searchBtn" placeholder="请输入收货人姓名、手机号码"></input>
+		</view>
+	</view>
+	<view wx:if="{{showAddress || searchResult}}" class="groupcontent">
+		<block wx:for="{{userAddress}}" wx:key="index">
+			<view class="ui-group" catchtap="chooseAddress" data-item="{{item}}">
+				<view class="ui-list">
+					<view class="addr-main">
+						<view class="ui-title"> <text class="mr10">{{item.consigner}}</text><text>{{item.mobile}}</text> </view>
+						<view class="ui-content"><text class="c2">{{item.address1}}</text></view>
+					</view>
+					<view class="ui-bottom flex-sb">
+						<radio class="radio" catchtap="changeType"  data-idx="1" checked="{{item.is_default}}" data-id="{{item.id}}"><text class="c4">默认地址</text></radio>
+						<view class="flex-andmid">
+							<button class="ui-edit c4 " catchtap="addAddress" data-item="{{item}}">编辑</button>
+							<button class="ui-delete c4 " catchtap="changeType" data-idx="2"  data-id="{{item.id}}">删除</button>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<view class="footer flex-all"><button class="ui-btn" bindtap="addAddress" data-item="">新增地址</button></view>
+	</view>
+	<view class="searchHistory bgw" hidden="{{search}}">
+		<view class="historyTitle">历史搜索</view>
+		<view class="hisList">
+		
+			<view class="hisItem noHis"  wx:if="{{history.length==0}}">暂无历史搜索记录</view>
+			<view class="hisItem" wx:for="{{history}}" wx:key='index' >{{history}}</view>
+		</view>
+		<view class="clearHis"><button class="clearHisBtn" bindtap="proSearchClear">清除历史搜索</button></view>
+	</view>
+</view>

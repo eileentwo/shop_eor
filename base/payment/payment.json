@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "提交订单",
+  "usingComponents": {
+    "coupon": "/zhy/component/comcoupon/comcoupon",
+    "van-popup-gray": "/zhy/vant/popup-gray/index"}
+}

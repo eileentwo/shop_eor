@@ -1,0 +1,6 @@
+.wrap{position: fixed; z-index: 66; top:0; right:0; bottom:0; left: 0; background: #5740c6}
+.bg{ width: 100%; height: 100%}
+.qr{ position: fixed; z-index: 68; left: 0; bottom: 50rpx; text-align: center; width: 100%}
+.qr image{ width: 292rpx; height: 292rpx;}
+.qr .v1{ margin-top:20rpx; font-size: 42rpx; color: #fff}
+.qr .v2{ font-size: 24rpx; color: #fff}

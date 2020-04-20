@@ -1,0 +1,25 @@
+<!--base/returns/returns.wxml-->
+
+<view class="header flex-andmid">
+	<view class="headerTitleBox flex-all">
+		<view class="headerTitle flex1"></view>
+		<image class="searchImage" src="../../zhy/resource/images/search.png" bindtap="toSearch"></image>
+
+		<image class="addImage" src="../../zhy/resource/images/add1.png" bindtap="toSearch"></image>
+	</view>
+</view>
+<view class="orderList" style="min-height:100vh">
+	<view class="ui-group">
+		<view class="ui-list">
+				<view class="ui-title flex-sb">
+					<view class="l">DH-R-20160223-001708</view>
+					<view class="c-theme-font" id="dispalyStatus">待退款确认</view>
+				</view>
+				<view class="ui-content">
+					<view class="fix">数量：1</view>
+					<view class="fix">时间：2016-02-23 10:39:50</view>
+					<view class="fix">金额：¥154.00 (未退款)</view>
+				</view>
+      </view>
+	</view>
+</view>

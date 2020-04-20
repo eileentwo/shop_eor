@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "限时折扣",
+  "usingComponents": {
+    "comnodata": "/zhy/component/comnodata/comnodata",
+    "comlist": "../../zhy/component/comList/comList"
+  }
+}

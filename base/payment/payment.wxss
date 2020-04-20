@@ -1,0 +1,321 @@
+/* base/payment/payment.wxss */
+/* 商品信息start */
+.goodsInfo {
+  font-size: 26rpx;
+  border-bottom: 1px solid #eee;
+  margin-top: 6rpx;
+  padding-left: 20rpx;
+}
+
+.shop {
+  font-size: 28rpx;
+  line-height: 2;
+  border-bottom: 1px solid #eee;
+}
+
+.shopimg {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 12rpx;
+}
+
+.goods .red {
+  color: rgb(241, 50, 50);
+  font-size: 30rpx;
+}
+
+.goods .flex-sb {
+  flex-direction: column;
+  line-height: 2.4;
+  align-items: flex-start;
+  height: 200rpx;
+  padding-top: 20rpx;
+}
+
+.goodsimg {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 18rpx;
+  border-radius: 20rpx;
+}
+/* 商品信息 end */
+
+/* 配送方式 start */
+.express .bgw {
+  padding-left: 20rpx;
+}
+
+.express .expressBtns {
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 0ex;
+}
+
+.expressBtn {
+  width: 160rpx;
+  line-height: 2.2;
+  background-color: #eee;
+  color: #666;
+  text-align: center;
+  margin-right: 12rpx;
+  border-radius: 4rpx;
+}
+
+.active {
+  background-color: rgb(252, 66, 66);
+  color: #fff;
+}
+
+.expressimg {
+  width: 40rpx;
+  height: 42rpx;
+  margin-right: 10rpx;
+}
+
+.arrowR {
+  width: 16rpx;
+  height: 28rpx;
+  margin:0 0 0 10rpx;
+}
+
+.express-title {
+  border-bottom: 1px solid #eee;
+  text-indent: 20rpx;
+  color: #666;
+  line-height: 68rpx; 
+}
+
+.userinfo {
+  padding: 20rpx 0;
+}
+
+.phone {
+  margin:0 30rpx;
+}
+
+.linebg {
+  height: 6rpx;
+  background: linear-gradient(135deg, rgb(72, 148, 247) 0, rgb(72, 148, 247) 20rpx, white 20rpx, white 40rpx, rgb(250, 80, 29) 40rpx, rgb(250, 80, 29) 60rpx, white 60rpx, white 80rpx, rgb(72, 148, 247) 80rpx, rgb(72, 148, 247) 100rpx, white 100rpx, white 120rpx, rgb(250, 80, 29) 120rpx, rgb(250, 80, 29) 140rpx, white 140rpx, white 160rpx, rgb(72, 148, 247) 160rpx, rgb(72, 148, 247) 180rpx, white 180rpx, white 200rpx, rgb(250, 80, 29) 200rpx, rgb(250, 80, 29) 220rpx, white 220rpx, white 240rpx, rgb(72, 148, 247) 240rpx, rgb(72, 148, 247) 260rpx, white 260rpx, white 280rpx, rgb(250, 80, 29) 280rpx, rgb(250, 80, 29) 300rpx, white 300rpx, white 320rpx, rgb(72, 148, 247) 320rpx, rgb(72, 148, 247) 340rpx, white 340rpx, white 360rpx, rgb(250, 80, 29) 360rpx, rgb(250, 80, 29) 380rpx, white 380rpx, white 400rpx, rgb(72, 148, 247) 400rpx, rgb(72, 148, 247) 420rpx, white 420rpx, white 440rpx, rgb(250, 80, 29) 440rpx, rgb(250, 80, 29) 460rpx, white 460rpx, white 480rpx, rgb(72, 148, 247) 480rpx, rgb(72, 148, 247) 500rpx, white 500rpx, white 520rpx, rgb(250, 80, 29) 520rpx, rgb(250, 80, 29) 540rpx) repeat;
+  margin-bottom: 20rpx;
+}
+
+/* 配送方式 end */
+/* 备注 start */
+.message {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.tr {
+  text-align: right;
+}
+/* 备注 end */
+
+/* footer start */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 98rpx;
+  line-height: 98rpx;
+  padding-left: 20rpx;
+}
+
+.gray {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.submit {
+  color: #fff;
+  /* background-color: rgb(252, 48, 13); */
+  background-color: var(--blue);
+  font-size: 28rpx;
+  line-height: 98rpx;
+  margin: 0;
+  padding: 0 60rpx;
+}
+
+/* footer end */
+
+/* 弹窗选择优惠券 start */
+.coupon-type {
+  height: 80rpx;
+  padding:0 20rpx;
+  margin-top: 20rpx;
+  border-top: 1rpx solid #ececec;
+  border-bottom: 1rpx solid #ececec;
+  background: #fff;
+}
+
+.coupon-num {
+  display: inline-block;
+  margin: 0 10rpx;
+  padding: 0 6rpx;
+  border-radius: 4rpx;
+  font-size: 20rpx;
+}
+
+.coupon-box {
+  position: relative;
+  max-height: 760rpx;
+  padding: 110rpx 20rpx 0;
+  z-index: 110;
+  background: #ececec;
+  overflow: scroll;
+}
+.coupon-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 710rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  z-index: 111;
+  background: #fff;
+}
+.coupon-title-close{
+  transform: rotate(-45deg);
+  font-size: 56rpx;
+  font-weight: bold;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.item-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 194rpx;
+  height: 200rpx;
+  z-index: 0;
+  color: #fff;
+  font-size: 20rpx;
+}
+
+.item-left-price {
+  position: relative;
+  margin-left: -20rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.item-left-price::after {
+  content: '元';
+  position: absolute;
+  bottom: 8rpx;
+  right: -24rpx;
+  font-size: 20rpx;
+}
+
+.item-left image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+
+.item-right-title {
+  font-size: 30rpx;
+  color: #282828;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+}
+
+.item-right-time {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.item-right-btn {
+  position: absolute;
+  top: 76rpx;
+  right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  text-align: center;
+  background: #f84a5c;
+  color: #fff;
+  font-size: 22rpx;
+  border-radius: 25rpx;
+}
+
+.fail-btn {
+  background: #c6c6c6;
+}
+/* 弹窗选择优惠券 end */
+
+.maskBox{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0 ,0, .3);
+  z-index: 999
+}
+.maskContent{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #eee;
+  padding: 20rpx 50rpx;
+  font-size: 22rpx;
+}
+.couponnum{
+  line-height: 48rpx;
+}
+.scrollView{
+  height: 400rpx;
+}
+.maskContent1{
+  background-color: #fff;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 10rpx 10rpx 0 0;
+  padding: 20rpx 0;
+  line-height: 98rpx;
+}
+.btn{
+  line-height: 80rpx;
+  background-color: var(--blue);
+  color: #fff;
+  width: 700rpx;
+  border-radius: 10rpx;
+}
+.wechat{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+.right{
+  width: 40rpx;
+  height: 40rpx;
+}
+.maskContent1 .flex-sb{
+  border: 1px solid #eee;
+  border-width: 1px 0 1px;
+padding: 0 20rpx;
+}
+.activity{
+  padding: 20rpx;
+}
+.ui-right-inputbox{
+  padding-right: 20rpx;
+}

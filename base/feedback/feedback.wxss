@@ -1,0 +1,40 @@
+/* base/feedback/feedback.wxss */
+
+.feedbackList {
+  background: #fff;
+}
+
+.ui-group {
+  padding-left: 30rpx;
+}
+
+.img-avatar {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.ui-group .ui-group-rt {
+  padding: 30rpx 24rpx 30rpx 28rpx;
+  border-bottom: 1px solid #eee;
+  color: #444;
+  flex: 1;
+}
+
+.ui-title {
+  font-size: 30rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 50rpx;
+}
+
+.ui-content .ui-r3 {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 10rpx;  
+}
+.ui-content {
+    color: #999;
+    line-height: 40rpx;
+    font-size: 23rpx;
+}

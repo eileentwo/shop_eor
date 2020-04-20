@@ -1,0 +1,3 @@
+<button class="btn" bindtap="{{disabled ? '' : 'onAddressTap'}}" type="button" open-type="{{(!gps && !disabled)  ? 'openSetting' : ''}}" bindopensetting="{{disabled ? '' : 'getAddress'}}">
+  <slot></slot>
+</button>

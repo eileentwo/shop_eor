@@ -1,0 +1,22 @@
+<!--zhy/component/comShowBox/comshowBox.wxml-->
+<view class="mask" wx:if="{{showBox}}">
+  <view class="popup-container popup-container-alert point-rule-box">
+  
+    <view class="popup-content popup-content1" wx:if="{{ showBtns}}"></view>
+    <view class="popup-title">{{showTitle}}</view>
+    <view class="popup-content" wx:if="{{showChange}}">
+			<textarea class="ui-txtarea" placeholder="" bindinput="_inputTarget" value="{{changedValue}}" wx:if="{{showTitle=='详细地址'}}"></textarea>
+			<input class="ui-txtarea ui-input " value="{{changedValue}}" type="{{isNum?'number':'text'}}"  bindinput="_inputTarget"  wx:else></input>
+		</view>
+    <view class="popup-content popup-content1" wx:else>{{showContent}}</view>
+    
+    <view class="popup-panel flex-andmid" wx:if="{{showChange || showBtns}}">
+      <button class="popup-cancel" bindtap="_hideBox">取消</button>
+      <button class="popup-ok c-btn-full" bindtap="_popupok">确定</button>
+    </view>
+    <view class="popup-panel" wx:else>
+      <view class="popup-btn"  bindtap="_hideBox">我知道了</view>
+    </view>
+    
+  </view>
+</view>

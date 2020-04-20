@@ -1,0 +1,127 @@
+/* base/commission/commission.wxss */
+
+.content {
+  font-size: 27rpx;
+  line-height: 1.414;
+}
+
+.point-header {
+  height:156rpx;
+}
+
+.point-header .c-header-bg {
+  height: 156rpx;
+  color: #fff;
+  background-color: var(--blue);
+  text-align: center;
+}
+
+.point-header .point-total {
+  font-size: 60rpx;
+}
+
+.point-filter {
+  padding: 0 0 0 30rpx;
+  height: 100rpx;
+}
+
+.point-arrow {
+  border-top: 10rpx solid #999;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.flex-1 {
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+
+.point-filter-type {
+  padding: 0 30rpx;
+  height: 100%;
+  line-height: 100rpx;
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+
+.point-header .point-message {
+  color: #999;
+  font-size: 28rpx;
+  border-bottom: 1px solid #eee;
+  height: 94rpx;
+  line-height: 94rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+}
+.ml30{
+  margin-left: 30rpx
+}
+
+
+.moveContent{
+  transform: translateY(9999px);
+}
+.main {
+    width: 100%;
+    position: fixed;
+    max-height: 80%;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    text-align: center;
+    transform: translateY(999px);
+    -webkit-transform: translateY(999px);
+    z-index: 999;
+}
+.main .content {
+    height: 100%;
+}
+.moveInCon-li {
+    padding: 0 20rpx;
+    text-align: center;
+}
+.main .moveInCon-lable {
+    display: block;
+    padding: 30rpx 0;
+    color: #444;
+}
+.slider-btn {
+  width: 100%;
+    text-align: center;
+}
+.slider-cancel {
+    color: #999;
+    padding: 30rpx 0;
+    font-size: 32rpx;
+    line-height: 1.414;
+}
+.noData{
+  height: 79vh;
+  overflow: hidden;
+}
+.mtitle{
+  font-size: 32rpx;
+  margin:20rpx 0 0 20rpx;
+  line-height: 60rpx;
+}
+.mlist{ height: 90rpx; border-bottom: 1rpx solid #eee;padding: 10rpx 0;}
+.mid-box{ margin-top:20rpx; padding: 0 20rpx; line-height: 40rpx; background: #fff;box-sizing: border-box}
+
+.list_title{
+  color: #444;
+}
+.gray{
+  color: #666;
+  font-size: 24rpx;
+}
+.red{
+  font-size: 32rpx;
+  color: #fa401f;
+}
+.green{
+  color: var(--blue);
+}

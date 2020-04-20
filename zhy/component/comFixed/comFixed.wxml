@@ -1,0 +1,11 @@
+<view class="fixed-box" style="bottom:{{padding}}rpx">
+  <button wx:if="{{share}}" open-type="share">
+    <image src="../../zhy/resource/images/share.png"></image>
+  </button>
+  <button wx:if="{{serve}}" open-type="contact" bindcontact="_thankServe" type="default" session-from='{"nickName":"{{user.nickname}}","avatarUrl":"{{user.avatar}}"}'>
+    <image src="../../zhy/resource/images/fserve.png"></image>
+  </button>
+  <button wx:if="{{home && newPage}}" bindtap="_onHomeTap">
+    <image src="../../zhy/resource/images/fhome.png"></image>
+  </button>
+</view>

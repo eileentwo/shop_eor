@@ -1,0 +1,15 @@
+.benefit{ padding:20rpx 0 25rpx 22rpx; background: #fff;}
+.benefit-coupon{ padding:0; display: flex; align-items: center;}
+.benefit-coupon-tit{ width:100rpx; font-size: 28rpx; color: #949494;}
+.benefit-coupon-item{ margin:0 40rpx 0 0; width:550rpx; display: flex; align-items: center;}
+.benefit-coupon-item image{ margin-right: 15rpx; width: 34rpx; height: 26rpx;}
+.benefit-coupon-list{ font-size: 26rpx; color: #2E2E2E;}
+.benefit-coupon-btn{ padding:0 14rpx; height: 42rpx; line-height: 42rpx; border:1rpx solid #bfbfbf; border-radius: 21rpx; font-size: 24rpx; color: #666;}
+.benefit-active{ margin-top:20rpx; padding: 0 22rpx;}
+.benefit-active-con .red-icon{ margin-right: 8rpx; width: 22rpx; height: 26rpx;}
+.benefit-active,.benefit-active-con{ display: flex}
+.benefit-active-tit{ font-size: 28rpx; color: #666;}
+.benefit-active-con{ flex: 1; margin:0 40rpx; align-items: center; font-size: 28rpx;}
+.benefit-active-con .v1{ color: #af1010}
+.benefit-active-con .v2{ margin-left: 20rpx}
+

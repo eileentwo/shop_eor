@@ -1,0 +1,65 @@
+/* base/returns/returns.wxss */
+.header {
+  background-color:  var(--blue);
+  color: #fff;
+  line-height: 88rpx;
+  height: 88rpx;
+}
+.headerTitleBox{
+  width: 100%;
+}
+.headerTitle{
+  font-size: 36rpx;
+  text-align: center;
+  max-width: 60%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.flex1{
+  flex: 1;
+}
+
+.searchImage {
+  width: 56rpx;
+  height: 56rpx;
+  margin: 0 30rpx 0 56rpx;
+}
+.addImage{
+  width: 42rpx;
+  height: 42rpx;
+  margin:16rpx 32rpx 0 0;
+}
+.orderList{
+  margin-top: 20rpx;
+}
+.ui-group{
+  margin-bottom: 24rpx;
+  background-color: #fff;
+}
+.ui-list {
+  color: #444;
+  padding: 30rpx 24rpx 20rpx 0;
+  margin-left: 24rpx;
+  border-bottom: 1px solid #eee;
+  word-break: break-all;
+  box-sizing: border-box;
+}
+.noBB{
+  border-bottom: 0;
+}
+.ui-title {
+  line-height:50rpx;
+  font-size: 32rpx;
+}
+.c-theme-font {
+  color:  var(--blue);
+    font-size: 30rpx;
+    margin-bottom: -3rpx;
+    margin-top: 3rpx;
+}
+.ui-content {
+  margin:0 0 0 3rpx;
+  color: #999;
+  line-height: 1.7;
+}

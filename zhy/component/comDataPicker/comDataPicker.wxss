@@ -1,0 +1,156 @@
+/* zhy/component/datepicker.wxss */
+.picker-item {
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 自定义时间 */
+.picker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: -320px;
+  left: 0;
+  transition: height 0.5s;
+  z-index: 2000;
+  background: #fff;
+}
+
+.sensorType-screen {
+  width: 100vw;
+  /* height:400rpx; */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #333333;
+  opacity: 0;
+  overflow: hidden;
+  z-index: 1999;
+  color: #fff;
+}
+
+.sensorTypePicker {
+  width: 100%;
+  height: 220rpx;
+  margin: 30rpx 0 20rpx;
+  box-sizing: border-box;
+  background: #f7f7f7;
+}
+
+.picker-item {
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  /* overflow: hidden; */
+}
+
+
+.box {
+  padding: 0 10px;
+}
+
+/* 至 */
+.to {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(138, 138, 138);
+  font-size: 30rpx;
+  /* font-size:30rpx; */
+}
+
+.btn-box {
+  width: 100%;
+  display: flex;
+  height: 90rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 10rpx solid #eee;
+  margin-top: 30rpx;
+  text-align: center;
+  background: #fff;
+
+}
+
+.pick_btn {
+  flex: 1;
+  padding: 7px 15px;
+  color: #333;
+  font-size: 32rpx;
+}
+
+
+/*输入框中的时间样式*/
+.input_time {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view_time {
+  flex: 1;
+  padding: 14rpx 30rpx 0;
+  text-align: center;
+  color: #747474;
+}
+
+.view_time1 {
+  color: #33404e;
+}
+
+.time_border {
+  display: inline-block;
+  width: 240rpx;
+  height: 4rpx;
+  margin-bottom: -6rpx;
+}
+
+.view_time1 .time_border {
+  background-color: #33404e;
+}
+
+.time_text {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.disable_time {
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: -16rpx;
+}
+
+.determine-list {
+  margin-top: 24rpx;
+  width: 94%;
+}
+
+.determine-submit-button {
+  font-size: 30rpx;
+  background: linear-gradient(to bottom, #289CFF, #51CBFF);
+  color: #FFFFFF;
+  margin-bottom: 36rpx;
+}
+
+.determine-submit-button::after {
+  border: 0;
+}
+
+.determine-submit-large {
+  height: 72rpx;
+  line-height: 72rpx;
+  width: 100%;
+  border-radius: 12rpx;
+}

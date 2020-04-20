@@ -1,0 +1,15 @@
+/* base/paybank/paybank.wxss */
+
+@import "/zhy/template/temgroup/temgroup.wxss";
+.ui-list{
+  display: flex;
+}
+.radio{
+  margin:0 16rpx 0 10rpx;
+}
+.c1{
+      color: #444;
+}
+.c4{
+      color: #999;
+}

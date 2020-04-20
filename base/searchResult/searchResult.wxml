@@ -1,0 +1,32 @@
+<!--base/searchResult/searchResult.wxml-->
+<!--base/selection/selection.wxml-->
+<view class="bgw">
+  <!--
+  <import src="../../zhy/template/comSearch/comSearch.wxml"></import>
+  <template is="comSearch" data="{{isToSearch:true}}"></template> -->
+
+  <include  src="/zhy/template/comSearch/comSearch.wxml"  />
+  <view class="filter">
+    <view class="filter-bar-list flex-andmid">
+      <view class="filter-bar-item flex-all {{brand_id!=''?'green':''}}" bindtap="onShowTap" data-title="0">品牌 
+        <image class="arrow-down" wx:if="{{brand_id!=''}}" src="../../zhy/resource/images/arrow down.png"></image>
+        <image class="arrow-down" wx:else src="../../zhy/resource/images/arrow-down-gray.png"></image>
+      </view>
+      <view class="filter-bar-item flex-all {{ selectGoodsLabelId !='' ?'green':''}}"   bindtap="onShowTap" data-title="1">标签 
+        <image class="arrow-down" wx:if="{{selectGoodsLabelId !='' }}" src="../../zhy/resource/images/arrow down.png"></image>
+        <image class="arrow-down" wx:else src="../../zhy/resource/images/arrow-down-gray.png"></image></view>
+      <view class="filter-bar-item flex-all {{sort_order?'green':''}}"  bindtap="onShowTap" data-title="2">排序
+        <image class="arrow-down" wx:if="{{sort_order}}" src="../../zhy/resource/images/arrow down.png"></image>
+        <image class="arrow-down" wx:else src="../../zhy/resource/images/arrow-down-gray.png"></image></view>
+    </view>
+  </view>  
+  <scroll-view scroll-y="true" bindscrolltolower="pullUpLoad" style="height:calc(100vh - 100px)" wx:if="{{goodsList.length>0}}"  class="{{isIphoneX?'hwrap':''}}">
+    <comlist  goodsList="{{goodsList}}" isA="true"  checkstate="{{checkstate}}" siteroot="{{siteroot}}"/>
+    
+  </scroll-view>
+    <view class="nodata flex-all" wx:else>
+      <comnodata nodata1="nodata2" />
+    </view>
+
+  <comfilters brand="{{brand}}" olable="{{olable}}" rank="{{rank}}" group_list="{{group_list}}" brandList="{{brandList}}" bind:selectBrand="selectBrand" bind:onLable="onLable" bind:onRankTap="onRankTap" bind:hideLable="hideLable"  bind:hideBrand="hideBrand"/>
+</view>

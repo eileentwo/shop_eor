@@ -1,0 +1,11 @@
+var distance = function (dis) {
+  if (dis > 1000) {
+    var dis = (dis / 1000).toFixed(2) + 'K'
+    return dis;
+  } else {
+    return dis;
+  }
+}
+module.exports = {
+  distance: distance
+}

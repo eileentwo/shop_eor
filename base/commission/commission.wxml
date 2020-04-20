@@ -1,0 +1,26 @@
+<!--base/commission/commission.wxml-->
+<view class="content">
+  <view class="point-header">
+    <view class="c-header-bg tc" bindtap="showBox">
+      <view class="point-total js-point-valid">{{integral_num}}</view>当前积分
+    </view>
+   
+  </view>
+</view>
+<view  wx:if="{{commission.length>0}}" >
+  <view class="mtitle">积分明细</view>
+  <scroll-view class="mid-box {{isIphoneX?'hwrap':''}}"scroll-y="true" style="height:80vh;"  bindscrolltolower="pullUpLoad">
+    <view class="mlist flex-sb" wx:for="{{commission}}" wx:key="index">
+      <view class="list_title">
+        <view>{{item.text}}</view>
+        <text class="gray">{{item.create_time}}</text>
+      </view>
+      <view class="number">
+        <view class="{{item.number>=0?'red':'green'}}">{{item.number}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="noData  flex-all" wx:else>
+  <comnodata nodata1="nodata1" />
+</view>

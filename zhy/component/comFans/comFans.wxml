@@ -1,0 +1,21 @@
+<view class="fans-group" bindtap="toggleFans" wx:if="{{info.is_show === 1}}">
+	<image class="group-left" src="{{imgRoot + info.logo}}" mode="aspectFill"></image>
+	<view class="group-center">
+		<view class="ellips1">{{info.name}}</view>
+		<view class="ellips2">{{info.details}}</view>
+	</view>
+	<image class="group-right" src="../../zhy/resource/images/info/add.png"></image>
+	<!-- <image class="group-right" src="{{imgRoot + info.pic}}"></image> -->
+</view>
+
+<view wx:if="{{fansMask}}" class="mask" bindtap="toggleFans"></view>
+<view class="fans-service" wx:if="{{fansMask && info.type === 2}}">
+		<view>加入群聊</view>
+		<view>请在客服窗口输入‘{{info.keywords}}’</view>
+		<button open-type="contact" bindtap="toggleFans" type="default" session-from='{"nickName":"{{user.nickname}}","avatarUrl":"{{user.avatar}}"}'>知道了</button>
+	</view>
+	<view class="fans-qr" wx:if="{{fansMask && info.type === 1}}">
+		<image src="{{imgRoot + info.group_qrcode}}"></image>
+		<view>保存到相册之后在进行扫码</view>
+		<button open-type="{{!has_auth ? 'openSetting' : ''}}" bindopensetting="{{!has_auth ? 'getAuth' : ''}}" bindtap="{{has_auth ? 'saveQrTap' : ''}}">{{has_auth ? '保存到相册' : '请先允许保存到相册权限'}}</button>
+	</view>

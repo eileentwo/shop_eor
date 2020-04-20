@@ -1,0 +1,8 @@
+<view class="box" style="width:{{width*5+50}}rpx;height:{{width}}rpx;">
+  <block wx:for="{{num}}" wx:key="star">
+    <image style="width:{{width}}rpx;height:{{width}}rpx;margin-right:10rpx;" src="{{imgh}}" data-idx="{{index + 1}}" bindtap='_onChangeTab'></image>
+  </block>
+  <block wx:for="{{5-num}}" wx:key="id">
+    <image style="width:{{width}}rpx;height:{{width}}rpx;margin-right:10rpx;" src="{{img}}" data-idx="{{num + index + 1}}" bindtap='_onChangeTab'></image>
+  </block>
+</view>

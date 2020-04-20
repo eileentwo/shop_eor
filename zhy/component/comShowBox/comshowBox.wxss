@@ -1,0 +1,64 @@
+/* zhy/component/comShowBox/comshowBox.wxss */
+@import "../../../app.wxss";
+
+.popup-container {
+    position: fixed;
+    top: 45%;
+    left: 30rpx;
+    right: 30rpx;
+    transform: translateY(-50%);
+    background-color: #fff;
+    z-index: 1001;
+    border-radius: 2px;
+    text-align: center;
+}
+.popup-title {
+    padding: 40rpx 0;
+    color: #555;
+    text-align: center;
+    font-size: 36rpx;
+}
+.popup-content {
+    overflow-y: auto;
+    max-height: 400rpx;
+    padding: 0 40rpx 40rpx;
+    text-align: left;
+    font-size: 28rpx;
+}
+.popup-container .popup-panel {
+    border-top: 1px solid #eee;
+}
+.popup-panel .popup-btn  {
+    font-size: 29rpx;
+    display: inline-block;
+    width: 50%;
+    line-height: 98rpx;
+    box-sizing: border-box;
+}
+
+
+.ui-txtarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border: 1px solid #eee;
+}
+
+.popup-panel button{
+  font-size: 29rpx;
+  width: 50%;
+  line-height: 98rpx;
+  box-sizing: border-box;
+  border-radius: 0;
+  margin-bottom: 0;
+  background-color: transparent;
+}
+.popup-panel .popup-ok{
+  background-color:  var(--blue);
+  color: #fff;
+}
+.popup-content .ui-input {
+  height: 90rpx;
+  font-size: 28rpx;
+  color: #555;
+}

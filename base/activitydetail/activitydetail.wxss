@@ -1,0 +1,127 @@
+/* base/activitydetail/activitydetail.wxss */
+@import "/zhy/template/customhead/customhead.wxss";
+/* @import "/zhy/template/comcoupon/comcoupon.wxss"; */
+.no-activity-img{
+  height: 90rpx;
+  background: -webkit-gradient(linear,left top,left bottom,from(#ffcac5),to(#eee));
+  background: linear-gradient(#ffcac5,#eee);
+  text-align: center;
+  line-height: 70rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #33404e;
+}
+.activity-count-down-num {
+  min-width: 40rpx;
+  padding: 0 4rpx;
+  height: 40rpx;
+  line-height: 44rpx;
+  overflow: hidden;
+  background-color: #33404e;
+  border-radius: 6rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  margin-right:8rpx;
+  margin-left: 8rpx;
+}
+.promotion-detail-card {
+  box-shadow: 0 0 20rpx 0 rgba(51,64,78,.1);
+  border-radius: 26rpx;
+  background: #fff;
+  padding:30rpx 20rpx 36rpx 30rpx;
+  margin: 20rpx;
+}
+.promotion-detail-card-title {
+  font-weight: 400;
+  color: #222;
+  font-size: 32rpx;
+}
+
+.promotion-detail-card-title .fsmall2 {
+  display: inline-block;
+  color: #fff;
+  border-radius: 2rpx;
+  padding: 0 8rpx;
+  margin-right: 10rpx;
+  line-height: 32rpx;
+  font-size: 24rpx;
+  color:#fff;
+  background: #ff6e92;
+}
+.promotion-content {
+  margin-top: 38rpx;
+  color: #222;
+}
+.promotion-detail-card .promotion-content-title {
+  font-size: 26rpx;
+  color: #888;
+  margin-bottom: 16rpx;
+}
+
+.f1 {
+  font-size: 30rpx;
+}
+
+.text-danger {
+  color: #ff2b00;
+}
+.active-goods-wrap{
+  background-color: #f3f5fc;
+  margin-bottom: 20rpx;
+}
+.active-goods-wrap-title, .product-showcase-title {
+  background: #fff;
+  height: 82rpx;
+  line-height: 82rpx;
+  font-size:  30rpx;
+  font-weight: 400;
+  color: #222;
+}
+.active-goods-wrap-title {
+  padding-left: 30rpx;
+}
+
+.good-item-full {
+  position: relative;
+  background: #fff;
+  padding-bottom: 15rpx;
+}
+
+.good-item-img{
+  width: 240rpx;
+  height: 240rpx;
+  margin-right: 24rpx;
+}
+.good-item-full-footer {
+  height: 230rpx;
+  display: flex;
+  flex-direction: column;
+}
+.flex-1{
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+.good-name {
+  max-height: 72rpx;
+  line-height: 36rpx;
+  color: #333d44;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  word-break: break-all;
+  margin-bottom: 16rpx;
+}
+.good-price {
+  overflow: hidden;
+  height: 45rpx;
+  width: 100%;
+  line-height: 45rpx;
+  color: #fb4920;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 24rpx;
+}

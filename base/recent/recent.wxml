@@ -1,0 +1,15 @@
+<!--base/recent/最近购买.wxml-->
+<view>
+  <view class="headerfix">
+    <image class="searchimg" src="../../zhy/resource/images/search.png"></image>
+    <view class="cartBox flex-all" >
+      <image class="cartimg" src="../../zhy/resource/images/cart.png"></image>
+      <text class="cartnum">3</text>
+    </view>
+  </view>
+
+
+    <scroll-view scroll-y="true">
+      <comlist  goodsList="{{goodsList}}" checkstate="{{checkstate}}" siteroot="{{siteroot}}"/>
+    </scroll-view>
+</view>

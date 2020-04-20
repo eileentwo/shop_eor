@@ -1,0 +1,128 @@
+/* base/message/message.wxss */
+.msg_wrap,.content {
+  min-height: 100vh;
+}
+
+.msg_head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color:  var(--blue);
+  color: #fff;
+  height: 88rpx;
+}
+
+.msg_head .backArrow {
+  width: 40rpx;
+  height: 40rpx;
+  padding: 10rpx;
+  position: absolute;
+  left: 20rpx;
+}
+
+.msg_head .headText {
+  flex: 1;
+  text-align: center;
+  font-size: 36rpx;
+}
+
+.message-viewst .icon_wrap {
+  width: 19.333%;
+  align-items: center;
+  text-align: center;
+}
+
+.message-viewst .icon_wrap .msg_icon {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.message-viewst .flex-sb {
+  flex: 1;
+  border-bottom: 1px solid #eee;
+}
+
+.message-viewst .message-text {
+  flex: 1;
+  height:140rpx;
+}
+
+.message-viewst .arrow_right {
+  width: 14rpx;
+  height: 24rpx;
+  margin-right: 30rpx;
+}
+
+.message-viewst .message-item .message-text .dt {
+  padding : 30rpx 0 10rpx;
+  color: #555;
+  font-size: 30rpx;
+  width: 480rpx;
+}
+.message-viewst .message-item .message-text .ell{
+  font-size: 26rpx;
+  color: #999;
+  width: 500rpx;  
+}
+
+.secMsgPage .ui-group{
+  background: #fff;
+  color: #444;
+  padding: 30rpx 24rpx;
+  margin: 24rpx 0;
+}
+
+.item-title {
+  color: #444;
+  font-size: 32rpx;
+}
+.notice-item .date {
+  margin-left: 0;
+  margin-top: 5rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.red-dot {
+  display: inline-block;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  margin-right: 17rpx;
+  vertical-align: middle;
+  margin-bottom: 1rpx;
+  background-color: #ff5237;
+}
+
+.info-detail-wrap {
+  padding: 0  30rpx;
+  line-height: 1.414;
+}
+.info-detail-wrap .title .thirdH3 {
+  color: #555;
+  margin: 30rpx 0 5rpx;
+  font-size: 32rpx;
+}
+.date, .type {
+  display: inline-block;
+  font-size: 24rpx;
+  color: #999;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.info-main {
+  color: #555;
+  margin-top: 20rpx;
+  word-break: break-all;
+}
+.info-main .thirdH3 {
+  font-size: 34rpx;
+}
+
+.info-main .thirdP{
+  line-height: 44rpx;
+}
+.thirdStrong{
+  font-weight: 500;
+}

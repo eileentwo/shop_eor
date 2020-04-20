@@ -1,0 +1,17 @@
+<!--base/returnsGoods/returnsGoods.wxml-->
+<view class="">
+	<view class="cart-list-item " data-id="30575499612" data-summaryid="792724552" data-promotionid="">
+		<view class="">
+			<view class="flex-andmid">
+				<image class="image" mode="aspectFill" src="https://oss.dinghuo123.com/images/productImage/1000119/p0862da8b-5f01-41a8-8dae-e97e50fcb8cc.jpg@200w_200h.jpg" alt=""></image>
+				<view class="product-content flex-1">
+					<view class="h3">莎拉公主 奥地利水晶项链 天使泪水晶项链</view>
+					<view class="p">P91205807</view>
+					<view class="p">材质：水晶，颜色：紫色</view>
+					<view class="flex-sb p"><text class="product-price">¥154</text><text class="product-list-count dib r">1件</text></view>
+				</view>
+			</view>
+			<view class="product-list-note flex-sb"><text class="note-label">备注信息：</text><text class="note-text">请输入200字以内的备注</text></view>
+		</view>
+	</view>
+</view>

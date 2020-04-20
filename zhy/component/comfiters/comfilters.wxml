@@ -1,0 +1,52 @@
+<!--zhy/component/comfiters.wxml-->
+<view class="nav-mask" wx:if="{{brand}}">
+    <view class="nav-box">
+      <view class="nav-title">
+        <view class="v1">品牌</view>
+        <image src="../../resource/images/arrow-up.png" class="icon-arrow-up"></image>
+      </view>
+      <scroll-view scroll-y class="nav-cont">
+        <view class="brand-item">
+          <block wx:for="{{brandList}}" wx:key="index">
+            <view class="brand-list {{item.isChecked?'active':''}}" data-brand_id="{{item.brand_id}}" data-idx="{{index}}" data-brand_name="{{item.brand_name}}" bindtap="_onBrandTap">{{item.brand_name}}</view>
+          </block>
+        </view>
+      </scroll-view>
+      <view class="nav-btn">
+        <view class="v1" bindtap="_hideBrand">重置</view>
+        <view class="v2" bindtap="_selectBrand">确定</view>
+      </view>
+    </view>
+  </view>
+  <view class="nav-mask" wx:if="{{olable}}">
+    <view class="nav-box">
+      <view class="nav-title">
+        <view class="v1">标签</view>
+        <image src="../../resource/images/arrow-up.png" class="icon-arrow-up"></image>
+      </view>
+      <scroll-view scroll-y class="nav-cont">
+        <view class="brand-item">
+          <block wx:for="{{	group_list}}" wx:key="index">
+            <view class="brand-list  {{item.isChecked?'active':''}}" data-group_id="{{item.group_id}}" data-index="{{index}}" bindtap="_onLableTap">{{item.group_name}}</view>
+          </block>
+        </view>
+      </scroll-view>
+      <view class="nav-btn">
+        <view class="v1" bindtap="_hideLable">重置</view>
+        <view class="v2" bindtap="_onLable">确定</view>
+      </view>
+    </view>
+  </view>
+  <view class="nav-mask" wx:if="{{rank}}">
+    <view class="nav-box">
+      <view class="nav-title">
+        <view class="v1">排序</view>
+        <image src="../../resource/images/arrow-up.png" class="icon-arrow-up"></image>
+      </view>
+      <view class="rank">
+        <view class="rank-list {{sort_order == 0 ? 'active':''}}" data-ridx="0" bindtap="_onRankTap">综合排序</view>
+        <view class="rank-list {{sort_order == 1 ? 'active':''}}" data-ridx="1" bindtap="_onRankTap">价格从低到高</view>
+        <view class="rank-list {{sort_order == 2 ? 'active':''}}" data-ridx="2" bindtap="_onRankTap">价格从高到低</view>
+      </view>
+    </view>
+  </view>

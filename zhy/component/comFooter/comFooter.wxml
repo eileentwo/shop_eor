@@ -1,0 +1,52 @@
+<view class="sec-footer {{isX ? 'iphone-x' : ''}}" style="background:{{bg}}" wx:if="{{show}}">
+  <block wx:for="{{nav}}" wx:key="na">
+    <block wx:if="{{item.types  == 1}}">
+      <view class="item" bindtap='_onNavTab' data-index='{{index}}'>
+        <view class="img-box">
+          <image class="item-img " src="{{item.choose ? item.imgh : item.img}}"></image>
+        </view>
+        <view class='item-txt' style="color:{{item.choose ? colorh : color}}">{{fixed.txt(item.txt)}}</view>
+      </view>
+    </block>
+    <block wx:if="{{item.types == 2}}">
+      <view class="item" target="miniProgram" data-id="{{item.appid}}" data-path="{{item.path}}" bindtap='onOtherAppTab'>
+        <view class="img-box">
+          <image class="item-img {{fixed.center(nav.length, index) ? 'point' : ''}}" src="{{item.img}}"></image>
+        </view>
+        <view class='item-txt' style="color:{{color}}">{{item.txt}}</view>
+      </view>
+    </block>
+    <block wx:if="{{item.types == 3}}">
+      <button class="item" open-type="contact" style="background:{{bg}}">
+        <view class="img-box">
+          <image class="item-img {{fixed.center(nav.length, index) ? 'point' : ''}}" src="{{item.img}}"></image>
+        </view>
+        <view class='item-txt' style="color:{{color}}">{{item.txt}}</view>
+      </button>
+    </block>
+  </block>
+</view>
+<wxs module="fixed">
+  var center = function(length, index) {
+    length = length - 0;
+    index = index - 0;
+    if (length % 2 != 0 && (Math.floor(length / 2)) == index) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  var txt = function(val) {
+    var length = val.length;
+    if (length > 4) {
+      var str = val.substring(0, 4);
+      return str;
+    } else {
+      return val;
+    }
+  }
+  module.exports = {
+    center: center,
+    txt: txt
+  }
+</wxs>

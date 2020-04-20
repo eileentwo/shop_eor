@@ -1,0 +1,60 @@
+<!--base/activitydetail/activitydetail.wxml-->
+<view class="wrap">
+	<!-- <import src="/zhy/template/customhead/customhead.wxml"></import>
+	<template is="customhead" data="{{statusBarHeight,title}}"></template> -->
+  <include  src="/zhy/template/customhead/customhead.wxml"  >
+  </include>
+	<scroll-view   class="{{isIphoneX?'hwrap':''}}">
+		<view class="no-activity-img">
+			<view class="promotion-detail-countdown">
+				<view class="activity-count-down">
+					<view class="flex-all">距结束
+						<text class="activity-count-down-num">1182</text>天
+						<text class="activity-count-down-num">06</text>:
+						<text class="activity-count-down-num">38</text>:
+						<text class="activity-count-down-num">40</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="promotion-detail-body">
+			<view class="promotion-detail-card">
+				<view class="promotion-detail-card-title"><text class="pink fsmall2">直降</text>商品促销</view>
+				<view class="promotion-content">
+					<view class="promotion-content-title">活动内容</view>
+					<view class="promotion-rule f1"><text class="">订货价统一降至</text><text class="text-danger">25</text><text class="">元</text></view>
+				</view>
+				<view class="promotion-content">
+					<view class="promotion-content-title">活动时间</view>
+					<view class="f1">2015-02-02 00:00 ~ 2023-08-29 00:00</view>
+				</view>
+			</view>
+			<view>
+				<view class="active-goods-wrap mb20rem js-goods">
+					<view class="active-goods-wrap-title pl30rem">活动商品</view>
+					<view class="active-goods vertical">
+						<view class="good-item-full good-item-box flex-andmid">
+							<view class="good-item-full-imgbox">
+								<image class="good-item-img" src="../../zhy/resource/images/1.png"></image>
+							</view>
+							<view class="good-item-full-footer">
+								<view class="flex-1">
+									<view class="good-name bold-text">羽合 毛巾家纺 素色缎条毛巾四条装</view>
+									<view class="good-full-desc"></view>
+								</view>
+								<view class="good-price bold-text">
+									<view class="good-price bold-text">
+										<text class="fsmall2">¥</text><text class="f1">25</text><text class="fsmall2">.00</text><text class="fsmall2">/件</text>
+									</view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	<!-- <import src="/zhy/template/comcoupon/comcoupon.wxml"></import>
+	<template is="comcoupon" data="{{isUse}}"></template> -->
+	
+	</scroll-view>
+</view>

@@ -1,0 +1,67 @@
+/* base/feedbacklist/feedbacklist.wxss */
+
+.fb-box {
+  padding: 15rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.fb-box .fb-top {
+  padding: 30rpx 0;
+  color: #ccc;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.fb-content {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+
+}
+
+.img-avatar, .img-reply {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+}
+
+.fb-txt {
+  padding: 30rpx;
+  line-height: 1.6;
+  border-radius: 30rpx;
+  color: #fff;
+  word-break: break-all;
+  background-color:  var(--blue);
+  font-size: 27rpx;
+  position: relative;
+  margin-right: 16rpx;
+}
+
+.c-border {
+  position: absolute;
+  z-index: 1;
+  top: 25rpx;
+  right: -15rpx;
+  width: 0;
+  height: 0;
+  content: ' ';
+  border-width: 10rpx;
+  border-style: solid;
+  border-color:  var(--blue);
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.imgbox {
+  width: 74rpx;
+  height: 94rpx;
+  margin: 6rpx;
+  background-color: #fff;
+}
+.img{
+  max-width: 100%;
+  max-height: 100%;
+}
+.imgList{
+  margin-top: 20rpx;
+}

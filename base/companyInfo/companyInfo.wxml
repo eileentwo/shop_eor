@@ -1,0 +1,51 @@
+<!--base/companyInfo/companyInfo.wxml-->
+<view>
+  <view class="content">
+    <view class="min-loading min-loading-fnbase" style="display: none;">数据加载中...</view>
+    <view class="companyDetail">
+      <view class="p30rpx fb">基本信息</view>
+      <view class="ui-group mb0 bgw">
+        <view class="ui-list pop-unUpdate">
+          <view class="ui-title flex-sb">
+            <text class="l">供应商名称</text>
+            <text class="tr ui-right-inputbox">{{shopInfo.base_info.shop_name}}</text>
+          </view>
+        </view>
+        <view class="ui-list pop-unUpdate">
+          <view class="ui-title flex-sb">
+            <text class="l">供应商等级</text>
+            <text class="tr ui-right-inputbox">{{shopInfo.instance_type_info.type_name}}</text>
+          </view>
+        </view>
+        <view class="ui-list pop-unUpdate">
+          <view class="ui-title flex-sb">
+            <text class="l">供应商类型</text>
+            <text class="tr ui-right-inputbox">{{shopInfo.group_info.group_name}}</text>
+          </view>
+        </view>
+        <view class="ui-list pop-unUpdate" bindtap="callPhone">
+          <view class="ui-title flex-sb">
+            <text class="l">供应商电话 </text>
+            <text class="tr ui-right-inputbox">{{shopInfo.base_info.shop_phone}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- <block wx:for-items="{{infos}}" wx:for-item="items" wx:for-index="idx" wx:key="index">
+        <view class="p30rpx fb">{{items.infoTitle}}</view>
+        <view class="ui-group mb0 bgw">
+          <view class="ui-list pop-unUpdate"  wx:for="{{items.baseInfo}}" data-val="{{item.val}}" data-parentindex="{{idx}}" data-index="{{index}}" wx:key="index" data-disable="{{item.disable}}" data-tip="{{item.tip}}">
+            <view class="ui-title flex-sb">
+              <text class="l">{{item.tip}}</text>
+              <text class="tr ui-right-inputbox {{item.disable?'disable':''}}" wx:if="{{item.disable}}">{{item.val}}</text>
+              <input type="text" class="tr ui-right-inputbox" value="{{item.val}}" placeholder="请输入" readonly="" wx:else/>
+            </view>
+          </view>
+
+        </view>
+     </block> -->
+    </view>
+  </view>
+
+</view>
+
+<!-- <comshowbox showBox="{{showPopMask}}"  showTitle="{{popTitle}}" showChange="{{showPopMask}}" changedValue="{{changedValue}}"   bind:inputTarget="inputTarget" bind:popupok="changeNode"/> -->

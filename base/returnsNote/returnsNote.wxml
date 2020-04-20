@@ -1,0 +1,29 @@
+<!--base/returnsNote/returnsNote.wxml-->
+<view class="content bgw">
+  <block wx:for="{{nodeText}}" wx:key="index">
+    <view class="ui-group ui-group-full" id="pList">
+      <view class="ui-list">
+        <view class="ui-title">不要</view>
+        <view class="ui-content">
+          <view class="flex-sb"> <text class="l">张总</text> <text class="tr">2020-03-04 17:41:18</text> </view>
+        </view>
+      </view>
+    </view>
+  </block>
+	<view class="nodata  flex-all" hidden="{{nodeText.length>0}}">
+		<view><image src="../../zhy/resource/images/nodata1.png" class="ic-nodata "></image>
+		<view class="pt30rem tc">暂无数据</view></view>
+	</view>
+	<view class="footer flex-all">
+		<button class="ui-btn c-btn-full" id="addNote" data-poptype="2" data-rule="name(新增备注);length(200)" bindtap="showPop">添加备注</button>
+	</view>
+</view>
+
+<view class="mask" id="popMask" wx:if="{{showPopMask}}">
+	<view class="popup-container popup-container-update  iosTop">
+		<view class="popup-title">新增备注</view>
+		<view class="popup-content"><textarea class="ui-txtarea" placeholder="" bindinput="inputTarget"></textarea></view>
+		<view class="popup-panel flex-andmid"><button href="javascript:;" class="popup-cancel" bindtap="hidePopMask">取消</button>
+			<button href="javascript:;" class="popup-ok c-btn-full" bindtap="changeNode">确定</button></view>
+	</view>
+</view>
